@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-icon_home);
+      }
+
+      .cls-2 {
+        fill: #425983;
+      }
+
+      .cls-3 {
+        fill: rgba(139,139,139,0);
+      }
+    </style>
+    <clipPath id="clip-icon_home">
+      <rect width="40" height="40"/>
+    </clipPath>
+  </defs>
+  <g id="icon_home" class="cls-1">
+    <rect class="cls-3" width="40" height="40"/>
+    <g id="Group_15713" data-name="Group 15713" transform="translate(-871 143)">
+      <path id="Path_58" data-name="Path 58" class="cls-2" d="M57.921,75.7,43.511,88.34a4.133,4.133,0,0,1-.911.6v18.185H53.937V97.6c0-1.335.8-2.41,1.8-2.41H60.1c1,0,1.8,1.086,1.8,2.41v9.528H73.241V88.94a4.407,4.407,0,0,1-.911-.6Z" transform="translate(833.074 -210.125)"/>
+      <path id="Path_59" data-name="Path 59" class="cls-2" d="M38.983,15.618,21.906.646a2.845,2.845,0,0,0-3.786,0L1.043,15.618a3.08,3.08,0,0,0-.329,4.255,2.863,2.863,0,0,0,4.126.339l15.167-13.3L35.185,20.223a2.874,2.874,0,0,0,4.126-.351A3.08,3.08,0,0,0,38.983,15.618Z" transform="translate(870.987 -142.925)"/>
+      <rect id="Rectangle_38" data-name="Rectangle 38" class="cls-2" width="6.387" height="12.176" transform="translate(897.689 -142.482)"/>
+    </g>
+  </g>
+</svg>

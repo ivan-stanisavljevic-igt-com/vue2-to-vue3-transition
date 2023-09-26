@@ -1,0 +1,318 @@
+/**
+ * Client configuration - use to define parameters values different per client.
+ * Do not reference directly in the code. Use via config.app.autoconf.XXX
+ */
+window.ctsautoconf = window.ctsautoconf || {}
+window.ctsautoconf.TRANSACTION_SERVER_CALL_MODE = '{{ WEBCLIENT.TRANSACTION_SERVER_CALL_MODE | default('API') }}'  // Request mode to transaction sever, 'API'(new CTS) or 'RPC'(old Texas)
+window.ctsautoconf.TRANSACTION_SERVER_API_VERSION = '{{ WEBCLIENT.TRANSACTION_SERVER_API_VERSION | default('v1') }}'  // Api Transaction server API version
+window.ctsautoconf.TRANSACTION_SERVER_API_AUTO_REFRESH_TOKEN = {{ WEBCLIENT.TRANSACTION_SERVER_API_AUTO_REFRESH_TOKEN | default('false') }}  // Will refresh token call execute on 401 automatically
+window.ctsautoconf.IS_BUYBACK_ENABLED = {{ WEBCLIENT.IS_BUYBACK_ENABLED | default('false') }}
+window.ctsautoconf.REGION = {{ WEBCLIENT.REGION | default('0') }}
+window.ctsautoconf.BUYBACK_REFRESH_INTERVAL = {{ WEBCLIENT.BUYBACK_REFRESH_INTERVAL | default('30') }} // refresh period in seconds for BuyBack offer in history. 0 to disable.
+window.ctsautoconf.SHOW_LEG_STATUS_IN_BETHISTORY = {{ WEBCLIENT.SHOW_LEG_STATUS_IN_BETHISTORY | default('false') }}
+window.ctsautoconf.BETSLIP = {
+  config: {
+    BETSLIP_CHECKBOXES: {
+	  REGULAR: {{ WEBCLIENT.BETSLIP.config.BETSLIP_CHECKBOXES.REGULAR | default('false') }},
+	  TEASER: {{ WEBCLIENT.BETSLIP.config.BETSLIP_CHECKBOXES.TEASER | default('false') }},
+	  RR: {{ WEBCLIENT.BETSLIP.config.BETSLIP_CHECKBOXES.RR | default('false') }}
+	},
+    maxSno: {{ WEBCLIENT.BETSLIP.config.maxSno | default('25') }},
+    showEventTsStart: {{ WEBCLIENT.BETSLIP.config.showEventTsStart | default('false') }},
+    showEventTsInBetHistory: {{ WEBCLIENT.BETSLIP.config.showEventTsInBetHistory | default('false') }},
+    isFastBetEnabled: {{ WEBCLIENT.BETSLIP.config.isFastBetEnabled | default('true') }},
+    calculateAsync: {{ WEBCLIENT.BETSLIP.config.calculateAsync | default('true') }},
+    updateBetSlipInt: {
+      default: {{ WEBCLIENT.BETSLIP.config.updateBetSlipInt.default | default('60') }},
+      live: {{ WEBCLIENT.BETSLIP.config.updateBetSlipInt.live | default('20') }}
+    },
+    derivatives: {
+      teasers: {
+        mixed: {{ WEBCLIENT.BETSLIP.config.derivatives.teasers.mixed | default('true') }},
+{% if WEBCLIENT.BETSLIP.config.derivatives.teasers.defaultActiveLevel | default({}) == {} %}
+        defaultActiveLevel: {}
+{% else %}
+        defaultActiveLevel: {
+{% for key, value in WEBCLIENT.BETSLIP.config.derivatives.teasers.defaultActiveLevel.items() %}
+          {{ key }}: '{{ value }}'{% if not loop.last %}, {% endif +%}
+{% endfor %}
+        }
+{% endif %}
+      },
+      pitchers: {
+        enabled: {{ WEBCLIENT.BETSLIP.config.derivatives.pitchers.enabled | default('true') }}
+      },
+      buyPoints: {
+        enabled: {{ WEBCLIENT.BETSLIP.config.derivatives.buyPoints.enabled | default('true') }}
+      }
+    },
+    SGM: {
+      enabled: {{ WEBCLIENT.BETSLIP.config.SGM.enabled | default('true') }}
+    },
+    SGMplus: {
+      enabled: {{ WEBCLIENT.BETSLIP.config.SGMplus.enabled | default('true') }}
+    },
+    specialOffers: {
+      enabled: {{ WEBCLIENT.BETSLIP.config.specialOffers.enabled | default('false') }},
+{% if WEBCLIENT.BETSLIP.config.specialOffers.translations | default({}) == {} %}
+      translations: {}
+{% else %}
+      translations: {
+{% for key, value in WEBCLIENT.BETSLIP.config.specialOffers.translations.items() %}
+        '{{ key }}': '{{ value }}'{% if not loop.last %}, {% endif +%}
+{% endfor %}
+      }
+{% endif %}
+    }
+  },
+  isFOPreferredInSingles: {{ WEBCLIENT.BETSLIP.isFOPreferredInSingles | default('true') }},
+  isFPPreferredInMultiples: {{ WEBCLIENT.BETSLIP.isFPPreferredInMultiples | default('true') }},
+  priceTypesToIgnore: [
+    {%- for i in WEBCLIENT.BETSLIP.priceTypesToIgnore | default(['SGM']) %}'{{ i }}'{% if not loop.last %}, {% endif %}{% endfor -%}
+  ]
+}
+window.ctsautoconf.INJECT_SELECTIONS_FROM_3RD_PARTY = {
+  abortIfHasSuspended: {{ WEBCLIENT.INJECT_SELECTIONS_FROM_3RD_PARTY.abortIfHasSuspended | default('!true') }},
+  allowSuspended: {{ WEBCLIENT.INJECT_SELECTIONS_FROM_3RD_PARTY.allowSuspended | default('true') }}
+}
+// if SHOW_ZERO_HCP_AS_PK = true and handicap = 0, will be shown as 'PK'
+window.ctsautoconf.SHOW_ZERO_HCP_AS_PK = {{ WEBCLIENT.SHOW_ZERO_HCP_AS_PK | default('false') }}
+
+window.ctsautoconf.LANGUAGE = '{{ WEBCLIENT.LANGUAGE | default('UK') }}'
+window.ctsautoconf.CURRENCY = '{{ WEBCLIENT.CURRENCY | default('$') }}'
+window.ctsautoconf.TIME_ZONE = '{{ WEBCLIENT.TIME_ZONE | default('America/New_York') }}'
+window.ctsautoconf.BRAND = '{{ WEBCLIENT.BRAND | default('igt') }}'
+window.ctsautoconf.SIGHTLINE_IMG = {{ WEBCLIENT.SIGHTLINE_IMG | default('false') }}
+window.ctsautoconf.SHOW_BETHISTORY_IN_BETSLIP = {{ WEBCLIENT.SHOW_BETHISTORY_IN_BETSLIP | default('false') }}
+window.ctsautoconf.WELCOME_PAGE = {{ WEBCLIENT.WELCOME_PAGE | default('false') }}
+window.ctsautoconf.HIDE_PITCHER_NAME = {{ WEBCLIENT.HIDE_PITCHER_NAME | default('false') }}
+window.ctsautoconf.SHOW_TEAM_LOGOS = {{ WEBCLIENT.SHOW_TEAM_LOGOS | default('false') }}
+
+/* Add to array below what you want to display on transaction history (AmountDebit, AmountCredit, CurrentBalance, WithdrawalBalance, TradingBalance) */
+window.ctsautoconf.transaction_history_amounts = [
+  {%- for i in WEBCLIENT.transaction_history_amounts | default([]) %}'{{ i }}'{% if not loop.last %}, {% endif %}{% endfor -%}
+]
+
+/* user notification before session ends */
+// window.ctsautoconf.sessionExpirationInterval = false // boolean | number
+window.ctsautoconf.sessionExpirationInterval = {{ WEBCLIENT.sessionExpirationInterval | default('false') }}
+
+// with the parameter window.ctsautoconf.TermsAndConditionsIsMandatory = true we specify that user has to accept T&C in order to register account
+// with the parameter window.ctsautoconf.TermsAndConditionsIsMandatory = false we specify that user can register account without T&C
+// if this parameter missing in configuration it will considered that user has to accept T&C in order to register account
+window.ctsautoconf.TermsAndConditionsIsMandatory = {{ WEBCLIENT.TermsAndConditionsIsMandatory | default('true') }}
+// autologin after registration
+window.ctsautoconf.autologinAfterRegistration = {{ WEBCLIENT.autologinAfterRegistration | default('true') }}
+
+{% if WEBCLIENT.LIVE_SPORTS_IDS | default([]) == [] %}
+window.ctsautoconf.LIVE_SPORTS_IDS = []
+{% else %}
+window.ctsautoconf.LIVE_SPORTS_IDS = [
+{% for i in WEBCLIENT.LIVE_SPORTS_IDS %}  '{{ i }}'{% if not loop.last %}, {% endif %} 
+{% endfor -%}]
+{% endif %}
+/*
+ * Define group of PM providers that don't have combined EV/PS/WS/WPS pool types
+ * and bet has to be placed as separated: WIN, PLACE and SHOW bets
+ * */
+window.ctsautoconf.providersWithSeparateBetForWPS = [
+  {%- for i in WEBCLIENT.providersWithSeparateBetForWPS | default([]) %}'{{ i }}'{% if not loop.last %}, {% endif %}{% endfor -%}
+]
+// scan data (deprecated in some branches)
+window.ctsautoconf.MICROBLINK = {{ WEBCLIENT.MICROBLINK | default('true') }}
+// scan drivers license (prop was only renamed previously MICROBLINK)
+window.ctsautoconf.SCAN_DRIVERS_LICENSE = {{ WEBCLIENT.SCAN_DRIVERS_LICENSE | default('true') }}
+
+// headlines update interval
+window.ctsautoconf.HeadlinesPeriodicalUpdateInterval = {{ WEBCLIENT.HeadlinesPeriodicalUpdateInterval | default('300000') }}
+/**
+ * Define groups of router path(s) and control their access.
+ * Router route will be checked if contains meta element named 'nav-group-key'. Router link will be disallowed only if 'navgroupkey' matches this config and config isactive == false. If dissallowed, will redirect to "exit"
+ * */
+window.ctsautoconf.ROUTERNAVGROUPS = {
+  groups: [
+{% for i in WEBCLIENT.ROUTERNAVGROUPS.groups | default([{'key': 'sports', 'isactive': 'true', 'exitpath': '/pm'}, {'key': 'pm', 'isactive': 'false', 'exitpath': '/'}]) %}
+    { key: '{{ i.key }}', isactive: {{ i.isactive }}, exitpath: '{{ i.exitpath}}' }{% if not loop.last %}, {% endif +%}
+{% endfor %}
+  ],
+  /** Kind of navigation coverage for the site - mixed|sports|pm. "sports" - site will act as sports only, "pm" - as pm only, "mixed" - all parts will be accessible */
+  navset: '{{ WEBCLIENT.ROUTERNAVGROUPS.navset | default('sports') }}',
+  /** What kind of statement/bet history filters to show - mixed|sports|pm */
+  statementset: '{{ WEBCLIENT.ROUTERNAVGROUPS.statementset | default('sports') }}'
+}
+
+// translation: false - translations are in static/translation; true -translations are on Media server
+window.ctsautoconf.mediaServerTranslation = {{ WEBCLIENT.mediaServerTranslation | default('false') }}
+window.ctsautoconf.customerContextUpdateInterval = {{ WEBCLIENT.customerContextUpdateInterval | default('60000') }} // 60000 = 1 minute
+window.ctsautoconf.includeHouseRulesInRegistrationPage = {{ WEBCLIENT.includeHouseRulesInRegistrationPage | default('false') }}
+window.ctsautoconf.displayAllGamePeriodsAsBig3 = {{ WEBCLIENT.displayAllGamePeriodsAsBig3 | default('false') }}
+
+// BR Widgets config
+window.ctsautoconf.BR_WIDGET_ENABLED = {{ WEBCLIENT.BR_WIDGET_ENABLED | default('false') }} // true/false
+window.ctsautoconf.BR_WIDGET_VERSION = '{{ WEBCLIENT.BR_WIDGET_VERSION | default('') }}' // 'V2'
+window.ctsautoconf.BR_WIDGET_CLIENTID = '{{ WEBCLIENT.BR_WIDGET_CLIENTID | default('') }}' // received from BR for specific client
+{% if WEBCLIENT.BR_WIDGET_SPORTS | default([]) == [] %}
+window.ctsautoconf.BR_WIDGET_SPORTS = []
+{% else %}
+window.ctsautoconf.BR_WIDGET_SPORTS = [
+{% for i in WEBCLIENT.BR_WIDGET_SPORTS %}  '{{ i }}'{% if not loop.last %}, {% endif +%}
+{% endfor -%}]
+{% endif %}
+
+window.ctsautoconf.DISABLE_PROPAGATE_HEADLINES_FROM_PARENT_BONODES = {{ WEBCLIENT.DISABLE_PROPAGATE_HEADLINES_FROM_PARENT_BONODES | default('true') }}
+
+// username and password min and max length
+window.ctsautoconf.userNameMinLength = {{ WEBCLIENT.userNameMinLength | default('5') }}
+window.ctsautoconf.userNameMaxLength = {{ WEBCLIENT.userNameMaxLength | default('15') }}
+window.ctsautoconf.pwdMinLength = {{ WEBCLIENT.pwdMinLength | default('8') }}
+window.ctsautoconf.pwdMaxLength = {{ WEBCLIENT.pwdMaxLength | default('15') }}
+
+// days left information in password expiration message: default - false; true - message doesn't include days left; false - message include days left information
+window.ctsautoconf.HideDaysLeftInfo = {{ WEBCLIENT.HideDaysLeftInfo | default('false') }} 
+
+// google places api key for website (for mobile app: key has to be null; for website: the key to be provided by the client)
+window.ctsautoconf.GooglePlacesApiKey = {% if WEBCLIENT.GooglePlacesApiKey | default('null') == 'null' %}null{% else %}'{{ WEBCLIENT.GooglePlacesApiKey }}'{% endif %}  // window.ctsautoconf.GooglePlacesApiKey = 'the key to be provided by the client'
+// google places api for mobile app (for mobile app: true; for website: false)
+window.ctsautoconf.GooglePlacesApiMobileAppEnabled = {{ WEBCLIENT.GooglePlacesApiMobileAppEnabled | default('false') }}
+
+// search
+window.ctsautoconf.IS_SEARCH_ENABLED = {{ WEBCLIENT.IS_SEARCH_ENABLED | default('true') }}
+window.ctsautoconf.SEARCH_NUMBER_OF_CHARS_TO_START = {{ WEBCLIENT.SEARCH_NUMBER_OF_CHARS_TO_START | default('3') }}
+
+// BUILD_VERSION display in the website footer
+// should be populated by devops in the buildtime ('1.2.16', '2.1.15'...)
+// 'BUILD_VERSION' string or falsy values will not be displayed at all
+window.ctsautoconf.BUILD_VERSION = '{{ WEBCLIENT.BUILD_VERSION | default('BUILD_VERSION') }}'
+
+// Affiliate integration exists/doesn't exist in the system: default value is false; true - exists; false - doesn't exist
+window.ctsautoconf.INCOME_ACCESS_ENABLED = {{ WEBCLIENT.INCOME_ACCESS_ENABLED | default('false') }} 
+
+// Big 3 column order by sport type
+{% if WEBCLIENT.BIG3_COLUMN_ORDER | default({}) == {} %}
+window.ctsautoconf.BIG3_COLUMN_ORDER = {}
+{% else %}
+window.ctsautoconf.BIG3_COLUMN_ORDER = { 
+{% for key, value in WEBCLIENT.BIG3_COLUMN_ORDER.items() %}
+  '{{ key }}': [{% for i in value %}'{{ i }}'{% if not loop.last %}, {% endif %}{% endfor%}]{% if not loop.last %}, {% endif +%}
+{% endfor -%}
+}
+{% endif %}
+
+/** List of sport types that should not be considered for Big3 layouts */
+window.ctsautoconf.BIG3_IGNORE_SPORTTYPES = [
+  {%- for i in WEBCLIENT.BIG3_IGNORE_SPORTTYPES | default(['SOCCER', 'TABLE TENNIS', 'TENNIS', 'DARTS', 'MMA', 'BOXING']) %}'{{ i }}'{% if not loop.last %}, {% endif %}{% endfor -%}
+]
+
+// Price format fractions
+window.ctsautoconf.US_PRICE_FORMAT_SIMPLE_FRACTIONS = {{ WEBCLIENT.US_PRICE_FORMAT_SIMPLE_FRACTIONS | default('false') }}
+
+// apps download page: true - if android app is available on Google Play store
+window.ctsautoconf.DOWNLOAD_APPS_SINGLE_PAGE = {{ WEBCLIENT.DOWNLOAD_APPS_SINGLE_PAGE | default('false') }}
+
+// the time period (in milliseconds) when the pop up shows the info about current session duration (for the purpose of responsible gaming)
+// window.ctsautoconf.SESSION_TIME_POPUP = false // pop-up disabled
+// window.ctsautoconf.SESSION_TIME_POPUP = 1800000 // 30 minutes
+window.ctsautoconf.SESSION_TIME_POPUP = {{ WEBCLIENT.SESSION_TIME_POPUP | default('false') }}
+
+// disable Join button: false - performs the standard registration; true- shows a popup of an alternative registration method
+window.ctsautoconf.DISABLE_JOIN_BUTTON = {{ WEBCLIENT.DISABLE_JOIN_BUTTON | default('false') }}
+
+// acceptable username type when logging in: UN - only username; EMAIL - only email; MIXED - username or email
+window.ctsautoconf.loginUsernameType = '{{ WEBCLIENT.loginUsernameType | default('MIXED') }}'
+
+// The time period (in milliseconds) of ip check for the purpose of geo-location (if ip has been changed in this period user will be geo-located again)
+window.ctsautoconf.IP_CHECK_INTERVAL = {{ WEBCLIENT.IP_CHECK_INTERVAL | default('60000') }}
+
+// Session refresh time period (in milliseconds) if user is active (180000 = 3 min)
+window.ctsautoconf.CHECK_ACTIVITY_INTERVAL = {{ WEBCLIENT.CHECK_ACTIVITY_INTERVAL | default('180000') }}
+
+// Mobile Bottom navigation items ('HOME', 'SPORTS', 'BETSLIP', ('PROMOS' or 'INFO'),'CONTESTS', PROFILE, 'HAMB_MENU') - Does not work for PM, only Sports site
+window.ctsautoconf.MOBILE_BOTTOMNAV_MENUITEMS = [
+  {%- for i in WEBCLIENT.MOBILE_BOTTOMNAV_MENUITEMS | default(['HOME', 'SPORTS', 'BETSLIP', 'PROMOS', 'PROFILE']) %}'{{ i }}'{% if not loop.last %}, {% endif %}{% endfor -%}
+]
+
+// login with face ID
+window.ctsautoconf.APP_BIOMETRICS_AUTOMATIC_LOGIN = {{ WEBCLIENT.APP_BIOMETRICS_AUTOMATIC_LOGIN | default('false') }}
+
+/* allow cashinshop withdrawal rounding to the nearest 5 cents.
+ * E.G. 5.32 will be rounded to a 5.30, 7.88 will be rounded to a 7.90 */
+window.ctsautoconf.CASHINSHOP_ROUND_TO_5_CENTS = {{ WEBCLIENT.CASHINSHOP_ROUND_TO_5_CENTS | default('true') }}
+
+// Refer a friend promo code in registration page
+// window.ctsautoconf.UseRafPromoCode = true - Promo code will be visible in registration page
+// window.ctsautoconf.UseRafPromoCode = false - Promo code will not be visible in registration page
+// if this parameter missing in configuration - Promo code will not be visible in registration page
+window.ctsautoconf.UseRafPromoCode = {{ WEBCLIENT.UseRafPromoCode | default('false') }}
+
+// Should username be remembered on login form (even after logout)
+window.ctsautoconf.LOGIN_USERNAME_PERSIST = {{ WEBCLIENT.LOGIN_USERNAME_PERSIST | default('false') }}
+
+// Read Only BO
+window.ctsautoconf.ROBO = {{ WEBCLIENT.ROBO | default('false') }}
+window.ctsautoconf.SHOW_APP_DOWNLOAD_POPUP_FOR_ROBO = {{ WEBCLIENT.SHOW_APP_DOWNLOAD_POPUP_FOR_ROBO | default('false') }}
+
+// Should only participant short names be used on event coupons on mobile
+window.ctsautoconf.USE_ONLY_SHORT_PARTICIPANT_NAMES_ON_MOBILE = {{ WEBCLIENT.USE_ONLY_SHORT_PARTICIPANT_NAMES_ON_MOBILE | default('false') }}
+
+// Time offset (in seconds) before which race is considered next for betting and will be selected from PM navigation. Accepts both positive and negative values. Negative values allow "after post" races to be considered "next" too.
+window.ctsautoconf.PM_NEXT_RACE_TIME_TO_START_OFFSET = {{ WEBCLIENT.PM_NEXT_RACE_TIME_TO_START_OFFSET | default('60') }}
+
+// Default value: true; if true, popup dialog will appear with the error that is occuring, i.e. network error...
+window.ctsautoconf.SHOW_UNKNOWN_ERROR_MODAL = {{ WEBCLIENT.SHOW_UNKNOWN_ERROR_MODAL | default('true') }}
+ 
+// application rating - native dialog will appear based on native condition
+window.ctsautoconf.appRating = {{ WEBCLIENT.appRating | default('false') }} 
+
+// Favorites true/false
+window.ctsautoconf.PLAYER_FAVORITES = {{ WEBCLIENT.PLAYER_FAVORITES | default('false') }}
+
+// Contests true - contests enabled, false - contests disabled
+window.ctsautoconf.CONTESTS = {{ WEBCLIENT.CONTESTS | default('false') }}
+
+// application rating - native dialog will appear based on native condition
+window.ctsautoconf.APP_RATING = {
+  ENABLE: {{ WEBCLIENT.APP_RATING.ENABLE | default('false') }},
+  DELAY: {{ WEBCLIENT.APP_RATING.DELAY | default('2000') }},
+  BET_COUNT: {{ WEBCLIENT.APP_RATING.BET_COUNT | default('20') }}
+}
+
+/** ** Hide results for live events ****/
+window.ctsautoconf.HIDE_SCORES = {{ WEBCLIENT.HIDE_SCORES | default('false') }}
+
+/** Rilot like headlines - ONLY for GENERIC brands **/
+window.ctsautoconf.HEADLINES_TILES = {{ WEBCLIENT.HEADLINES_TILES | default('false') }}
+
+/** Teaser and RR conditionaly in betslip footer - ONLY for GENERIC brands **/
+window.ctsautoconf.BETSLIP_LAYOT_2 = {{ WEBCLIENT.BETSLIP_LAYOT_2 | default('false') }}
+
+/** Display SidebarBanners category headlines on home page as secondary banner and on sport pages instead of sports breadcrumb - ONLY for GENERIC brands **/
+window.ctsautoconf.SECONDARY_BANNERS = {{ WEBCLIENT.SECONDARY_BANNERS | default('false') }}
+
+/** Rilot like page titles in header on mobile (should be true only if SECONDARY_BANNERS are true)**/
+
+window.ctsautoconf.PAGE_TITLE_IN_HEADER_ON_MOBILE = {{ WEBCLIENT.PAGE_TITLE_IN_HEADER_ON_MOBILE | default('false') }}
+
+/** Shows new welcome page if true, initialy made for Rilot **/
+window.ctsautoconf.SHOW_WELCOME = {{ WEBCLIENT.SHOW_WELCOME | default('false') }}
+
+/** Shows whats new page if true, initialy made for Rilot **/
+window.ctsautoconf.SHOW_WHATS_NEW = {{ WEBCLIENT.SHOW_WHATS_NEW | default('false') }}
+
+window.ctsautoconf.SHOW_LOCALTAX_IN_W2GFORM = {{ WEBCLIENT.SHOW_LOCALTAX_IN_W2GFORM | default('false') }}
+
+/** If true shows confirmation dialog when customer is closing account, initialy made for Rilot **/
+
+window.ctsautoconf.CLOSE_ACCOUNT_CONFIRMATION_POPUP = {{ WEBCLIENT.CLOSE_ACCOUNT_CONFIRMATION_POPUP | default('false') }}
+
+/** Display popup with limits on post registration  **/
+window.ctsautoconf.SHOW_LIMITS_AFTER_REGISTRATION = {{ WEBCLIENT.SHOW_LIMITS_AFTER_REGISTRATION | default('false') }}
+
+// Use Betting Data Matcher service
+window.ctsautoconf.BETTING_DATA_MATCHER = {{ WEBCLIENT.BETTING_DATA_MATCHER | default('false') }}
+
+/** Minimum days for Cool-Off/Self-exclusion **/
+window.ctsautoconf.MIN_NUM_OF_DAYS_FOR_COOL_OFF = {{ WEBCLIENT.MIN_NUM_OF_DAYS_FOR_COOL_OFF | default('1') }}
+
+window.ctsautoconf.DISABLE_FORGOTTEN_PASSWORD_VIA_EMAIL = {{ WEBCLIENT.DISABLE_FORGOTTEN_PASSWORD_VIA_EMAIL | default('false') }}
+
+window.ctsautoconf.DISABLE_LOGIN_REDIRECT = {{ WEBCLIENT.DISABLE_LOGIN_REDIRECT | default('false') }}

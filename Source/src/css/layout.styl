@@ -1,0 +1,297 @@
+@import "config"
+
+.application
+  .container
+    padding: 0
+
+    .gap
+      padding: gap
+
+  & > .application--wrap
+    & > .content
+      & > .content--wrap
+        & > .container
+          margin: 0
+          padding: 0
+          height: 100%
+
+          .sports-page,
+          .live-sports-page
+            height: 100%
+            @media mobile-big-and-below
+              background: #e5e8ed
+            .bo_nav_headline
+              position relative
+              cursor default
+              height 209px
+
+              @media mobile-big-and-below
+                padding 0 10px
+                height auto
+
+  .page-layout
+    @media mobile-big-and-below
+      display: block
+      height: auto
+
+    .main-column
+      position: relative
+
+    .left-column,
+    .right-column,
+    .betslip-column
+      padding: gap
+      flex-grow: 0
+      flex-shrink: 0
+
+    .left-column
+      flex-basis: 15%
+      min-width: 200px
+      padding-top: 0
+      position: relative
+
+      @media mobile-big-and-below
+        padding: 0
+
+    .right-column
+      flex-basis: 320px
+      min-width: 250px
+
+    .betslip-column
+      flex-basis: 320px
+      min-width: 250px
+      @media only screen and (min-width: 1440px)
+        flex-basis: 375px
+    .center-column
+      width auto
+      @media only screen and (min-width: 1024px) and (max-width: 1060px)
+        max-width 550px
+
+      @media desktop-and-above
+        max-width 840px
+
+    .center-column
+      .live-coupon.not-on-tab
+        .live-event-container
+          .event
+            &.GOLF
+              .event-info
+                @media mobile-big-and-below
+                  display none
+            &.MOTORSPORT
+              .event-info
+                @media mobile-big-and-below
+                  display none
+            &.NASCAR
+              .event-info
+                @media mobile-big-and-below
+                  display none
+      .tab-coupons
+        position relative
+        .tab-coupon
+          .live-coupon
+            .live-event-container
+              .event
+                &.big3-event
+                  .event-info
+                    .event-info.live-coupon-event
+                      .eventTitle
+                        white-space normal
+                        text-overflow normal
+                        .name
+                          display inline-block
+                          overflow hidden
+                          text-overflow ellipsis
+                          @media mobile-big-and-below
+                            white-space normal
+                            width 95px
+                            line-height normal
+                            display table-cell
+                            vertical-align middle
+                        .pitcher-name
+                          white-space: normal
+                          line-height: 8px
+                          margin-top: -10px
+                          @media mobile-big-and-below
+                            display: block
+                            height: 8px
+                            overflow: hidden
+          .coupon.group-by-date
+            .date.live
+              .event
+                // &.big3-event
+                .event-info.big-three
+                  .event-info
+                    .eventTitle
+                      white-space normal
+                      text-overflow normal
+                      overflow initial
+                      display: table
+                      table-layout: fixed
+                      height 40px
+                      .name
+                        white-space normal
+                        line-height: 15px
+                        display: table-cell
+                        height: initial!important
+                        vertical-align: middle
+                      .pitcher-name
+                        white-space: normal
+                        line-height: 12px
+                        display: table-row
+                        vertical-align: middle
+
+    .betslip-column
+      padding: 4px
+      @media tablet-and-above
+        padding: 0px
+
+  .header
+    .menu
+      @media mobile-big-and-below
+        display: none
+
+  .left-column
+    .main-navigation
+      @media tablet-and-above
+        display: none
+
+.browser-internet-explorer
+  .page-layout
+    .center-column
+      min-width: 650px
+      @media mobile-big-and-below
+        min-width: 0
+  .application--wrap
+    @media mobile-big-and-below
+      width 100%
+    .content
+      @media mobile-big-and-below
+        display: block
+
+
+.url-navigation
+  .tab-coupon
+    .tab-content
+      .coupon
+        .coupon-event.twoselections
+          .selection-name
+            display: none
+       .coupon-event.outright
+          padding: 15px
+          .outright-event-name
+            // display none
+        .coupon-event.twoselections.MMA
+         .names.participants
+          .eventTitle
+            display none
+        .coupon-event.twoselections.BASEBALL,
+        .coupon-event.twoselections.GOLF,
+        .coupon-event.twoselections.MOTORSPORT,
+        .coupon-event.twoselections.NASCAR,
+        .coupon-event.twoselections.MMA
+          .market
+            width: 100%
+            .selections-container
+              .selections
+                width: 100%
+                .selection
+                  margin: 0px !important
+                  .selection-column
+                    display: flex
+                    margin: 4px 0
+                    .selection-name
+                      display: flex
+                      flex-grow: 1
+                      font-size: 14px
+                      color: #000
+                      height: 40px
+                      margin: 2px 0
+                      line-height: 35px
+                      white-space: nowrap
+                      //padding-left 12px
+        .coupon-event.outright.twoselections.BASKETBALL,
+        .coupon-event.outright.twoselections.BASEBALL
+          .name.names
+            display none
+        .coupon-event.outright.twoselections
+          .outright-event-name
+            display none
+        .coupon-event.outright.twoselections.GOLF,
+        .coupon-event.outright.twoselections.MOTORSPORT,
+        .coupon-event.outright.twoselections.NASCAR
+          .outright-event-name
+            display: inline
+          .name.names
+            display: none
+        .coupon-event.outright.coupon-threeselections,
+        .coupon-event.coupon-threeselections.GOLF,
+        .coupon-event.coupon-threeselections.MOTORSPORT,
+        .coupon-event.coupon-threeselections.NASCAR
+          .name.names
+            display: none
+
+        .coupon-event.outright.coupon-threeselections,
+        .coupon-event.coupon-threeselections.GOLF,
+        .coupon-event.coupon-threeselections.MOTORSPORT,
+        .coupon-event.coupon-threeselections.NASCAR
+          padding-top 15px
+          margin-bottom 7px
+        .coupon-event.outright.coupon-threeselections,
+        .coupon-event.coupon-threeselections.GOLF,
+        .coupon-event.coupon-threeselections.MOTORSPORT,
+        .coupon-event.coupon-threeselections.NASCAR
+          .market
+            width 100%
+            .selections-container
+              .selections
+                width 100%
+                @media mobile-big-and-below
+                  display block
+                .selection
+                  border-right 1px solid #cfd6db
+                  margin-bottom 2px
+                  width: 33%
+                  &:last-child
+                    border-right none
+                  @media mobile-big-and-below
+                    width 100%
+                    display block
+                    border-right none
+                  .selection-column
+                    display flex
+                    margin 4px 0
+                    padding 12px !important
+                    @media mobile-big-and-below
+                      margin 0px
+                      padding 0 12px !important
+                    .selection-name
+                      display flex
+                      flex-grow 1
+                      font-size 14px
+                      color #1f375b
+                      height 40px
+                      margin 2px 0
+                      line-height 35px
+                      white-space nowrap
+                    .selection-wapper
+                    .selection-data
+                      width 52px
+        .coupon-event.outright.selections-nine-plus
+          padding 0
+          border-bottom-right-radius: 5px
+          border-bottom-right-radius: 5px
+          .outright-event-name
+            padding: 15px 15px 0px 15px
+          .selections-container
+            .flex
+              padding 15px
+
+
+
+
+.url-sports.url-event
+  .center-column
+    padding-right 25px
+    @media mobile-big-and-below
+      padding-right 0px

@@ -1,0 +1,20 @@
+---
+MOBILE_WEBCLIENT:
+# app-config.js
+  BUILD_VERSION: 'BUILD_VERSION'
+  IP_CHECK_INTERVAL: '15000'
+  CHECK_ACTIVITY_INTERVAL: '120000'
+
+# env-config.js
+  CONTENT_SERVER_HOSTNAME_PREFIX: ''
+  CONTENT_SERVER_HOSTNAME: 'https://sports.nv.boydgaming.com/'
+  MEDIA_CONTENT_HOSTNAME: 'https://sports.nv.boydgaming.com/media'
+  WEB_SERVER_HOSTNAME: 'https://sports.nv.boydgaming.com'
+  WEBPUSH_SERVICE_HOSTNAME: 'https://sports.nv.boydgaming.com'
+  FIREBASE_ANALYTICS: 'true'
+  XTREMEPUSH_ANALYTICS: 'true'
+
+# mobile team
+  MOBILE_LS: 'true'
+  APP_BIOMETRICS_AUTOMATIC_LOGIN: 'true'
+  APPSFLYER_ANALYTICS: 'true'

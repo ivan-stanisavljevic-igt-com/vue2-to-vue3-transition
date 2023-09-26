@@ -1,0 +1,940 @@
+@import "config"
+
+html
+  font: font-body
+  @media mobile-big-and-below
+    background: #fff
+  @media tablet-and-below
+    -webkit-text-size-adjust: none
+    text-size-adjust none
+
+body
+  overflow-x: hidden
+
+h1, h2, h3, h4, h5, h6, table, ul, ol, p, form, fieldset, section, article, .container, .wrapper
+  margin: 0 0 gap
+
+  &:last-child
+    margin: 0
+
+h1, h2, h3, h4, h5, h6
+  font-family 'Open Sans Bold'
+
+h1
+  font-size: 1.6rem
+h2
+  font-size: 1.4rem
+h3
+  font-size: 1.2rem
+h4
+  font-size: 1.1rem
+h5
+  font-size: 1rem
+
+hr
+  margin: gap 0;
+
+table
+  width: 100%
+  border-spacing: 0
+  border-collapse: collapse
+
+  tr
+    border-bottom: solid 1px #e2e2e2
+    &:last-child
+      border-bottom: none
+
+  th, td
+    padding: (gap / 2)
+    text-align: left
+
+  th
+    background: #e6e6e6
+
+.buttons
+  margin: gap 0
+
+  &:last-child
+    margin-bottom: 0
+
+.app-body
+  // background-color: #00269e
+  background: none
+  &.promotions-teaser-visible
+    // background: linear-gradient(to bottom, #06283b 0%, #06283b 490px, #e5e8ed 490px, #e5e8ed 100%)
+  &.url-account
+    background: #0b4da1
+  &.url-state-name-set-password-by-temp-session
+    .header_background
+      display block
+  @media mobile-big-and-below
+    background: none
+  .content
+    @media mobile-big-and-below
+      padding 0
+      background #e5e8ed
+    .main-column
+      @media mobile-big-and-below
+        background: #06283b
+    .background-headline
+      .headline-wrapper
+        background: #06283b
+        @media mobile-big-and-below
+          background #06283b
+        .background-image
+          @media mobile-big-and-below
+            height 290px
+    &.browser-safari
+      .background-headline
+        .headline-wrapper
+          .background-image
+              @media mobile-big-and-below
+                height 285px
+  // sports page
+  &.url-state-name-sports.url-sports
+    .sports-page
+      .tab-coupons
+        .v-tabs
+          @media mobile-big-and-below
+            background #0b4da1
+  // live page
+  &.url-state-name-sports-live
+    .live-sports-page
+      .bo_nav_headline
+        @media mobile-big-and-below
+          background-color #06283b
+          overflow auto
+    header.header
+      @media mobile-big-and-below
+        background-color #06283b
+  // navigation page
+  &.url-sports.url-navigation
+    @media mobile-big-and-below
+      .content
+        padding 0
+        background #e5e8ed
+      .main-column
+        background: #06283b
+        .container
+          .bo_nav_headline
+            margin-bottom 15px
+            h1
+              margin-bottom 0
+          .tab-coupons
+            .container.tab-coupon
+              background-color #e5e8ed
+              min-height 200px
+  // event page
+  &.url-state-name-event
+    .background-headline
+    .bet-radar-widget
+      margin-top -6px
+      position relative
+    // -----------------------------------------------------------------------------------------------
+.url-state-name-logout
+  .v-card__actions
+  .v-card__title
+    justify-content center
+
+.application
+  max-width: desktop-big-size
+  margin: 0 auto
+
+  &.theme--light,
+  &.theme--light .v-card
+    color: #1F375B
+    box-shadow none
+
+  &.theme--light
+    background: transparent
+
+header.header
+  color: color-white
+
+  a
+    color: color-white
+
+header.header
+  min-height: 55px
+  margin-bottom: 23px
+  margin auto
+
+  @media mobile-big-and-below
+    width: 100%;
+    margin-bottom: 0px
+    z-index: 3
+.header_background
+  background #0B4DA1
+  @media mobile-big-and-below
+    background none
+    .header_holder
+      box-shadow 0 0 3px 0 rgba(0,0,0,0.25)
+  .sub_header
+    height 50px
+    background #fff
+    margin-top -60px
+    box-shadow 0 2px 2px rgba(0, 0, 0, 0.2)
+header.header
+  min-height 140px
+  flex-direction column
+  margin auto
+  @media mobile-big-and-below
+    min-height auto
+
+header
+  position: relative
+  display: flex
+
+  .logo
+    text-align: center
+    padding: 0 gap
+    flex-grow: 0
+    margin-right: 25px
+    margin-top: 10px
+    @media mobile-big-and-below
+      margin: 0
+      padding-right: 0
+
+    a
+      display: block
+      line-height: 0
+
+      img
+        max-height: 80px
+        max-width: 180px
+
+        @media mobile-big-and-below
+          max-height: 24px
+
+  @media tablet-and-above
+    display: block
+
+
+.status
+  .v-card
+    .component
+      table
+        width: auto
+
+        th
+          min-width: 20em
+
+.meetings-tab-container
+  .tabs__wrapper
+    .tabs__div,
+    .tabs__li
+      .tabs__item--active
+          background: color-yellow-dark
+          color: color-yellow-dark-contrast !important // because of vuetify this is a must
+
+      &.full
+        width: 100%
+
+.pools-tab-container
+  .tabs__bar
+    background: color-yellow-light
+
+  .tabs__wrapper
+    .tabs__li,
+    .tabs__div
+      color: color-yellow-light-contrast
+      .tabs__item--active
+          font-weight: bold
+
+
+.date-picker
+  .v-menu__activator
+    .input-group__input,  input
+      cursor: pointer
+// Override per resolution
+// @media desktop-big-above
+
+// @media tablet-and-above
+
+.url-sports,
+.url-live
+  ul
+    list-style: none
+
+.v-dialog
+  max-width: 800px
+  @media mobile-big-and-below
+    max-width: none
+.overlay-dialog
+   max-width: 466px
+   padding: 0px
+.dialog-login
+  max-width: 628px
+  background: transparent
+  padding: 0
+  @media mobile-big-and-below
+    max-width: 100%
+    background: #fff
+
+.dialog-myaccount
+  padding: 0
+  @media mobile-big-and-below
+    max-width: 100%
+    background:  #E4E8EE
+    padding: 0
+    &:not(.notLoggedIn)
+      height: 100%
+
+
+.dialog-myaccount.notLoggedIn
+  @media mobile-big-and-below
+    background: #fff
+
+  @media tablet
+    width: 90%
+
+  &.dialog-myaccount,
+  &.dialog-menu,
+  &.dialog-betslip
+    &.dialog-bottom-transition-leave-active
+      // transition: none
+
+  &.dialog-login
+    .flex.close
+      display: block
+  &.dialog-myaccount
+    .flex.close
+      // display: none
+
+    &.expand .login-component
+      expand(gap)
+      expand(gap, vertical)
+
+.login-component
+  .flex.close
+    display none
+
+.scrolled
+  .main-column
+    padding-top: 91px
+  .sl.add-funds
+    .main-column
+      padding-top 0
+
+@media mobile-big-and-below
+  .dialog-competition-select
+    max-width: none
+    position: absolute
+    bottom: 0
+    left: 0
+    margin: 0 !important
+    border-radius: 8px 8px 0 0
+    a
+      padding: 0 !important
+
+  .dialog-single-bet-slip
+    max-width: none
+    position: fixed
+    bottom: 0
+    left: 0
+    margin: 0 !important
+    padding: 0 10px
+    background: transparent
+    transform: translate(0)
+    &.dialog-bottom-transition-leave-active
+      transition: none
+    &.dialog-bottom-transition--enter-active
+      // transition: all .6s ease
+    #singleBetSlip
+      border-radius: 5px 5px 0 0
+      border-width: 1px 1px 0 1px
+      border-style: solid
+      border-color: #cfd6db
+
+
+// overlay mobile app while loggin in
+.mobile-app-overlay
+  pointer-events:none
+  opacity: 0.5
+  .dialog
+    pointer-events:none !important
+
+.app-warpper
+  background #dcdfe9
+  .browser-firefox.app-body
+  .browser-internet-explorer.app-body
+    background-size 100% 405px
+
+.browser-microsoft-edge
+  .application
+    .page-layout
+      .main-column
+        .center-column
+          max-width 837px
+
+.generic-icon-note
+  .v-icon
+    vertical-align middle
+    font-size 22px
+  span
+    vertical-align middle
+
+
+.dialogMyAccountDesktop
+.dialog-myaccount
+  background #0b4da1 !important
+  .navigation-group
+    border-bottom 7px solid #dadbdf
+    .navigation
+      margin-bottom -1px
+  .account_mobile
+    background #0b4da1 !important
+    padding 16px 5px
+  .account_desktop
+    background #fff !important
+    // padding 16px 5px
+  .account_links
+    margin-top 5px
+    border-radius 5px
+    text-align center
+    .site-navigation
+      .navigation-item
+        a
+          color #004C97
+        .router-link-exact-active.router-link-active
+          color #004C97 !important
+          font-weight bold
+      .navigation .navigation-item:last-child
+        border-top 0px
+        &:after
+          content: ""
+          display block
+          width 100%
+          border-bottom 1px solid #dadbdf !important
+      .navigation-group:last-child
+        .navigation .navigation-item:last-child:after
+          display none
+        .navigation-item
+          background #dadbdf !important
+          padding-top 40px
+          padding-bottom 10px
+          border-radius 5px
+          border-top 0px !important
+          @media mobile-big-and-below
+            padding-bottom 60px
+          a
+            border 1px solid #004C97
+            border-radius 25px
+            padding 7px 10px
+            width 120px
+      // .navigation-item:not(:last-child):after
+      .navigation-item:after
+        width 100%
+        border-bottom 1px solid #dadbdf
+  .account_details
+    background #0b4da1 !important
+    padding 0 !important
+    border-radius 5px
+    .buttons
+      margin-top 0
+      padding 10px 5px 0 5px
+    .transactions.success
+      background-color #ff671f !important
+      .v-btn__content
+        font-family 'Open Sans Bold'
+    .user_details
+      background #0b4da1
+      width 100%
+      display flex
+      align-items flex-start
+      @media mobile-big-and-below
+        padding 0 5px
+        display block
+      .user_title
+        margin-right 20px
+      .session_details
+        color #ff671f
+        font-size 14px
+        flex-direction column
+        margin-left auto
+        display flex
+        span
+          color #fff
+      .lastlogdur
+          color #ff671f!important
+      .v-icon
+        color #fff
+        font-size 60px
+        display inline
+        margin-right 10px
+    .account_buttons
+      background #fff
+  .buttons
+    border-radius 0 0 5px 5px
+    .btn
+      border-radius 25px
+      width 98%
+      &.withdraw
+        border 2px solid #dadbdf
+        color #004C97
+      &.deposit
+        background #1A9DDD !important
+  .account_balance
+    flex-wrap wrap !important
+    background none !important
+    color #fff !important
+    padding 5px 5px 5px 70px
+    margin-top -30px
+    span
+      font-size 14px !important
+    .value
+      font-size 16px !important
+      text-align left
+      cursor: pointer
+      @media mobile-big-and-below
+        width 120px
+    .text
+      // max-width 80px
+      line-height 12px
+      margin-right 5px
+      font-weight normal
+.dialogMyAccountDesktop
+  position fixed
+  right -24px
+  top -24px !important
+  max-height 100% !important
+  height 100%
+  background #dadbdf!important
+  overflow-y scroll
+  overflow-x hidden
+  .user_details
+    .session_details
+      margin-left 0 !important
+    .user_title
+      font-size 20px
+      text-align center
+  .account_balance
+    background transparent !important
+    border-top 0px !important
+    color #ff671f !important
+    font-weight normal
+    .value
+      color #fff !important
+    .text
+      // max-width 60px
+      line-height 14px
+      &:after
+        content ':'
+  .session_details
+    margin-top 10px
+    span
+      color #ffffff
+      font-size 12px !important
+  .account_desktop
+    margin -16px -16px 0 -16px
+    .account_details
+      padding 16px !important
+      border-radius 0
+      // display flex
+      // justify-content space-between
+      .buttons
+        padding 10px 0px 0 10px
+        background transparent
+        .btn
+          text-transform uppercase
+        .withdraw
+          border 2px solid #AABDD1
+          color #AABDD1
+          background-color transparent !important
+          &:hover
+            background-color #fff !important
+            color: #1F375B
+    .account_links
+      background #dadbdf !important
+      margin 0px !important
+      // padding 0 16px !important
+      .site-navigation
+        background #fff !important
+        .navigation-group:last-child
+          .navigation-item:last-child
+            background #fff !important
+            border-top 2px solid #e4e8ee !important
+            padding-top 20px
+            padding-bottom 20px
+
+.icon-live:before
+  content 'LIVE'
+  border 2px solid #E7212D
+  color #E7212D
+  font-size 13px
+  padding 0 3px
+  border-radius 2px
+  font-family 'Open sans Bold'
+.top-container
+  .navigation-item
+    .icon-live:before
+      display none
+.icon-live
+  .igt-icon
+    display none !important
+
+.site-navigation
+  .navigation-item
+    .icon-live:before
+      content 'LIVE'
+      border 2px solid #E7212D
+      color #E7212D
+      font-size 13px
+      padding 0 3px
+      border-radius 2px
+      font-family 'Open sans Bold'
+      width: 30px !important
+      height: 20px !important
+      margin: 1px 1px 1px -5px
+      line-height: 17px
+      @media mobile-big-and-below
+        line-height: 20px
+        padding 0 2px
+.pnmpp-containerdialog
+  padding 25px
+  border-radius 3px
+
+// message center dialog override
+.message-center-dialog
+  background #f2f2f2
+  padding 5px 5px 5px 5px
+  max-width 500px
+  .msg_center_header
+    display flex
+    align-items: center
+    justify-content: space-between
+    .title
+      font-size 14px !important
+      text-transform: uppercase
+      font-family 'Open Sans SemiBold' !important
+    .close
+      cursor pointer
+      margin-right -5px
+      color #1f375b
+  .message-center-container
+    font-size 14px
+    .ms-chld:not(:last-child)
+      margin-bottom 15px
+    .ms-chld
+      .ms-info-wrapper
+        display: flex
+        justify-content: center
+        .ms-info
+          margin-top 10px
+          color transparent !important
+          background-image: url('~@/assets/images/icons/icon-info-darkblue.svg')
+          height 30px
+          width 30px
+      .v-card__text
+        padding 5px 15px
+        a
+          color unset
+    .ms-chld:nth-child(even)
+      background #0b4da1
+      color #fff
+      .ms-info
+        background-image: url('~@/assets/images/icons/icon-info-white.svg')
+    .here
+      font-family:  'Open Sans Bold'
+      cursor pointer
+
+.search-component
+  margin 0
+  .v-tabs .v-tabs__bar .v-tabs__container .v-tabs__div a
+    white-space: nowrap
+  .text__highlight
+    color #1493ff
+    background transparent
+
+.v-dialog
+  .v-card__text
+    a
+      word-break: break-all
+
+.headline-dialog
+  margin: 0
+  padding: 0
+  background: transparent
+  overflow: hidden
+  @media mobile-big-and-below
+    max-width 90%
+  .close
+    .btn
+      .btn__content
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 0
+
+// used for new Welcome popup, where stacking context of dialogs needs to be changed
+.welcome
+.whats-new
+  &.disabled-scroll
+    .v-dialog__content
+      z-index: 20000 !important
+
+.whats-new-dialog.v-dialog
+  max-height: 725px
+  max-width: 830px
+  background: url('/static/static-content/whats_new_v.png'), linear-gradient(#1b2c56, 70%, #b4b4b4)
+  background-repeat: no-repeat
+  background-position: center top
+  background-size: contain
+  color: #fff
+  border: solid 5px #ABABAB
+  border-radius: 7px
+  position: relative
+  padding: 0
+  height: auto
+
+  .content
+    padding: 15px
+
+  img
+    max-height: 100%
+    max-width: 100%
+    display: block
+
+  @media mobile-big-and-below
+    max-height: 90%
+    border-width: 3px
+    background-size: 128%
+
+.welcome-dialog-generic
+.whats-new-dialog
+  height: 100vh
+  max-width: 100%
+  z-index: 20000
+
+  .close.close.close
+    position absolute
+    top: 0px
+    right: 0px
+    width: auto !important
+    min-width: 0
+    height: auto
+    background: none
+    margin: 0
+
+    .v-btn__content
+      padding: 0
+      &:after
+        content: "\2715"
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 2.1em
+        font-weight: normal
+        border-radius: 50%
+        padding: 15px
+        line-height: 1
+        color: #333
+
+.welcome-dialog-generic
+  display: flex
+  flex-direction: column
+  background: #F3F3F3
+  padding: 0
+  overflow-x: hidden
+
+  .welcome
+  .footer
+    display: flex
+    align-items: center
+    justify-content: center
+
+  .welcome .text .center
+  .footer > div
+    padding: 20px
+    max-width: 1000px
+
+
+  .welcome
+    flex: 1
+
+    > div
+      width: 100%
+
+    h1
+      display: flex
+      align-items: center
+      justify-content: center
+
+      img
+        max-width: 550px
+
+        @media mobile-big-and-below
+          max-width: 300px
+
+    .content
+      display: flex
+      flex-direction: column
+      position: relative
+
+      .wing
+        flex: 0 0 50px
+        display: flex
+        justify-content: space-between
+        
+        @media mobile-big-and-below
+          flex-basis: 20px
+
+        &:after
+        &:before
+          content: ""
+          width: 10%
+          background-repeat: no-repeat
+          background-size: 100% 100%
+
+          @media mobile-big-and-below
+            width: 17%
+
+      .wing-top
+        &:before
+        &:after
+          position: relative
+          top: 1px
+
+        &:before
+          // background-image: url('/static/static-content/welcome-top-left.svg')
+          background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='a' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64.63 24.83' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cstyle%3E .b %7B fill: %231b2c56; %7D %3C/style%3E%3C/defs%3E%3Cpath class='b' d='M0,24.83V0L64.63,24.83H0Z'/%3E%3C/svg%3E");
+          background-position: bottom left
+          left: -1px
+        &:after
+          // background-image: url('/static/static-content/welcome-top-right.svg')
+          background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='a' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64.63 24.83' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cstyle%3E .b %7B fill: %231b2c56; %7D %3C/style%3E%3C/defs%3E%3Cpath class='b' d='M0,24.83L64.63,0V24.83H0Z'/%3E%3C/svg%3E");
+          background-position: bottom right
+          right: -1px
+      .wing-bottom
+        &:before
+        &:after
+          position: relative
+          top: -1px
+
+        &:before
+          // background-image: url('/static/static-content/welcome-bottom-left.svg')
+          background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='a' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64.63 24.83' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cstyle%3E .b %7B fill: %231b2c56; %7D %3C/style%3E%3C/defs%3E%3Cpath class='b' d='M64.63,0L0,24.83V0H64.63Z'/%3E%3C/svg%3E");
+          background-position: top left
+          left: -1px
+        &:after
+          // background-image: url('/static/static-content/welcome-bottom-right.svg')
+          background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='a' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64.63 24.83' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cstyle%3E .c %7B fill: %231b2c56; %7D %3C/style%3E%3C/defs%3E%3Cpath id='b' data-name='Group 164' class='c' d='M64.63,0V24.83L0,0H64.63Z'/%3E%3C/svg%3E");
+          background-position: top right
+          right: -1px
+
+      .text
+        flex: 1
+        text-align: center
+        color: #fff
+        background: #1B2C56
+        text-transform: uppercase
+        font-size: 24px
+        margin: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        min-height: 450px
+        background-image: url('/static/static-content/welcome-bg.png')
+        background-position: center
+        background-repeat: no-repeat
+        background-size: 21em
+
+        @media mobile-big-and-below
+          min-height: 300px
+          font-size: 16px
+
+        .big
+          display: block
+          font-size: 100px
+          font-weight: bold
+
+          @media mobile-big-and-below
+            font-size: 62px
+
+        .circle
+          background: #e70000c7
+          padding: 6px
+          border-radius: 50%
+          line-height: 0.9
+          display: inline-block
+
+        .join-us
+          display: flex
+          align-items: center
+          justify-content: center
+          position: absolute
+          left: 50%
+          transform: translate(-50%, 0)
+          bottom: 25px
+          color: #fff
+          background: linear-gradient(0deg, #540000, #9d0000)
+          padding: 15px 45px
+          border-radius: 3px
+
+          @media mobile-big-and-below
+            bottom: 5px
+
+  .footer
+    background: #fff
+    font-size: 13px
+    
+    @media mobile-big-and-below
+      line-height: 1.2
+      font-size: 10px
+
+    p
+      margin: 0
+
+    .flex
+      display: flex
+      margin: 0 0 20px
+      align-items: center
+
+      &:last-child
+        margin: 0
+
+      > *:first-child
+        margin: 0 10px 0 0
+
+        @media mobile-big-and-below
+          margin: 0 0 10px
+
+      @media mobile-big-and-below
+        flex-direction: column
+
+        img
+          align-self: center
+          max-width: 275px
+
+  @media only screen and (max-height: 760px)
+    .welcome
+      h1
+        margin: 13px 0 4px
+
+        img
+          max-width: 230px
+      
+      .content
+        .text
+          min-height: 193px
+          font-size: 14px
+
+          .big
+            font-size: 46px
+
+          .join-us
+            padding: 10px 35px
+    
+    .footer
+      > div
+        padding: 15px
+
+.whats-new-dialog
+  .close.close.close
+    .v-btn__content
+      &:after
+        color: #ABABAB
+
+.welcome-dialog-generic.welcome-dialog-generic .welcome .content .text .circle
+  border-radius: 3px
+  padding: 8px 12px

@@ -1,0 +1,236 @@
+
+/* remove the border highlight on element*/
+#sr-widget *:focus, #sr-widget *:active {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* adds font to the whole widget */
+#sr-widget .sr-bb {
+  background-color: #06283b
+}
+
+/* remove background color from widget */
+#sr-widget .sr-bb .srt-base-1 {
+  background-color: transparent !important;
+  border-color: transparent;
+}
+.sr-bb .sr-lmt-plus__expand-wrapper {
+  background-color: #06283b !important;
+  width: 100% !important
+}
+.sr-bb .sr-lmt-plus__expand-wrapper.srm-is-collapsed {
+  background-color: #06283b !important
+}
+
+#sr-widget .sr-bb .sr-lmt-plus-scb__result {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 0;
+}
+
+/* Add live tag only if there is a .live class applied to the main widget container */
+#sr-widget.live .sr-bb .sr-lmt-plus-scb__mid::after, #sr-widget.mobile.live .sr-bb .sr-lmt-plus-scb__mid::after, #sr-widget.desktop.live .sr-bb .sr-lmt-plus-scb__mid::after {
+  content: "LIVE";
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  width: 27px;
+  height: 14px;
+  line-height: 2;
+  display: block;
+  background-color: #DB3F3F;
+  border-radius: 2px;
+  float: left;
+  margin-bottom: 8px;
+}
+#sr-widget.live .sr-bb .sr-lmt-plus-scb__mid::after, #sr-widget.mobile.live .sr-bb .sr-lmt-plus-scb__mid::after, #sr-widget.desktop.live .sr-bb .sr-lmt-plus-scb__mid::after  {
+  content: "LIVE";
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  width: 52px;
+  height: 22px;
+  line-height: 2;
+  display: block;
+  background-color: #DB3F3F;
+  border-radius: 2px;
+  float: left;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+/* remove the period results as not needed */
+#sr-widget.live .sr-bb .sr-lmt-plus-scb__result-period, #sr-widget.mobile.live .sr-bb .sr-lmt-plus-scb__result-period,  #sr-widget.desktop.live .sr-bb .sr-lmt-plus-scb__result-period   {
+  display: none;
+}
+
+/* makes the primary fill color white */
+#sr-widget .sr-bb .srt-fill-primary-1  {
+  fill: #fff;
+}
+
+/* reverse the order of item from top to bottom */
+#sr-widget .sr-bb .sr-lmt-plus-scb__mid{
+  flex-direction: column-reverse;
+}
+
+/* remove styling from live/status element */
+#sr-widget .sr-bb .sr-lmt-plus-scb__status {
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+}
+
+/* define the height of the scoreboard */
+#sr-widget .sr-bb .sr-lmt-plus__segment.srm-scoreboard {
+  height: 106px;
+}
+/* make the wrapper of scoreboard fill its parent */
+#sr-widget .sr-bb .sr-lmt-plus-scb__wrapper.srt-base-1 {
+  height: 100%;
+}
+/* define mobile crest's size */
+#sr-widget .sr-bb .sr-small .sr-lmt-plus-scb__crest  {
+  width: 60px;
+  height: 60px;
+}
+/* define bigger screen crest's size */
+#sr-widget .sr-bb .sr-lmt-plus-scb__crest  {
+  width: 72px;
+  height: 72px;
+}
+/* padding on team name */
+#sr-widget .sr-bb .sr-lmt-plus-scb__team-title, #sr-widget .sr-bb .sr-lmt-plus-scb__team-abbr {
+  margin-top: 8px;
+}
+/* fix secondary name */
+#sr-widget .sr-bb .sr-lmt-plus-scb__team-name {
+  float: left;
+  margin-top: 0px;
+}
+/* resize nick names to macth whole name */
+#sr-widget .sr-bb .sr-lmt-plus-scb__team-name.srm-nick {
+  margin-right: 6px;
+  font-size: 14px;
+}
+/* switch element crest + name's position to stacked */
+#sr-widget .sr-bb .sr-lmt-plus-scb__team, #sr-widget .sr-bb .sr-lmt-plus-scb__team.srm-right{
+  /* flex-direction: column; */
+  text-align: center;
+}
+/* center the rightmost crest */
+#sr-widget .sr-bb .sr-lmt-plus-scb__teams.srm-right {
+  align-items: center;
+}
+
+/* define size of the tab swith for momentum and scoreboard */
+#sr-widget .sr-bb .sr-lmt-plus-switcher__tab-btn {
+  width: 36px;
+}
+
+/* additional styling on the switch  */
+#sr-widget .sr-bb .sr-lmt-plus-switcher__tab-btn-inner.srt-base-1-primary {
+  border-color: transparent;
+  border-radius: 100px;
+  background-color: #fff;
+}
+
+/* define radius of the switcher */
+#sr-widget .sr-bb .sr-lmt-plus-switcher--medium .sr-lmt-plus-switcher__tab-btn-inner.srt-base-1-primary {
+  border-radius: 100px 0 0 100px;
+}
+
+/* reset styling on the switcher */
+#sr-widget .sr-bb .sr-lmt-1-ms-shootingstats__team-holder-home.srt-base-1-home-1{
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* define svg icon color on the switcher */
+#sr-widget .sr-bb svg.srt-fill-primary-1.srm-is-active {
+  fill: #0D7FE1;
+  padding-right: 2px;
+}
+
+/* add separator line between scoreboard and graph */
+#sr-widget .sr-bb .sr-lmt-plus__segment.srm-momentum::before {
+  height: 1px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 47.51%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  position: absolute;
+  top: -1px;
+  width: 100%;
+  opacity: 0.4;
+}
+
+/* fix footer height */
+#sr-widget .sr-bb .sr-lmt-plus__footer-wrapper {
+  /* height: 26px; */
+}
+
+/* bacground to the arrow for expand */
+#sr-widget .sr-bb .sr-lmt-plus__expand-wrapper::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 27px;
+  width: 44px;
+  background-color: #31a0fd;
+  border-radius: 50px 50px 0 0;
+}
+
+/* reset neutral color used in various places */
+#sr-widget .sr-bb .srt-fill-neutral-9 {
+  fill: rgba(255, 255, 255, 0.1);
+}
+
+/* remove tabs on the pitch */
+#sr-widget .sr-bb .sr-lmt-plus-tabs {
+  display: none;
+}
+
+/* remove sportsradar logo */
+#sr-widget .sr-bb .sr-poweredby__link {
+  opacity: 0;
+  height: 0px;
+}
+
+
+/* Hide display more button befor whole js is loaded*/
+#sr-widget .sr-lmt-plus__footer-wrapper {
+  visibility: hidden;
+}
+
+/* USD-546 Enable clicking on tab switcher */
+.sr-lmt-plus-switcher__tabs {
+  z-index: 100;
+}
+
+.sr-bb .sr-lmt-plus__expand-wrapper:not(.srm-is-collapsed) {
+  margin-bottom: 0px;
+  width: 100% !important;
+  border-bottom: 1px;
+}
+
+#sr-widget .sr-bb .custom-footer::after {
+  content:"";
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 47.51%, rgba(255, 255, 255, 0) 100%);
+  display: block;
+  height:1px;
+  top: -8px;
+  width: 100%;
+  opacity: 0.4;
+  position: absolute;
+}
+
+.custom-footer {
+  top: -6px
+}
+
+.sr-bb .sr-lmt-plus__expand-icon {
+  /* height: 30px; */
+  width: 9px;
+  position: absolute;
+  top: 6px;
+}

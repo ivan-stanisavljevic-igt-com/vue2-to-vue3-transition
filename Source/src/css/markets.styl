@@ -1,0 +1,905 @@
+@import "config"
+
+.marketgroup
+  .hheader
+    .head
+      cursor: pointer
+      margin: 0
+      color: #fff
+      cursor default
+      font-size: 14px
+      font-style: normal
+      font-stretch: normal
+      font-weight: bold
+      line-height: normal
+      padding 10px 9px
+      min-width 0
+      flex 5
+      @media mobile-big-and-below
+        padding 10px 0 10px 10px
+      h4
+        font-size 14px
+        text-transform uppercase
+        white-space nowrap
+        display block
+        text-overflow ellipsis
+        overflow hidden
+        font-weight: normal
+  .coupon.group-by-date
+    .date.live
+      .event
+        border-top 1px solid #cfd6db
+        display block
+        .info-markets-container
+          padding 12px 5px 0px 9px
+          display flex
+          align-items center
+          .event-info
+            flex 1
+            cursor default
+            .eventTitleWrapper
+              margin-top 0px !important
+              margin-bottom 0px
+              @media mobile-big-and-below
+                margin-bottom 0px
+              &:last-child
+                margin-bottom 0
+              .eventTitle
+                line-height 21px
+                .pitcher-name
+                  margin-top: -5px
+              .showResult
+                .score-value
+                  //padding 0 7.5px
+        .info-markets-container.GOLF,
+        .info-markets-container.MOTORSPORT,
+        .info-markets-container.NASCAR
+          padding unset
+          .markets
+            .market
+              .market-name
+                display none
+              .selection-wapper.selection-data
+                padding 9px 9px
+                // margin 2px 0
+                .value.suspended
+                  .igt-icon
+                    // line-height 18px
+        .info-markets-container
+          .market-name
+              display none
+
+  .coupon-event
+    .market
+      .markets-container
+        .markets
+          .market
+            .market-name
+              display none
+        .markets.single
+          .market
+            .flex-more3-container
+              .selections
+                display flex
+                padding 5px 0
+                &.active
+                  .selection
+                    .selection-wapper
+                      .value
+                        .selectionprice
+                            color white
+            &.three-and-more-selections
+              .selections-mobile
+                .selection-wapper
+                  display flex
+                  cursor default
+                  pointer-events visiblefill
+                  user-select none
+                  padding 5px 12px
+                  .name.names
+                    font-size 14px
+                    color #000
+                    // overflow hidden
+                    line-height: 1.3
+                    margin-right: 3px
+                    // padding-top 8px
+                    // flex 1
+                    // text-overflow ellipsis
+                    // white-space nowrap
+                    width 0
+                  .value
+                    height 100%
+                    .sh
+                      background #f2f2f2
+                      padding 13px 9px
+                      width 60px
+                      min-height 40px
+                      font-size 14px
+                      color #0b4da1
+                      text-align center
+                      cursor pointer
+                      display flex
+                      flex-direction: column
+                      justify-content: center
+                      height 100%
+                      pointer-events auto
+                      .selectionprice
+                        line-height 13px
+                        color #0b4da1
+                        // font-weight 700
+                      .selectionprice.varylongprice
+                        font-size 12px !important
+                .longprice-selection
+                  .sh
+                    padding: 13px 0px !important
+
+                &.active
+                  .selection-wapper
+                    background-color white!important
+                    .name.names
+                      background-color white!important
+                      color #000 !important
+                    .value
+                      background-color white!important
+                      .sh
+                        background-color #157cc1  !important
+                        color #fff !important
+                        border-radius 0px
+                        .selectionprice
+                          color white
+
+            .selections
+              &.handicap
+                .selection
+                  .selection-wapper
+                    padding 4px
+          .big3
+            .market
+              .selection
+              .selection-wapper
+                padding 0
+                // margin 2px 0px
+                .value
+                  display flex
+                  min-width 30%
+                  @media mobile-big-and-below
+                    min-width 50px
+                  .had-value
+                    // flex 1
+                  .sh
+                    flex 1
+                    .currenthandicap
+                      font-weight 700
+                .value.suspended
+                  .had-value
+                    display none
+            .market.money
+              .selection
+                .selection-wapper
+                  .value
+                    display flex
+                    .selectionprice
+                      // line-height 38px
+                      font-weight 700
+        .markets.multiple
+          .big3
+            .market
+              .selection
+              .selection-wapper
+                padding 0
+                // margin 2px 0px
+                .value
+                  display flex
+                  min-width 30%
+                  @media mobile-big-and-below
+                    min-width 50px
+                  .had-value
+                    // flex 1
+                  .sh
+                    flex 1
+                  .currenthandicap
+                    .uo-currenthandicap
+                      margin-left 4px
+                      @media mobile-big-and-below
+                        margin-left 4px
+                .value.suspended
+                  .had-value
+                    display none
+  .big-three-one-selection-per-event
+    .empty
+      display none
+
+.eventmarketgroup
+  .markets
+    .market
+      margin-top 2px
+      // @media mobile-big-and-below
+      //   margin 0 4px 2px
+      .parent
+        display flex
+        padding 10px 15px
+        background #fff
+        border 1px solid #dcdfe9
+        border-top-style hidden
+        border-bottom-left-radius 0px
+        border-bottom-right-radius 0px
+        .market.name
+          flex 1
+          .layout
+            height: 35px
+            line-height 40px
+            font-size 14px !important
+            color #1f375b
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
+            cursor default
+            display block
+        .selections-container
+          flex 1
+          padding 10px 0
+          .selections
+            &.handicap
+              .selection-wapper
+                padding 4px
+            .selection
+              margin 2px
+      &.three-and-more-selections
+        .parent
+          .market.name
+            display none
+          .flex-more3-container
+            .selections
+              display flex
+              padding 5px 0
+              @media mobile-big-and-below
+                padding 0
+              &.active
+                .selection
+                  .selection-wapper
+                    .value
+                      .selectionprice
+                          color white
+              .selectionname
+                flex 1
+                font-size 14px
+                color #1f375b
+                overflow hidden
+                text-overflow ellipsis
+                line-height 40px
+              .selection
+                flex 1
+                justify-content flex-end
+                .selection-wapper
+                  flex 0.33
+          .selections-container
+            padding 0
+            @media mobile-big-and-below
+              padding 0
+            .selections-mobile
+              .selection-wapper
+                display flex
+                cursor default
+                pointer-events none
+                user-select none
+                padding 5px 12px
+                @media mobile-big-and-below
+                  padding 5px 12px
+                .name.names
+                  font-size 14px
+                  color #1f375b
+                  overflow hidden
+                  padding-top 8px
+                  flex 1
+                .value
+                  flex 1
+                  display flex
+                  justify-content flex-end
+                  .sh
+                    flex 0.33
+                    background #f0f3f8
+                    padding 13px 9px
+                    min-width 5rem
+                    font-size 14px
+                    color #111
+                    text-align center
+                    cursor pointer
+                    display block
+                    pointer-events auto
+                    .selectionprice
+                      line-height: 18px;
+                      color #0090ff
+                      font-weight 700
+              &.active
+                .selection-wapper
+                  background-color white!important
+                  .name.names
+                    background-color white!important
+                    color #1f375b!important
+                  .value
+                    background-color white!important
+                    .sh
+                      background-color #0090ff !important
+                      color #fff !important
+                      border-radius 3px
+                      .selectionprice
+                        color white
+          &.selections-in-columns
+            .selections-container
+              .selections
+                .selection-name,
+                .selectionname
+                  cursor: default
+                .selection
+                  display flex
+                  width 33%
+                  @media mobile-big-and-below
+                    display flex
+                    width 100%
+                  .selection-wapper
+                    width: 60px
+                    margin 0px
+            .selections-mobile
+              .value
+                flex unset!important
+        .selections-container
+          // outright and threeplus on eventmarket group
+          .flex
+            border-left: 1px solid #cfd6db
+            border-right: 1px solid #cfd6db
+          .flex:not(.selection)
+            border-bottom 1px solid #cfd6db
+            border-bottom-left-radius 5px
+            border-bottom-right-radius 5px
+            .flex-more3-container
+              display block
+              width 100%
+              // padding: 0px 0 0 15px
+              .flex-item
+                display inline-block
+                vertical-align: top
+                .selections
+                  display: flex
+                  justify-content: space-between
+                  padding: 8px 12px
+                  // .selectionprice
+                  //   line-height: 1
+                  &.active
+                    .selectionprice
+                      color white
+                  .selectionname
+                    font-size: 14px
+                    // line-height: 40px
+                    color: #1f375b
+                    // overflow: hidden
+                    // text-overflow: ellipsis
+                    // display: inline-block
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    line-height: 1.3
+                    margin-right: 3px
+                    // white-space: nowrap
+                    cursor: default
+                    width: 100%
+                  .selection.layout
+                    display block
+                    flex unset
+              &.one-column
+                .flex-item
+                  display: block
+                  .selections
+                    .selectionname
+                      width: initial
+                    .selection.layout
+                      width 130px
+
+              &.two-columns
+                .flex-item
+                  width 50%
+              &.three-columns
+                .flex-item
+                  width 33.6%
+              &.two-columns, &.three-columns
+                display: flex
+                .flex-item
+                  border-right: 1px solid #cfd6db
+                  height: 100%
+                  // padding-bottom: 5px
+                  &:last-child
+                    border-right: none
+                  .selections
+                    border-bottom: 1px solid #cfd6db
+                    .selection.layout
+                      width: 60p
+                      min-width: auto
+                      .selection-wapper
+                        // padding: 13px 9px
+                        width: 60px
+                        height: 100%
+                        min-height: 40px
+                        font-size: 14px
+                        color: #111
+                        text-align: center
+                        cursor: pointer
+                        display: flex
+                        pointer-events: auto
+                      // .selection-wapper.longprice-selection
+                      //   padding: 13px 0px !important
+                    &:last-child
+                      border-bottom: none
+            .selections-mobile
+              width: 100%
+              display: flex
+              border-right: none
+              &.active
+                .selection-wapper
+                  background-color: white!important
+                  .name.names
+                    background-color: white!important
+                  .value
+                    .selectionprice
+                      color: white
+              .selection-wapper
+                padding 5px 12px
+                cursor: default
+                .name.names
+                  font-size: 14px
+                  color: #1f375b
+                  // overflow: hidden
+                  // text-overflow: ellipsis
+                  max-width: 100%
+                  display: inline-block
+                  vertical-align: middle
+                  // white-space: nowrap
+                  width: 0
+                  // height: 42px
+                  line-height: 1.3
+                  margin-right: 3px
+                .value
+                  padding: 13px 9px
+                  width: 60px
+                  height: 100%
+                  font-size: 14px
+                  text-align: center
+                  cursor: pointer
+                  display: block
+                  pointer-events: auto
+                  background-color #f2f2f2
+                  .sh
+                    height 100%
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                  .selectionprice
+                    line-height: 13px
+                    font-weight: 700
+                    color: #0e4fa2
+              .longprice-selection
+                .value
+                  padding: 13px 0px !important
+        &.three
+          .selections-container
+            .selection
+              border-left none
+              border-top: none
+      &.two-selections
+        .selections-in-columns
+          .selections-container
+            .selection
+              &.U,
+              &.H
+                border-right 1px solid #cfd6db
+                width: 50%
+                display inline-block
+                @media mobile-big-and-below
+                  border-right none
+                  display flex
+                  width auto
+                .selection-name
+                  cursor default
+              &.O,
+              &.A
+                width: 50%
+                display inline-block
+                @media mobile-big-and-below
+                  display flex
+                  width auto
+                .selection-name
+                  cursor default
+              .selection-wapper
+                width 60px
+                margin 0px !important
+    .market
+      .selections
+        .selection
+          &.active
+            .selection-wapper.selection-data
+              background #157cc1
+              .currenthandicap
+                color white
+          .selection-column.active
+            .selection-wapper.selection-data
+              background #157cc1
+  .big3
+    display flex
+    .market.name
+      flex 3
+      .layout
+        height 40px
+        line-height unset
+        font-size 14px
+        color #000
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap
+        cursor default
+        display block
+        flex-direction column
+        margin: 2px 0
+        line-height: 40px
+    .market.points
+      flex 1
+    .market.money
+      flex 1
+      .selection
+        .value
+          .sh
+            .selectionprice
+              font-family 'Open Sans Bold'
+    .market.total
+      flex 1
+    .market
+      .selection
+        .selection-wapper
+          padding 0
+          margin 2px 1px
+          .value
+            min-width 30%
+            display inline-block
+            @media mobile-big-and-below
+              min-width 40px
+            .sh
+              flex 1
+              .currenthandicap
+                display flex
+                font-weight bold
+                justify-content center
+                .had-value
+                  // flex 1
+                  // line-height 35px
+                .uo-currenthandicap
+                  //flex 1
+                  margin-left 4px
+  .markets.single
+    .value
+    .selectionprice
+      font-weight 500
+    .big3
+      .market
+        .empty
+          display none
+  .markets.multiple
+    .big3
+      .market
+        .empty
+          width 130px
+          @media mobile-big-and-below
+            width 60px
+            margin 0 1px
+.market.three-and-more-selections
+  .value
+    .selectionprice
+      font-weight 700
+      font-size 14px
+.market.two-selections
+  .value
+    .selectionprice
+      font-weight 700
+      font-size 12px
+.live-coupon, .search-component, .search-events-component, .my-events-page-content
+  .hheader
+    display flex
+    align-items center
+    .head
+      cursor: pointer
+      margin: 0
+      color: #fff
+      cursor default
+      padding 10px 9px
+      margin-bottom 0px
+      font-size 14px
+      flex 10
+      min-width: 120px
+      @media mobile-big-and-below
+        flex 4
+      h4
+        font-size 14px
+        text-transform uppercase
+        overflow: hidden
+        font-family 'Open Sans Bold'
+        text-overflow: ellipsis
+        white-space: nowrap
+    .big3-markets-header
+      .markets-title
+        h4.big3-market-name
+          @media mobile-big-and-below
+            width 53px
+  .big3-event
+    .markets-wrapper
+      .markets
+        &.single,
+        &.multiple
+          .big3
+            .market
+              .selections
+                .selection-wapper
+                  @media mobile-big-and-below
+                    width 53px
+                    min-width 53px
+                  .value
+                    @media mobile-big-and-below
+                      width 53px
+                      min-width: initial!important
+            .money
+              .selectionprice
+                font-weight 700
+  .wrapper
+    flex 1
+    padding 12px 5px 0px 9px
+    .event-info
+      display inline-block
+      width: 100%
+      flex 1
+    .markets-wrapper
+      .markets.single
+        .big3
+          .market
+            .empty
+              display none
+      .markets.multiple
+        .big3
+          .market
+            .empty
+              width 130px
+            .selection
+              .selection-wapper
+                padding 0
+                margin 0px 1px 4px 0px
+                .value
+                  display flex
+                  min-width 30%
+                  @media mobile-big-and-below
+                    min-width 50px
+                  .had-value
+                    // flex 1
+                  .sh
+                    flex 1
+                .value.suspended
+                  .had-value
+                    display none
+                  .sh
+                    .currenthandicap
+                      display none
+      .threeselections
+        .showResult
+          @media mobile-big-and-below
+            margin-top 0px !important
+            margin-bottom 0px !important
+
+          .market.points
+            .selection-wapper
+              .selectionprice.suspended
+                line-height 36px
+          .market.money
+            .selection-wapper
+              .selectionprice
+                line-height 18px
+                font-weight 700
+              .selectionprice.suspended
+                line-height 40px
+                .igt-icon
+                  /* position relative
+                  top 7px */
+          .market.total
+            .selection-wapper
+              .selectionprice.suspended
+                line-height 36px
+      .market.two-selections
+        .selections-container
+          .selection
+            .name.names
+              display: none
+      .market
+        .selections
+          .selection
+            &.active
+              .selection-wapper.selection-data
+                background #0d7fe1
+                .currenthandicap
+                  color white
+            .selection-column.active
+              .selection-wapper.selection-data
+                background #0d7fe1
+
+  .big-three-one-selection-per-event
+    .empty
+      display none
+  .lsevents-checkbox-container
+    .input-group.checkbox
+      max-width none
+      margin 0
+      flex-direction row-reverse
+      label
+        max-width none
+        position initial
+        display inline-block
+        flex 90
+        background white
+      .input-group__input
+        padding 6px 12px 0
+        position relative
+        flex 1
+.live-coupon
+  @media mobile-big-and-below
+    .event.GOLF,
+    .event.MOTORSPORT,
+    .event.NASCAR
+      .wrapper
+        .flex
+          padding: 12px
+
+
+
+
+// IE 11 specific fixes
+.browser-internet-explorer.browser-version-11
+  .coupon-event
+      .market
+        .markets-container
+          .markets.single
+            .market
+              &.three-and-more-selections
+                &.three
+                  width 447px
+                  @media mobile-big-and-below
+                    width 192px
+              &.two-selections
+                width 150px
+                @media mobile-big-and-below
+                  width 65px
+  .eventmarketgroup
+    .markets
+      .market
+        &.two-selections
+          .selections-in-columns
+            .selections-container
+              .selections
+                .selection
+                  .selection-wapper
+                    .value
+                      .sh
+                        max-width none
+
+
+  .eventmarketgroup
+    .markets.single
+      .flex-more3-container.two-columns
+        .selection.layout
+          flex: 0.2 !important
+
+  .live-coupon
+    .markets-wrapper
+      .market
+        &.two-selections
+          width 150px
+          @media mobile-big-and-below
+            width 65px
+        &.three-and-more-selections
+          &.three
+            width 447px
+            @media mobile-big-and-below
+              width 192px
+.url-sports.url-navigation .markets-wrapper.markets
+  //padding-top 7px
+
+
+
+/* @TODO Move this*/
+/* Fixing LIVE on pre match pages */
+
+ .tennis
+   .activelead.dot
+      left -33px
+ .soccer
+   .markets-wrapper.markets
+      margin-top 5px
+
+.coupon-event.odds-boost
+  .market
+    width 100%
+    .market.odds-boost
+      .parent
+        display flex
+        flex 1
+      .selections.layout.all.non-had
+        flex-wrap: wrap
+        .selection
+          display: flex
+          align-items center
+          justify-content space-between
+          .odds-boost-selection-name
+            padding 0 8px 5px 0
+            font-weight normal
+            font-size 14px
+            color #000
+            margin-top 6px
+            text-align justify
+            float left
+            @media mobile-big-and-below
+              // width 180px
+              font-size 12px
+              padding-right 8px
+          .selection-row
+            display flex
+            .odds-boost.estimatepricedown
+              min-width 5rem
+              width 130px
+              font-size 20px
+              text-align center
+              display flex
+              align-items center
+              justify-content center
+              height 40px
+              margin 0px 1px 4px 0px
+              border-radius 2px
+              @media mobile-big-and-below
+                width: 53px
+                min-width 53px
+                font-size 12px
+
+.coupon-event .names.participants .eventTitle .name,
+.event-info .event-info .eventTitleWrapper .eventTitle .name,
+.eventmarketgroup .markets .name,
+.eventmarketgroup .markets .selection-name,
+.marketgroup .coupon-event .market .name.names
+  word-break: break-word
+
+// Column order
+.markets .big3.big3 .markets.big3-column-order
+.hheader.hheader.hheader .big3-markets-header.big3-column-order
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  margin-right: 0
+
+  .big3-column-order-
+  .big3-column-order-0
+  .big3-column-order-1
+    margin-right: 4px
+
+  .big3-column-order-:last-child
+    margin-right: 0
+
+  .big3-column-order-0
+    order: 0
+  .big3-column-order-1
+    order: 1
+  .big3-column-order-2
+    order: 2
+    margin-right: 0
+  .more_bets
+    order: 10
+    margin-right: 6px
+
+.hheader.hheader.hheader .big3-markets-header.big3-column-order
+  justify-content: flex-end
+
+  @media mobile-big-and-below
+    margin-right: 5px
+
+.eventTitle
+.market.name
+.selections-container
+  .listcode
+    display: none

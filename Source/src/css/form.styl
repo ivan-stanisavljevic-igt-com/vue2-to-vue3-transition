@@ -1,0 +1,134 @@
+@import "config"
+  .ctsform-stepindicators { text-align: center; padding-bottom:25px; }
+  .ctsform-stepindicators span { display:inline-block; width:28px; font-size:12px; line-height:26px; border:solid 1px dodgerblue; border-radius:14px; box-sizing:border-box; }
+  .ctsform-stepindicators span.active { color:#fff; background-color:dodgerblue; border-color:dodgerblue; }
+  .ctsform-stepindicators span + span { margin-left:5px; }
+
+  .ctsform { text-align:left; font-size: 14px; line-height: 20px; font-weight: normal; }
+
+  .ctsform .legend{ margin-bottom:15px; padding:0; display:block; font-weight:bold; text-align:center; }
+  .ctsform .control-block { clear:both; margin-bottom:15px; display:block; position:relative; }
+  .ctsform .control-block.nomarg{ margin-bottom:0; }
+  .ctsform .form-actions{ clear:both; margin-bottom:0; display:block; text-align:center; }
+  .ctsform .form-actions input[type=text]{ display:inline-block; width:auto; }
+  .ctsform .form-actions buttom + buttom { margin-left: 30px; }
+
+  .ctsform input[type=text],
+  .ctsform input[type=number],
+  .ctsform input[type=password],
+  .ctsform input[type=email],
+  .ctsform input[type=url],
+  .ctsform input[type=tel],
+  .ctsform select {
+    box-sizing:border-box;
+    padding:30px 10px 5px;
+    width:100%;
+    clear:both;
+    display:block;
+    position:relative;
+    z-index:5;
+    color:#505050;
+    font-family: "Open Sans SemiBold" !important;
+  }
+
+  .ctsform input:focus,
+  .ctsform select:focus { outline:none; }
+  .ctsform input[disabled],
+  .ctsform select[disabled] { color: #666; opacity: 1!important;-webkit-text-fill-color: #666;}
+
+  .ctsform .control-elm { font-size: 16px; line-height: 20px; font-weight: normal; }
+  .ctsform .control-elm.disabled { color: #999; }
+
+  .ctsform .control-label { position:absolute; z-index:1; top:0; right:0; left:0; height:55px; padding:30px 10px 0; line-height:20px;  transition: all 0.1s ease-in; }
+  .ctsform .control-label:after { content:""; position:absolute; right:0; bottom:0; left:0; height:1px; background-color:#ddd; }
+  .ctsform .control-label.inactive:after { background-color:#fefefe; }
+  .ctsform .filled .control-label,
+  .ctsform .pseudofilled .control-label { padding-top:0; font-size:12px; color:#999; }
+  .ctsform input:focus + .control-label,
+  .ctsform select:focus + .control-label,
+  .ctsform .withfocus .control-label { padding-top:0; font-size:12px; color:#368ffe; background-color:#f6f6f6; }
+  .ctsform input:focus + .control-label:after,
+  .ctsform select:focus + .control-label:after
+  .ctsform .withfocus .control-label:after { background-color:#368ffe; }
+
+  .ctsform button
+    background: #1a9ddd repeat scroll 0 0 !important;
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0 25px;
+    font-family: 'Open Sans SemiBold';
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    text-transform: uppercase
+
+    &:first-child
+      margin-left: 0
+
+  .ctsform .linkbut,
+  .ctsform button.linkbut { background-color:transparent; line-height:150%; text-shadow: none; color:#242870; padding: 0; }
+  .ctsform .linkbut:focus { outline:none; }
+
+  .ctsform .control-block-dob input { display:inline-block; width:28%; }
+  .ctsform .control-block-dob input:nth-child(-n+3):after { content:" / "; color:#999; }
+
+  // .ctsform .control-block-x3inp input { display:inline-block; width:32%; }
+  // .ctsform .control-block-x3inp input:nth-child(-n+3) { margin-right:0; }
+  // .ctsform .control-block-x3inp .x3inp-lbl { position:absolute; z-index:2; top:20px; left 0; font-size:10px; line-height:120%; text-transform:uppercase; width:32%; padding-left:10px; box-sizing:border-box; color:#999; }
+  // .ctsform .control-block-x3inp .x3inp-lbl.x3inp-lbl-two { left: 33.5% }
+  // .ctsform .control-block-x3inp .x3inp-lbl.x3inp-lbl-three { left: 67% }
+  .ctsform .control-block-x3inp .inputs {display: flex; flex-direction: row;justify-content: space-between;margin-top:5px;}
+  .ctsform .control-block-x3inp .inputs div {flex: auto;}
+
+  .ctsform .finfo { font-size:smaller; color:#666; }
+  .ctsform .finfo-c { text-align:center; }
+
+  .ctsform .vmsg { display:block; position:relative; top:-5px; font-size:smaller; }
+  .ctsform .vmsg.invalid { color:#ff5656; font-family: "Open Sans Bold"  }
+
+  .ctsform .msg-block { clear:both; margin-bottom:10px; display:block; padding:10px; background-color:#fff; border: solid 1px #fff; color:#333; border-radius:3px; font-size:14px; line-height:150%;  }
+  .ctsform .msg-block.success { background-color:#ABF8B6 !important; border-color: #39D659; color:#006D00 !important; }
+  .ctsform .msg-block.error { background-color:rgba(226, 68, 71, 0.1) !important; border-color: #E24447; color:#E24447 !important; }
+  .ctsform .msg-block.warning { background-color:#FFEA9F !important; border-color: #FFCD17; color:#613400 !important; }
+  .ctsform .msg-block.notification { background-color:#5CC7EB; border-color: #00B1E5; color:#fff; }
+
+  .ctsform .tac { text-align: center; }
+  .ctsform .tal { text-align: left; }
+  .ctsform .dn { display:none }
+
+  @media desktop-and-above {
+  .ctsform button:hover, a.button:hover, .buttons button:hover { color: #fff; background: #0096C9; }
+  .ctsform .linkbut:hover { cursor:pointer; color:#242870; background-color:transparent; outline:none; }
+  }
+
+  @media (min-width: 601px) {
+  .ctsform .half { width:49%; float:left; }
+  .ctsform .half:nth-child(2n+1) { clear:left; padding-right:1%; }
+  .ctsform .half:nth-child(2n+2) { width:50%; }
+  .ctsform .third { width:33%; float:left; }
+  .ctsform .third:nth-child(3n+1) { padding-right:1%; clear:left; }
+  .ctsform .third:nth-child(3n+2) { padding-right:1%; }
+  .ctsform .third:nth-child(3n+3) { width:33%; }
+  }
+
+  .clearafter:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+  .accpage
+    .ctsform .liminfos
+    .ctsform .control-label
+    .ctsform input[type=text]
+    .ctsform input[type=number]
+    .ctsform input[type=password]
+    .ctsform input[type=email]
+    .ctsform input[type=url]
+    .ctsform input[type=tel]
+    .ctsform select
+      padding-left: 0
+      padding-right: 0
+
+  .self-exclusion.ctsform
+    .vdp-datepicker
+      input
+        cursor pointer
+        z-index 2

@@ -1,0 +1,224 @@
+navigation(type = vertical)
+  background-color-level-1 = color-yellow-light
+  background-color-level-2 = lightness(color-yellow-light, 85%)
+  background-color-level-3 = lightness(color-yellow-light, 93%)
+  background-color-level-4 = lightness(color-yellow-light, 99%)
+
+  &, ul
+    margin: 0
+    padding: 0
+
+  background: background-color-level-1
+
+  &, li, a
+    display: block
+
+  a
+    padding: gap
+    color: color-yellow-light-contrast
+    text-decoration: none
+
+    &.router-link-active
+      background: color-yellow-dark
+      color: color-yellow-dark-contrast
+
+  ul
+    background: background-color-level-2
+
+    ul
+      background: background-color-level-3
+
+      ul
+        background: background-color-level-4
+
+  if type == vertical
+    a
+      display: flex
+      align-items: center
+
+      span
+        flex: 1 0 auto
+
+      .icon
+        flex: 0 1 auto
+
+
+  if type == horizontal
+    li, a
+      display: inline-block
+
+
+round(value = 5px)
+  border-radius: value
+
+vertical-align-function()
+    white-space: nowrap
+
+    &:before
+      content: ''
+      display: inline-block
+      height: 100%
+      vertical-align: middle
+      margin-right: -0.25em
+
+scroll-off()
+  position:fixed !important
+  width:100%
+  -webkit-overflow-scrolling: touch
+  overflow: hidden
+
+scroll-x()
+  overflow-x: auto
+  white-space: nowrap
+
+clearfix()
+  *zoom: 1
+
+  &:before,
+  &:after
+    content: " "
+    display: table
+
+  &:after
+    clear: both
+
+ir()
+  font: 0/0 a;
+  color: transparent
+  text-shadow: none
+  border: 0
+
+text-overflow()
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  max-width: 100%
+  display: inline-block
+  vertical-align: middle
+
+no-wrap()
+  white-space: nowrap
+
+hyphenate()
+  -ms-word-break: break-all
+  word-break: break-all
+  word-break: break-word
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  hyphens: auto
+
+wrap-long-words()
+  overflow-wrap: break-word
+  word-wrap: break-word
+  -ms-word-break: break-all
+  word-break: break-all
+  word-break: break-word
+  -ms-hyphens: auto
+  -moz-hyphens: auto
+  -webkit-hyphens: auto
+  hyphens: auto
+
+badge()
+  height = 1.8em
+
+  border-radius: 1000px
+  display: inline-block
+  font-weight: normal
+  text-align: center
+  padding: 0 0.5em
+  outline: 0
+  text-decoration: none
+  vertical-align: middle
+  line-height: height
+  height: height
+  font-size: 0.8rem
+  min-width: 2.5em
+  font-family: daxpromedium
+
+expand(value, type = all)
+  if type == all
+    margin-left: -(value)
+    margin-right: -(value)
+    margin-top: -(value)
+    margin-bottom: -(value)
+
+  if type == horizontal
+    margin-left: -(value)
+    margin-right: -(value)
+
+  if type == vertical
+    margin-top: -(value)
+    margin-bottom: -(value)
+
+override-svg-icon(names, color, background = '')
+  if background != ''
+    &.igt-icon,
+    .igt-icon
+      height: 28px;
+      width: 28px;
+      align-items: center
+      display: inline-flex
+      justify-content: center
+
+  for name in names
+    .icon-{name}
+      background-image: url(svg-path'/'name'-'color'.svg')
+override-svg-icon-with-default(names)
+  &.igt-icon,
+  .igt-icon
+    height: 28px;
+    width: 28px;
+    align-items: center
+    display: inline-flex
+    justify-content: center
+
+  for name in names
+    .icon-{name}
+      background-image: url(svg-path'/'name'.svg')
+
+border-arrow(direction = right, rotatedeg = 0deg)
+  display: inline-block
+  width: 0
+  height: 0
+  if direction == bottom
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #333
+  if direction == right
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #333
+  if direction == top
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #333
+  if direction == left
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #333
+
+  transform: rotate(rotatedeg)
+
+absolute-center()
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3D(-50%, -50%, 0);
+
+absolute-center-y()
+  position: absolute;
+  top: 50%;
+  transform: translate3D(0, -50%, 0);
+
+override-svg-icon-superbook(names, color)
+  if background != ''
+    &.igt-icon,
+    .igt-icon
+      align-items: center
+      display: inline-flex
+      justify-content: center
+
+  for name in names
+    .icon-{name}
+      background-image: url('~@/assets/images/brands/sb/sports/'name'-'color'.svg') !important
+

@@ -1,0 +1,1658 @@
+@import "config"
+@import "mixins"
+
+.betslip-column,
+.dialog-betslip
+  position: relative
+
+
+.dialog-betslip
+  position: fixed
+  right: 0
+  bottom: 0
+  left: 0
+  top: 0 
+  padding-bottom: 0 !important
+  // overflow-y: scroll
+  overflow-y: hidden
+  overflow-x: hidden
+  width: 100%
+  height: 100%
+  background: #E4E8EE
+  -webkit-overflow-scrolling: touch
+
+.mobile_betslip
+  @media mobile-big-and-below
+    overflow-y: scroll
+    height: calc(100% - 54px)
+    -webkit-overflow-scrolling: touch
+    overflow-y: scroll
+    overflow-x: hidden
+    position: fixed
+    top: 62px 
+    left: 0
+    right: 0
+.mobile_betslip.betslip-resize
+  @media mobile-big-and-below
+    height: calc(100% - 131px)
+
+.betslipactive
+  @media mobile-big-and-below
+    overflow: hidden
+    position: fixed
+    width: 100%
+
+.overflowHidden
+  @media mobile-big-and-below
+    overflow-y: hidden !important
+
+.singleBetsliipActive 
+  overflow-y: scroll !important
+  -webkit-overflow-scrolling: touch
+
+.betslip_actions
+  &.bet_placed
+    @media tablet-and-above
+      padding: 1px
+      background: #ffffff
+      border-radius: 4px
+      border: 1px solid #CFD6DB
+
+.betslip-page:not(.betslip-empty)
+  .v-btn.primary-btn
+    background-color: #157cc1 !important
+    &:hover
+      background-color: #004c97 !important
+.betslip-page
+  @media tablet-and-below
+    &.bet_placed_sucessfuly
+      background: #fff
+      margin-left: -4px
+      margin-right: -4px
+      height: 100%
+
+  .checkbox
+    display: inline-flex
+    width: auto
+    color: #2396FC !important
+    min-height: 20px
+    vertical-align: middle
+
+    &.input-group
+      margin-bottom: 0
+      .input-group__input
+        background: transparent
+        min-height: 20px
+        padding: 0
+        .icon--selection-control 
+          -ms-flex-item-align: normal
+          align-self: normal
+          height: auto
+          margin: auto
+
+  .selection-cnt-1
+  .selection-cnt-2
+    .checkbox
+      opacity: 0.6
+
+
+
+  .SBbetSlip
+    padding 0 5px
+    h2
+      font-weight: bold
+      display: flex
+      align-items: center
+      margin: 0
+      font-size: 14px
+      min-height: 2.8rem
+      color: #004c97
+
+      &:first-child
+        padding-left: 8px
+
+    .btn-container
+      display: flex
+      align-items: stretch
+
+      .column-left,
+      .column-right
+        flex: 1
+
+      .column-left
+        flex-basis: 15%
+        margin-right: 8px
+      .column-right
+        flex-basis: 85%
+
+    .v-btn
+      min-height: 48px
+      min-width: 48px
+      color: #fff
+      margin: 0
+      width: 100%
+      height: auto
+      font-family 'Open Sans SemiBold'
+      padding: 0 5px
+
+      .v-btn__content
+        padding: 0
+        font-weight: normal
+      &.delALL
+        background: none
+        border: solid 1px #CFD6DB
+        padding: 0
+        width: 48px
+
+        .igt-icon
+          .css
+            width: 18px
+            height: 20px
+      span
+        .browser-safari.os-ios &
+          margin: auto
+
+  &.betslip-empty
+    .empty-betslip
+      margin-top: 10vh
+      margin-bottom: 10vh
+      @media mobile-big-and-below
+        margin-bottom: 0 !important
+        &.RR
+        &.TEASER
+          margin-top: 3vh
+
+      img
+        margin-left: -3%
+        margin-bottom: 2vh
+        width: 30vh
+        max-width: 219px
+        @media mobile-big-and-below
+          margin-bottom: 1vh
+      .msg
+        font-weight: bold
+        font-size: 24px
+        color: #99a8b1
+        .small-msg
+          font-size:14px
+          display: block
+          padding: 10px 13%
+          font-weight: normal
+          @media mobile-big-and-below
+            padding: 5px 12% 10px 12%
+            line-height: 17px
+      a 
+        font-weight: bold
+        font-size:14px
+        // display: flex
+        // justify-content: center
+        // align-items: center
+        margin-bottom: 10px
+        display: block
+        .igt-icon 
+          margin-right: 5px
+          line-height: 18px
+          &>span 
+            width 17px
+            height 17px
+        span
+          display: inline-block
+          vertical-align: middle
+          height: 17px
+
+    .action-btns
+    .call-to-login
+      position: absolute
+      bottom: 0
+      left: -4px
+      right: -4px
+      padding: 12px
+      background: #fff
+      border-radius: 4px
+
+      @media tablet-and-above
+        // position: static
+        position: sticky
+        bottom: 0px
+      .v-btn
+        background-color: #0b4da1
+        font-size: 14px
+        font-weight: bold
+        border-radius: 2px
+        &:hover 
+          background-color: #0b4da1
+
+  .application & .badge
+    border-radius: 2px
+    width: 20px
+    height: 20px
+    font-weight: normal
+    font-size: 12px
+
+  .betslip-page-header
+    &.user_logged_in
+      .tab
+        flex: auto
+        justify-content: center
+        @media mobile-big-and-below
+          flex: none
+          padding: 10px 17px
+  .betslip-page-header:not(.user_logged_in)
+    .tab
+      width: 33%
+      flex: none
+      justify-content: center
+
+
+  .mobile_betslip  
+    @media mobile-big-and-below  
+      position: relative
+      z-index: 1
+      top: 54px
+  .betslip-page-header
+    background: #0b4da1
+    display: flex
+    align-items: stretch
+    @media mobile-big-and-below
+      background: #0b4da1
+      margin: -4px -4px 0 -4px
+      position: fixed
+      top: 0px
+      left: 0
+      right: 0
+      z-index: 2
+     
+     
+
+    .tab,
+    .close,
+    .logged-in,
+    .not-logged-in
+      display flex
+      align-items: center
+
+    .tab,
+    .close
+      flex-grow: 0
+
+    .logged-in,
+    .not-logged-in
+      flex: 1
+
+    .logged-in
+      display: flex
+      align-items: stretch
+
+    .tab
+      // padding: 10px 17px
+      display: flex
+      align-items: center
+      min-height: 62px
+      font-size: 14px
+
+      a
+        color: #fff
+        font-weight: normal
+        .badge
+          font-weight: normal
+
+      &.active
+        background: #fff
+
+        a
+          color: #06283b
+          font-weight: bold
+
+      .a-link-
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        height: 100%
+        width: 100%
+
+        .badge
+          align-self: center
+
+    .close
+      min-width: 0
+      height auto
+      margin: 0 0 0 auto
+
+      .v-btn__content
+        padding: 0 10px 0 0
+
+        .icon
+          font-weight: normal
+
+
+  .betslipHeader
+    background: #fff
+    padding: 0
+    margin: 0px -4px 5px -4px
+
+    .tabs
+      display: flex
+
+      .tab
+        flex: 1
+        a
+          color: #004c97
+          font-size: 14px
+          font-weight: normal
+          display: block
+          height: 100%
+          min-height: 48px
+          display: flex
+          align-items: center
+          justify-content: center
+
+        &.active
+          a
+            color: #004c97 !important
+
+.dialog-betslip
+  padding-top: 4px
+  padding-left: 0px
+  padding-right: 0px
+  .bets
+    padding: 5px
+
+.betslip-page
+  .msg:not(.REGULAR):not(.TEASER):not(.RR)
+      padding: 16px 12px
+      font-weight: 600
+      border-radius: 0 0 4px 4px
+      display: flex
+      text-align: left
+      font-size: 14px
+      line-height: 16px
+      align-items: center
+      justify-content: left
+      &.info 
+        background-color: #E5F3FF !important
+        color: #0F89F1 !important
+        border: 1px solid #4CADFF
+        border-color: #4CADFF !important
+      .igt-icon > span
+        margin-right: 12px
+        width: 20px !important
+        height: 20px !important
+      &.inRefferal
+        border-radius: 4px !important
+        background-color: #FFF2E5 !important
+        color: #EA913C !important
+        border: 1px solid #EA913C
+        border-color: #EA913C !important
+      &.bet_actions_msg
+        flex-direction: column !important
+  
+  .sport-container
+    &.info-msg-on
+      border: 1px solid #4CADFF
+      .teaser-option-container
+        border-bottom: 1px solid #4CADFF
+        background-color: #E5F3FF !important
+        border-radius: 5px 5px 0 0
+      .msg
+        &.info
+          border-width: 1px 0 0 0 !important
+
+  .errorMsg
+    display: flex
+    text-align: left
+    font-size: 14px
+    line-height: 14px
+    align-items: center
+    justify-content: left
+    &.CLOSED_or_SUSPENDED
+      background-color: #EA913C
+      color: #ffffff
+    a 
+      color: #FFF
+
+.dialog-betslip-confirm
+.dialog-betslip-msg
+  max-width: 466px
+  overflow: hidden
+  h2
+    margin: 0
+    text-transform: uppercase
+    font-size: 30px
+    font-weight: bold
+    line-height: 35px
+    text-align: left
+  .dialog_text
+    font-size: 14px
+    font-weight: normal
+    line-height: 18px
+    color: #06283b
+    text-align: left
+    margin: 20px 0 24px 0
+  .v-btn
+    width: 100%
+    border-radius: 2px
+    font-weight: bold
+  .primary 
+    background: #ffffff !important 
+    border: 1px solid #CFD6DB !important 
+    margin-left: -2px
+    color: #004c97 !important
+  .secondary 
+    background: #004c97 !important 
+    border: 1px solid #004c97 !important 
+    color: #fff
+    margin-left: 4px
+    &:hover
+      background: #157cc1 !important
+      border: 1px solid #157cc1 !important 
+  @media mobile-big-and-below
+    max-width: none
+    position: absolute 
+    bottom: 0
+    left: 0
+    margin: 0 !important
+    border-radius: 8px 8px 0 0
+
+.betslip-page.InProgress
+  &.betslip-page .betslip-page-header
+     background-color: #294B75  
+  &.betslip-page .betslip-page-header .tab 
+  &.betslip-page .betslipHeader
+    display: none 
+  &.betslip-page .betslip-page-header .placing-bets-msg
+    display: block
+    font-weight: normal
+    font-size: 16px
+    text-transform: uppercase
+    padding-top: 20px
+    padding-left: 20px
+    color: #FFF
+.action-msg.InProgress
+  display:none
+.action-btns.InProgress
+  display:none
+.bsSelection.REGULAR.state-4
+  &.selection .stake-n-return
+  &.selection .event-name
+  &.selection .column
+  &.betType .title-parlay
+    background-color:#CFD6DB
+
+@media tablet-and-below
+  .bet_placed_sucessfuly
+    .betslip-page-header
+      background: #fff
+      // padding-bottom: 5vh
+      // position: unset
+      .icon
+        color: #06283b
+      .close
+        margin: 0 0 0 auto !important
+    .betslipHeader
+      display:none
+    
+
+.action-msg
+  background: #fff
+  h3 
+    margin-bottom: 10px
+  .v-btn
+    background: #1493FF !important
+    margin-top: 10px
+
+  .betPlacement
+  #BetSlipChanged
+    padding: 12px
+
+.action-btns
+  .v-btn
+    background: #004c97
+    &:hover 
+      background-color: #157cc1
+  .btn_blue
+    background: #004c97 !important
+    &:hover 
+      background-color: #157cc1 !important
+  .btn_white
+    background: #FFF 
+    color: #004c97 
+    border: 1px solid #CFD6DB
+    &:hover 
+      background-color: #fff !important
+  
+.bet_rejected
+  background: #004c97 !important
+  &:hover 
+    background-color: #157cc1 !important
+
+.delALL
+  background: #fff !important
+  &:hover 
+    background-color: #fff !important
+
+
+.browser-internet-explorer
+  .betslip-page.betslip-empty
+    @media tablet-and-above
+      .call-to-login
+        left: 4px !important
+        right: 4px !important
+
+  .SBbetSlip 
+    .v-btn
+      height: 48px
+
+.action-btns
+  .v-icon
+    color red
+    margin-right: 5px
+  .btn_green
+    background: #3fc369 !important
+    color: #ffffff
+    &.inRefferal
+      .igt-icon > span 
+        width: 20px !important
+        height: 20px !important
+  &.inRefferal
+    border-top: 0 !important
+
+  
+.call-to-login
+  @media tablet-and-below
+    margin-bottom 59px
+.betslip_actions:not(.bet_placed) // .action-btns
+  @media tablet-and-below
+    padding: 0px 12px 71px 12px !important
+
+.betslip_actions:not(.bet_placed)
+  @media tablet-and-below
+    position: fixed
+    bottom: 0px
+    left: 0
+    right: 0
+    z-index 100
+
+.betslip_actions.bet_placed .action-btns 
+  @media tablet-and-below 
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+
+
+/* iphone X */
+.os-ios
+  @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3)
+    .call-to-login
+      margin-bottom 87px
+    .betslip_actions:not(.bet_placed) // .action-btns
+      // padding-bottom:  104px !important
+
+.os-ios
+  @media only screen and (min-device-width: 414px) and (min-device-height: 896px) and (-webkit-device-pixel-ratio: 3)
+    .call-to-login
+      margin-bottom 87px
+    .betslip_actions:not(.bet_placed) // .action-btns
+      padding-bottom:  104px !important
+
+  /* iphone XR */
+.os-ios
+  @media only screen and (min-device-width: 414px) and (min-device-height: 896px) and (-webkit-min-device-pixel-ratio: 2)
+    .call-to-login
+      margin-bottom 87px
+    .betslip_actions:not(.bet_placed) // .action-btns
+      // padding-bottom:  104px !important
+
+.toggleBetslipColumn
+  min-width 125px
+  margin -10px 0 5px 0
+  position fixed
+  top 90px
+  z-index 101
+  height 50px
+  border-radius 0
+  text-transform uppercase
+  background #ff671f 
+  color #fff
+  display flex
+  justify-content space-between
+  align-items center
+  padding 0 5px 0 10px
+  &.loggedIn
+    width 320px
+    padding 0 5px
+    @media only screen and (min-width: 1440px)
+      width 375px
+  .betslipTabs
+    flex 1
+    justify-content space-around
+    display flex
+    align-items center
+    &.noHistory
+      justify-content flex-start
+      &.loggedIn
+        flex 0
+        .tab
+          min-width 110px
+          
+  .btn
+    background-color transparent !important
+    min-width unset
+    margin-left auto
+    margin-right 0
+    &:focus
+    &:active
+      box-shadow none !important
+    &:before
+      background-color transparent !important
+      transition none !important
+    .ripple__container
+      display none !important
+  .btn__content
+    font-weight normal !important
+    font-size 16px
+    padding 0 !important
+  .pd-icon
+    margin 0 5px
+    font-size 12px
+    color #fff
+  .badge
+    font-size 12px
+    margin-left 5px
+  .tab
+    flex 1
+    text-align center
+    padding 5px 0
+    a
+      color #fff
+      font-size 14px
+      font-family: 'Open Sans SemiBold'
+    &.active
+      background #fff
+      // padding 5px 0
+      // margin 0 5px
+      a
+        color #000
+      .badge
+        background #dadbdf !important
+        color #2a77aa
+.toggleBetslipColumn:not(.loggedIn)
+  .betslipTabs .tab.active
+    background transparent !important
+    a
+      color #fff
+    .badge
+      background #fff !important
+      color #ff671f
+
+.betslip-page
+  background #fff
+  // padding-bottom 20px
+  position unset !important
+  overflow unset !important
+  @media tablet-and-above
+    margin-bottom 50px
+  &.betslip-empty
+    background #fff
+    min-height 50vh
+    @media tablet-and-above
+      margin-bottom 20px
+  .betslip-page-header
+    background  #fff
+    border-radius 4px 4px 0 0
+    overflow hidden
+    .tab a
+      color #06283b
+      @media mobile-big-and-below
+        color #fff
+
+  .betslipHeader
+    border-radius 4px 4px 0 0
+    .tab
+      color #000
+      background-color #f2f2f2
+      border 2px solid #fff
+      border-bottom-width 1px
+      border-left-width 1px
+      margin 0
+      border-radius 0
+      font-family 'Open Sans SemiBold'
+      // box-shadow inset 0px 0px 8px 0px rgba(0, 0, 0, 0.15)
+      a
+        color: #000 !important
+      &.active
+        box-shadow none
+        background #ffffff
+        border-bottom 0px
+        color #2A77AA
+        a
+          color #2A77AA !important
+
+.dialog-betslip
+  padding-top 0
+  .betslip-page
+    .betslipHeader
+      margin 0
+    .your_receipt
+      color #fff
+    &.bet_placed_sucessfuly
+      background #fff
+      .mobile_betslip
+        top 62px
+  .mobile_betslip
+    top 65px
+    height calc(100% - 115px)
+    left 0px
+    right 0px
+    margin 0px
+    .SBbetSlip
+      margin 0 5px
+      @media mobile-big-and-below
+        margin 0 5px
+    .bets
+      background #fff
+      padding-top 5px
+  .betslip-page
+    background #0b4da1
+    height 100%
+    &.bet_placed_sucessfuly
+      .mobile_betslip
+        height 100% !important
+      .betslip-page-header
+        margin 0
+        border-radius 0px !important
+    .betslip-page-header
+      .preheader
+        display flex
+        justify-content space-between
+        flex-direction row
+        height 40px
+        align-items center
+      .betslip_balance
+        flex-direction row
+        color #AABDD1
+        padding-top 5px
+        align-items center
+        margin 0 5px
+        .pd-icon
+          padding-right 5px
+      .close
+        min-width auto
+        margin-left auto !important
+        .icon
+          color #AABDD1
+        .btn__content
+          padding 0
+          margin 0 5px
+    .betslip-page-header
+      border-radius 0px !important
+      background  #004c97 !important
+      margin 5px
+      overflow hidden
+      &.user_logged_in
+        top 40px
+      .tab
+        min-height 52px
+        padding 5px
+        flex 1
+        a
+          flex-direction row
+          text-transform uppercase
+        .badge
+          background #fff
+          margin-left 5px
+          border-radius 50%
+        &.active
+          background #ff671f !important
+          a
+            background #ff671f !important
+            border-radius 5px
+            color #fff
+            font-weight normal
+          .badge
+            background #fff !important
+            color #ff671f
+      &:not(.user_logged_in)
+        .v-icon
+          color #fff
+        .tab
+          flex auto
+          &.active
+            a
+              color #fff
+              .badge
+                background #fff !important
+                color #ff671f
+    .betslipHeader
+      border-radius 4px 4px 0 0
+      .tab
+        color #000
+        background-color #f2f2f2
+        border 2px solid #fff
+        border-bottom-width 1px
+        border-left-width 1px
+        margin 0
+        border-radius 0
+        &:first-child
+          border-radius 0
+        &:last-child
+          border-radius 0
+        a
+          color #626871 !important
+          text-transform uppercase
+          font-size 12px
+        &.active
+          box-shadow none
+          background #ffffff
+          border-bottom 0px
+          color #2A77AA
+          a
+            color #2A77AA !important
+
+    .preheader
+      display flex
+      justify-content space-between
+      flex-direction row
+      height 40px
+      align-items center
+    .betslip_balance
+      flex-direction row
+      color #fff
+      padding-top 5px
+      align-items center
+      margin 0 5px
+      .pd-icon
+        padding-right 5px
+    .close
+      min-width auto
+      margin-left auto !important
+      .icon
+        color #AABDD1
+      .btn__content
+        padding 0
+        margin 0 5px
+.action-btns
+  @media mobile-big-and-above
+    border 0px !important
+    background transparent !important
+  .btn.primary-btn
+    background-color #004c97 !important !important
+    &:hover
+      background-color #2a77aa !important
+      opacity 0.8
+  .acceptChanges
+    background-color #2a77aa !important
+  .header-SING
+    color #004c97
+.betslip-empty
+  .action-btns
+    border 0px !important
+    background transparent !important
+.bets
+  .singles
+    // border-top 1px dashed #2a77aa
+  .header-PARLAY
+    display none
+.bsSelection
+  &.isClosed
+    .stake_price
+      .price
+        .price_title
+          word-spacing 9999px // forces "CLOSED MARKET" text to break between words
+  .isLive
+    background #E70E37
+    color #ffffff
+    font-style italic
+    padding 0 5px
+    font-size 11px
+    margin 1px
+    font-weight 600
+    &:before
+      display none
+  .selection
+    border 2px solid #dadbdf
+    .columns
+      padding 10px 5px
+      .pd-icon
+        color #051E41
+    .event-name-inner
+      justify-content  space-between
+      // height 30px
+      align-items flex-start
+      .name
+        flex-grow unset
+      .market-name
+        font-size 11px
+        display inline-block
+        font-weight normal
+      .currenthandicap
+        color #157cc1
+        font-weight 600
+        padding 0
+        margin 0
+      .price
+        background #157cc1
+        color #ffffff
+        border-radius 5px
+        padding 3px 5px
+        font-weight 600
+        display block
+        min-width 40px
+      .pd-icon
+        color #051e41
+  .selection .event-name
+    background-color #000
+    border 0px
+    color #fff
+    font-weight normal
+    justify-content space-between
+    border-radius 5px
+    margin 0 -2px
+    .pd-icon
+      margin-right 5px
+    .btnX
+      margin-right 0
+      .pd-icon
+        margin-right 0px
+        margin-left 5px
+    .btnToggleVisibility
+      &:focus
+      &:active
+          outline none !important
+          border none !important
+          .v-icon
+            outline none !important
+            border none !important
+    .eventname
+      span
+        display inline
+    .market-name
+      color #fff
+      font-size 11px
+      display inline-block
+      text-align right
+    .currenthandicap
+      color #157cc1
+  .stake_price
+    display flex
+    .price
+      background #157cc1 !important
+      color #fff
+      width 50%
+      height 50px
+      border-radius 0px
+      margin 0 0px 0 5px
+      text-align center
+      display flex
+      flex-direction column
+      align-items center
+      justify-content center
+      font-weight 600
+      font-size 14px
+      .price_title
+        font-weight normal
+        font-size 12px
+  .selection
+    .stake-n-return
+      padding-top 0
+  .money-input
+    border-radius 5px
+    border 1px solid #939EAE
+    height 50px
+    .label-txt
+      text-transform uppercase
+  .stake-line > span
+    margin-right 0
+    padding 0
+  .stake
+    .money-input
+      border-right-style dashed
+  .returns
+    .money-input
+      border-left 0px
+  .bs_right
+  .bs_left
+    display flex
+    align-items center
+  .bs_left
+    .igt-icon
+      padding-right 5px
+  .bs_right
+    .v-icon
+      padding-left 5px
+
+
+  .bets
+    .header-SING
+      .betslip-tab-title
+        color #ff671f
+.bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-1
+.bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-2
+.bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-3
+.bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-4
+.bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-5
+.bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-6
+.bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-7
+.bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-8
+  .selection
+    border-color: #157cc1 !important
+    .event-name
+      border-color: #157cc1 !important
+      background-color: #157cc1 !important
+.application
+  .SBbetSlip
+    .RR
+    .TEASER
+      .column-left
+        margin-right 5px !important
+      .bsSelection
+        .selection
+          margin 5px 0!important
+          border-radius 5px !important
+      .bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-1
+      .bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-2
+      .bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-3
+      .bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-4
+      .bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-5
+      .bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-6
+      .bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-7
+      .bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-8
+        .selection
+          border 1px solid #157cc1 !important
+          .event-name
+            border-color: #157cc1 !important
+            background-color: #157cc1 !important
+      .bsSelection:not(.S):not(.isClosed):not(.isSuspended):not(.interRelated-1):not(.interRelated-2):not(.interRelated-3):not(.interRelated-4):not(.interRelated-5):not(.interRelated-6):not(.interRelated-7):not(.interRelated-8)
+        .selection
+          padding-left 0px !important
+          .header-changed
+            margin-left 0px !important
+      .bsSelection:first-child
+        .selection
+          margin: 0
+          border 2px solid #dadbdf !important
+      .bsSelection.isSuspended:first-child
+        .selection
+          border 2px solid #dadbdf !important
+      .sport-container.info-msg-on
+        .teaserSelection.last
+          .selection
+            border-radius 5px !important
+    .isClosed .selection-price .price,
+    .isClosed.isSuspended .selection-price .price,
+    .isSuspended .selection-price .price
+    .isNR .selection-price .price
+      display block
+      font-weight normal !important
+      font-size 12px !important
+
+
+.allowedRR
+  .betType
+    margin 5px 0
+    border-radius 5px
+.betType
+  border 2px solid #dadbdf !important
+  background #fff !important
+  border-radius 0px
+.header-TEASER
+  .teaser_first
+    color #fff !important
+    &:after
+      content ":"
+.header-RR.rr_title
+  color #fff !important
+
+.header-RR
+.title-parlay
+.header-TEASER
+  background #0b4da1
+  color #fff !important
+  text-transform uppercase
+  padding 10px 12px !important
+  border-radius 0px
+  margin -2px -2px 0 -2px
+.parly_first
+  color #ff671f !important
+  &:after
+    content ":"
+.bet_content
+  display flex
+  align-items center
+.betType-RR
+.betType-Parlay
+  .bet_content
+    align-items normal
+    .odds_div
+      margin-top 5px
+      margin-bottom 5px
+.odds_div
+  background #157cc1
+  color #fff !important
+  width 50%
+  height 50px
+  border-radius 0px
+  margin 0 0px 0 5px
+  text-align center
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  font-weight bold
+  font-size 14px
+  .price_title
+    font-weight normal
+    font-size 12px
+    text-transform uppercase
+    font-family 'Open Sans Bold'
+  .odds
+    color #fff !important
+.stake-n-return
+  .money-input
+    border-radius 5px
+    border 1px solid #939EAE
+    height 50px
+    &.focused
+      border-color #ff671f
+      label
+        color #ff671f
+    .label-txt
+      text-transform uppercase
+      font-size 11px
+  .stake-line > span
+    margin-right 0 !important
+    padding 0
+  .stake
+    .money-input
+      border-right-style dashed
+  .currency
+    bottom 2px !important
+  .returns
+    .money-input
+      border-left 0px
+.stake-n-return
+  .stake-n-return
+    padding 0!important
+
+.singles .header-SING.focused
+.singles .header-SING.non-empty
+  margin-top 0px !important
+  padding-top 8px !important
+  margin-bottom 0px !important
+.stakeAll
+  height 30px
+  padding-right 8px
+  .multiSinglesStake
+    .money-input
+      background #fff !important
+      padding 5px !important
+      .clear-btn
+        bottom 5px !important
+      &.input-only
+        border 1px solid #004c97
+        border-radius 0px
+        min-width 80px !important
+        height 30px
+      label
+        text-align center !important
+        color #fff
+        width 50% !important
+        background #004c97
+        color #fff !important
+        border-radius 0
+        display flex !important
+        align-items center
+        justify-content center
+        height 28px
+        padding 0 !important
+        top 0 !important
+        font-size 11px
+        line-height 11px
+        text-transform uppercase
+        font-weight normal
+      input
+        width 50%
+        display flex
+        margin-left auto
+    .money-input.input-only.focused
+    .money-input.input-only.non-empty
+      padding: 0px !important
+      top 0px !important
+      border 1px solid #004c97 !important
+      border-radius 02px !important
+      margin-top 0px !important
+      margin-bottom 0px  !important
+      input
+        width 50% !important
+        height 30px
+        border 0
+        padding 5px 5px 5px 15px !important
+        background transparent
+      .currency
+        bottom 0px
+        left 52%
+        color #004c97
+      label
+        padding 0 !important
+        top 0 !important
+        left 0 !important
+
+.betslip_total_cost
+  color #003865
+  text-align left
+  font-size 14px
+  display flex
+  justify-content space-between
+  align-items center
+  padding-bottom 10px
+  .line1
+    font-size: 14px
+    color: #003865
+.betslip_actions
+  border 0px !important
+  @media mobile-big-and-below
+    background #fff
+  button
+    .loader-container
+      top 2px
+      .circle-loader
+        width 25px
+        height 25px
+.betslip_footer_bottom
+  display flex
+  justify-content space-between
+  align-items center
+  text-transform uppercase
+  padding-bottom 10px
+  .preference-switch
+    margin 0 !important
+    padding 5px 0 !important
+    background none !important
+    label
+      color #888
+    .checkbox.input-group
+      .input-group__input
+        .icon--selection-control
+          color #888
+  .delALL
+    border 0px !important
+    background none !important
+    width auto !important
+    min-height auto !important
+    span
+      color #0b4da1
+      text-transform uppercase
+      font-size 12px
+      font-weight 600
+    .pd-icon
+      color #939EAE
+      font-size 22px
+      @media mobile-big-and-below
+        color #2a77aa
+
+/*Betsli Messages*/
+.betslip-page
+  .goodLuck_text
+    color #2471B7
+    text-transform uppercase
+    font-size 16px
+    font-weight bold
+  .bet_placed_img
+    padding-top 100px
+    max-width 100px
+  .bet_placed
+    .action-msg h3
+      color #2471B7
+      text-transform uppercase
+      margin-bottom 0
+    .action_buttons
+      .btn
+        border-radius 25px
+        &.primary
+          background #2471b7 !important
+          border 1px solid #2471b7 !important
+          // color #fff !important
+        &.secondary
+          color #2471b7 !important
+          border 2px solid #D7DBE2 !important
+          // color #fff !important
+    .bet_placed .totals
+      border-top 0px
+      @media mobile-big-and-below
+        bottom 150px
+      div
+        margin 0
+        line-height 20px
+        label
+          color #2471b7
+          text-align left
+        .value
+          color #2471b7
+    .potential-return
+      .value
+        color #0b4da1 !important
+  .msg:not(.REGULAR):not(.TEASER):not(.RR)
+      padding: 16px 12px
+      border-radius: 0px
+      display: flex
+      text-align: left
+      font-size: 14px
+      line-height: 16px
+      font-weight normal
+      align-items: center
+      justify-content: left
+      &.info
+        background-color: #157cc1 !important
+        color: #fff !important
+        border 0px
+        .v-icon
+          color #fff
+          padding-right 5px
+      &.inRefferal
+        border-radius: 4px !important
+        background-color: #FFE5CF !important
+        color: #D36000 !important
+        border: 0
+      &.bet_actions_msg
+        flex-direction: column !important
+
+.betslip-page
+  .teaserSelection
+    border 0px !important
+  .bsSelection
+    .checkbox
+      color #0b4da1 !important
+  .sport-container
+    border 0px !important
+    &.info-msg-on
+      border 0px !important
+      .teaser-option-container
+        border-bottom 0px !important
+        background-color #0b4da1 !important
+        border-radius 0
+        h2 
+          color #fff
+.teaser-option-container
+  border-bottom 0px !important
+  background-color #0b4da1 !important
+  border-radius 0
+  .teaser-option
+    background-color #0b4da1 !important
+    border 1px solid #fff
+    border-radius 25px
+    .value
+      border-color #ff671f
+      min-width 120px
+      .spread-label
+        color #aabdd1
+        text-transform uppercase
+        font-size 12px
+      .spread
+        color #fff
+    .icon
+      color #ff671f
+    .btn.btn--disabled
+      .icon
+        opacity 0.5 !important
+        color #ff671f !important
+
+.betslip-page
+  .errorMsg
+    position relative
+    border-radius 0
+    background-color #FAE2E2
+    color #FF4B4B
+    text-align left
+    font-weight normal
+    padding: 10px 10px
+    margin -12px -12px 12px -12px
+    a
+      color #FF4B4B !important
+
+    &.HAS_ERRORS
+      background-color #FAE2E2
+        font-weight bold
+      a
+        color #FF4B4B !important
+    &.NO_STAKES,
+    &.NO_BET_TYPES,
+    &.NO_LIVE_TEASERS_ALLOWED
+      background-color #FAE2E2
+    &.CLOSED_or_SUSPENDED
+      background-color #FFE5CF
+      color #D36000
+    .igt-icon > span
+      margin-right: 12px
+  .not-geolocated
+    .pls-wait
+      color #2a77aa
+      font-size 16px
+    .verify
+      color #2a77aa
+      font-size 14px
+.stmnt-bet .legribbon-void
+  display none
+/*********************************  BETSLIP END ********************************/
+
+/******************************** GEOLOCATION***********************************/
+.overlay-dialog
+  border-radius 5px
+  h1
+    color #FF4B4B !important
+  .geo-content
+    .buttons
+      .primary-btn-blue
+        border-radius 2px !important
+        margin auto
+        background #ff671f
+    .gc-link
+      color #ff671f !important
+    .geo-suggestion
+      color #FF4B4B !important
+.selection-core
+  .event-name
+    display flex
+    align-items center
+    justify-content space-between
+    .icon-trash-white
+      width 16px
+      height 20px
+    .bs_right
+    .bs_left
+      display flex
+      align-items center
+      justify-content space-between
+  .stake_price
+    display flex
+    .selection-price
+      background #157cc1
+      color #fff
+      width 50%
+      height 50px
+      border-radius 0px
+      margin 0
+      text-align center
+      display flex
+      flex-direction column
+      align-items center
+      justify-content center
+      font-family 'Open Sans Bold'
+      font-size 14px
+      max-width 100px
+      .price_title
+        font-weight normal
+        font-size 12px
+        text-transform uppercase
+    .stake-n-return
+      padding 0px 0px 0px 5px
+
+.selection-price
+  position relative
+  .price.priceUp
+    &:before 
+      font-family: 'Material Icons'
+      content: "\e5ce"
+      display inline-block
+      color #fff
+      width 20px
+      height 20px
+      background #ff671f
+      border-radius 50%
+      position absolute
+      left 5px
+      font-size 10px
+      line-height 20px
+      font-size 20px
+  .price.priceDown
+    &:before 
+      font-family: 'Material Icons'
+      content: "\e5cf"
+      font-size 20px
+      display inline-block
+      color #fff
+      width 20px
+      height 20px
+      background #ff671f
+      border-radius 50%
+      position absolute
+      left 5px
+      font-size 10px
+      line-height 20px
+      font-size 20px
+.RR
+  .selection-price
+    .price.priceUp
+    .price.priceDown
+      &:before 
+        left -30px
+
+.SBbetSlip
+.FastBetSlip
+  .currenthandicap
+    position relative
+    &.hcpUp
+      &:after 
+        font-family: 'Material Icons'
+        content: "\e5ce"
+        display inline-block
+        color #fff
+        width 20px
+        height 20px
+        background #ff671f
+        border-radius 50%
+        position absolute
+        font-size 10px
+        line-height 20px
+        font-size 20px
+        margin-left 3px
+.SBbetSlip
+.FastBetSlip
+  .currenthandicap
+    position relative
+    &.hcpDown
+      &:after 
+        font-family: 'Material Icons'
+        content: "\e5cf"
+        display inline-block
+        color #fff
+        width 20px
+        height 20px
+        background #ff671f
+        border-radius 50%
+        position absolute
+        font-size 10px
+        line-height 20px
+        font-size 20px
+        margin-left 3px
+
+.SBbetSlip
+  .currenthandicapT
+    position relative
+    &.hcpUp
+      &:before 
+        font-family: 'Material Icons'
+        content: "\e5ce"
+        display inline-block
+        color #fff
+        width 20px
+        height 20px
+        background #ff671f
+        border-radius 50%
+        position absolute
+        font-size 10px
+        line-height 20px
+        font-size 20px
+        left -30px
+.SBbetSlip
+  .currenthandicapT
+    position relative
+    &.hcpDown
+      &:before 
+        font-family: 'Material Icons'
+        content: "\e5cf"
+        display inline-block
+        color #fff
+        width 20px
+        height 20px
+        background #ff671f
+        border-radius 50%
+        position absolute
+        font-size 10px
+        line-height 20px
+        font-size 20px
+        left -30px
+
+.selection
+  &.isClosed
+  &.isSuspended
+    .selection-price
+      background #f2f2f2 !important
+      color #B9BDC6 !important
+
+.SBbetSlip .selection .selection-core .event-name .eventname span
+  display: inline
+  white-space: normal
+
+.FastBetSlip 
+  .igt-icon
+    .icon-available-for-bb
+    .icon-available-for-bb-white
+    .icon-available-for-bb-blue
+      width 22px !important 
+      margin 0 5px
+  .isForBB
+    .column-right
+      display flex !important 
+      align-items center  
+       
+
+.SBbetSlip
+  .isForBB
+    .igt-icon
+      .icon-available-for-bb
+      .icon-available-for-bb-white
+      .icon-available-for-bb-blue
+        width 22px !important
+  .SELECTIONS-RR
+    .isForBB
+      .eventname
+        display flex
+        justify-content flex-start
+        align-items center
+        .name-lines
+          flex 1 1 auto
+        .isForBB
+          padding-left 5px
+      .isLive
+        padding-left 5px !important
+.app-body:not(.boyd)
+  .SBbetSlip
+    .selection.REGULAR.isForBB
+      .column-right
+        display flex
+        justify-content flex-start
+        align-items center
+        .isForBB
+          padding-left 5px
+        

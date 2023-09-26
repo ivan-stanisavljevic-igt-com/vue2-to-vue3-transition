@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Betradar widget</title>
+
+    <link rel="stylesheet" media="screen" href="base.css">
+    <link rel="stylesheet" media="screen" href="style.css">
+  </head>
+  <body>
+    <!-- desktop div where sportradar will be injected -->
+    <div id="sr-widget" class="desktop">
+      <div class="score">
+        <!-- scoreboard widget will be inject here -->
+      </div>
+      <div class="lmt">
+        <!-- Live match tracker Pitch widget will be inject here -->
+      </div>
+    </div>
+    <!-- mobile div where sportradar will be injected -->
+    <div id="sr-widget" class="mobile"></div>
+
+    <script>
+      var id, isMobile, isLive, clientId, message, element, brandkey;
+
+      // Get params from parent
+      id = getParamValue('id')
+      isMobile = getParamValue('ismobile') == 'true'
+      isLive = getParamValue('isLive')
+      clientId = getParamValue('clientid')
+      brandkey = getParamValue('brandkey')
+      element = document.getElementById('sr-widget')
+
+      function getParamValue(paramName) {
+        var url, qArray;
+
+        url = window.location.search.substring(1); //get rid of "?" in querystring
+        qArray = url.split('&'); //get key-value pairs
+        for (var i = 0; i < qArray.length; i++) {
+          var pArr = qArray[i].split('='); //split key and value
+          if (pArr[0] == paramName)
+            return pArr[1]; //return value
+        }
+      }
+
+      element.classList.add(brandkey)
+
+      if (isLive) {
+        element.classList.add('live')
+      }
+
+      function widgetExtracted(widget, openWindow) {
+        widget.style.visibility = 'visible'
+
+        let el = document.getElementsByClassName('sr-lmt-plus__expand-wrapper')[0]
+        if (el) {
+          el.addEventListener('click', function () {
+            message = openWindow ? 'open' : 'close'
+            window.parent.postMessage(message, '*')
+            openWindow = !openWindow
+          })
+        }
+        return openWindow;
+      }
+
+      window.addEventListener('DOMContentLoaded', function () {
+        var openWindow = true;
+        var widget;
+
+        if(isMobile) {
+          setTimeout(function () {
+            // case: Fast network
+            widget = document.querySelector('#sr-widget .sr-lmt-plus__footer-wrapper')
+
+            if (widget != null) {
+              widget.style.visibility = 'visible'
+              widgetExtracted(widget, openWindow);
+            } else {
+              // case: Slow network
+              setTimeout(function () {
+                widget = document.querySelector('#sr-widget .sr-lmt-plus__footer-wrapper')
+                if (widget != null) {
+                  widget.style.visibility = 'visible'
+                  widgetExtracted(widget, openWindow);
+                }
+              }, 4000)
+            }
+          }, 3000)
+        } else {
+          setTimeout(function(){
+            if (document.querySelector('#sr-widget .sr-lmt-plus__footer-wrapper')) {
+              // document.querySelector('#sr-widget .sr-lmt-plus__footer-wrapper').style.visibility = 'visible'
+            }
+
+            widgetExtracted(widget, openWindow);
+          }, 4000)
+        }
+      })
+
+      // this is just a small condition to add the match id to the hash
+      if (window.location.hash) {
+        var matchIdVar = window.location.hash.replace('#', '')
+      } else {
+        // var matchIdVar = "13246054"
+        var matchIdVar = id
+      };
+
+      // this is the widget code from sportradar:
+      (function(a,b,c,d,e,f,g,h,i){a[e]||(i=a[e]=function(){(a[e].q=a[e].q||[]).push(arguments)},i.l=1*new Date,i.o=f,
+          g=b.createElement(c),h=b.getElementsByTagName(c)[0],g.async=1,g.src=d,g.setAttribute("n",e),h.parentNode.insertBefore(g,h)
+      )})(window,document,"script","https://widgets.sir.sportradar.com/" + clientId + "/widgetloader","SIR", {
+        language: "en",
+        theme: "betradardark",
+        clockType: "12"
+      });
+
+      // this adds the widget mobile version
+      if (isMobile) {
+        SIR('addWidget', '#sr-widget.mobile', 'match.lmtplus', {
+          layout: "single",
+          scoreboard: "extended",
+          momentum: "extended",
+          collapseTo: "momentum",
+          tabsPosition: "top",
+          disableWidgetHeader: true,
+          disableCrests: true,
+          matchId: id,
+          activeSwitcher: "scoreDetails"
+        });
+      } else {
+        // this adds the Live match Pitch widget desktop version
+        SIR('addWidget', '#sr-widget.desktop .score', 'match.lmtplus', {
+          layout: "single",
+          scoreboard: "extended",
+          momentum: "extended",
+          collapseTo: "momentum",
+          tabsPosition: "top",
+          disableWidgetHeader: true,
+          disableCrests: true,
+          matchId: id,
+          activeSwitcher: "scoreDetails"
+        });
+
+        // this adds the scoreboard widget desktop version
+        SIR('addWidget', '#sr-widget.desktop .lmt', 'match.lmtplus', {
+          layout: "single",
+          scoreboard: "disable",
+          momentum: "disable",
+          collapseTo: "disable",
+          tabsPosition: "top",
+          disableWidgetHeader: true,
+          disableCrests: true,
+          matchId: id,
+          activeSwitcher: "scoreDetails"
+        });
+      }
+    </script>
+  </body>
+</html>

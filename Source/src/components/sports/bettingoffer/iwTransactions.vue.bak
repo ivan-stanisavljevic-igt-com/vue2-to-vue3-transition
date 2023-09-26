@@ -1,0 +1,286 @@
+<template>
+  <div class="transaction-container" v-if="isLoggedIn && isHomePage">
+    <div class="sightline">
+      <div class="label">Sightline</div>
+
+      <div class="processing-wrapper">
+        <CircularRotate
+          rotationInterval="2000"
+          :mobileBigAndBelow="true"
+          class="inline-block"
+        >
+        </CircularRotate>
+        <span class="pw">{{ processingMessage }}</span>
+      </div>
+      <div>
+        <div>
+          <div v-if="sightlineNote" class="note">{{ sightlineNote }}</div>
+
+          <div v-if="isInstructionVerified" class="content">
+            <v-btn class="transaction deposit-sightline" color="success" @click="depositSightline">Deposit</v-btn>
+            <v-btn class="transaction withdrawal-sightline" color="success" @click="withdrawalSightline">Withdrawal</v-btn>
+            <v-btn class="transaction funding-sightline" color="success" @click="fundingSightline">Funding</v-btn>
+          </div>
+          <div v-else>
+            <div class="content">
+              <v-btn class="transaction" color="success" @click="startEnrollFlow" :disabled="isProcessing">Enroll</v-btn>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- invisible form for enrollment process -->
+    <v-form id="spanexpress" name="LaunchSpanExpress" :action="postUrl" method="post">
+      {{postUrl}}
+      <input name="MerchantID" id="MerchantID" :value="merchantID" />
+      <textarea name="IdentityToken" id="IdentityToken">{{ identityToken }}</textarea>
+      <input name="MemberNumber" id="MemberNumber" :value="memberNumber" />
+      <input name="FirstName" id="FirstName" :value="firstName" />
+      <input name="LastName" id="LastName" :value="lastName" />
+      <input name="PhoneNumber" id="PhoneNumber" :value="phoneNumber" />
+      <input name="Email" id="Email" :value="eMail" />
+      <input name="Address" id="Address" :value="address" />
+      <input name="City" id="City" :value="city" />
+      <input name="State" id="State" :value="state" />
+      <input name="Country" id="Country" :value="country" />
+      <input name="PostalCode" id="PostalCode" :value="postalCode" />
+      <input name="MerchantApplication" id="MerchantApplication" :value="merchantApplication" />
+      <input name="MerchantTransactionID" id="MerchantTransactionID" :value="merchantTransactionID" />
+      <input name="ReturnUrl" id="ReturnUrl" :value="returnURL"/>
+      <input name="MerchantName" id="MerchantName" :value="merchantName" />
+      <input type="submit"/>
+    </v-form>
+    <div class="cashinshop">
+      <div class="label">Cashinshop</div>
+      <div class="content">
+        <v-btn class="transaction withdrawal-cashinshop" color="success" @click="withdrawalCashinshop">Withdrawal</v-btn>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import { mapState, mapGetters } from 'vuex'
+import CircularRotate from '@/components/common/CircularRotate'
+import Screen from '@/components/mixins/Screen'
+
+export default {
+  components: {
+    CircularRotate
+  },
+
+  mixins: [Screen],
+
+  data () {
+    return {
+      isInitialized: false,
+      isRedirectedFromSightline: false,
+      IDMMSITXRequest: null,  // will be set only when redirected from Sightline with the value from query parameter
+
+      // enroll form data to be sent
+      redirectionData: undefined,
+      postUrl: undefined,
+      merchantID: undefined,
+      identityToken: undefined,
+      memberNumber: undefined,
+      firstName: undefined,
+      lastName: undefined,
+      phoneNumber: undefined,
+      eMail: undefined,
+      address: undefined,
+      city: undefined,
+      state: undefined,
+      country: undefined,
+      postalCode: undefined,
+      merchantApplication: undefined,
+      merchantTransactionID: undefined,
+      returnURL: undefined,
+      merchantName: undefined
+    }
+  },
+
+  computed: {
+    isHomePage () {
+      return this.$route.name === 'sports'
+    },
+
+    ...mapGetters(['isLoggedIn']),
+    ...mapState('sightline', {
+      isProcessingInstructionFetch: 'isProcessingInstructionFetch',
+      isProcessingEnrollment: 'isProcessingEnrollment',
+      isFinalizingEnrollment: 'isFinalizingEnrollment'
+    }),
+    ...mapGetters('sightline', {
+      isInstructionVerified: 'isInstructionVerified'
+    }),
+
+    isProcessing () {
+      return this.isProcessingInstructionFetch || this.isProcessingEnrollment || this.isFinalizingEnrollment
+    },
+
+    processingMessage () {
+      if (this.isProcessingInstructionFetch) {
+        return 'Verifying your Sightline instruction for transactions, please wait...'
+      }
+      if (this.isProcessingEnrollment) {
+        return 'Starting enrollment... You should be redirected to Sightline website now...'
+      }
+      if (this.isFinalizingEnrollment) {
+        return 'Checking enrollment status, please wait...'
+      }
+      return 'Please wait...'
+    },
+
+    sightlineNote () {
+      if (this.isInstructionVerified) {
+        return 'Your transaction instruction has been verified successfully and following operations are available:'
+      } else {
+        return 'Your transaction instruction has not been verified. Please enroll in order to enable transaction operations with Sightline.'
+      }
+    }
+  },
+
+  methods: {
+    depositSightline () {
+      this.$router.push({name: 'deposit-sightline'})
+    },
+    withdrawalSightline () {
+      this.$router.push({name: 'withdrawal-sightline'})
+    },
+    fundingSightline () {
+      this.$router.push({name: 'funding-sightline'})
+    },
+    withdrawalCashinshop () {
+      this.$router.push({name: 'withdrawal-cashinshop'})
+    },
+    startEnrollFlow () {
+      this.$store.dispatch('sightline/startEnrollmentFlow')
+        .then(redirectionData => {
+          console.log('redirection parameters:', redirectionData.result.Parameters)
+
+          if (redirectionData && redirectionData.result && redirectionData.result.Parameters && redirectionData.result.Url) {
+            this.postUrl = redirectionData.result.Url
+            let params = redirectionData.result.Parameters
+
+            this.merchantID = params.find(p => p.Name === 'MerchantID').Value
+            this.identityToken = params.find(p => p.Name === 'IdentityToken').Value
+            this.memberNumber = params.find(p => p.Name === 'MemberNumber').Value
+            this.firstName = params.find(p => p.Name === 'FirstName').Value
+            this.lastName = params.find(p => p.Name === 'LastName').Value
+            this.phoneNumber = params.find(p => p.Name === 'PhoneNumber').Value
+            this.eMail = params.find(p => p.Name === 'Email').Value
+            this.address = params.find(p => p.Name === 'Address').Value
+            this.city = params.find(p => p.Name === 'City').Value
+            this.state = params.find(p => p.Name === 'State').Value
+            this.country = params.find(p => p.Name === 'Country').Value
+            this.postalCode = params.find(p => p.Name === 'PostalCode').Value
+            this.merchantApplication = params.find(p => p.Name === 'MerchantApplication').Value
+            this.merchantTransactionID = params.find(p => p.Name === 'MerchantTransactionID').Value
+            this.returnURL = params.find(p => p.Name === 'ReturnURL').Value
+            this.merchantName = params.find(p => p.Name === 'MerchantName').Value
+
+            setTimeout(() => {
+              document.getElementById('spanexpress').submit()
+            }, 500)
+          }
+        })
+        .catch(err => {
+          // todo: handle error
+          console.log(err)
+        })
+    },
+
+    checkIfRedirectedFromSightline () {
+      let url = window.location.href
+      let IDMMSITXRequestExist = url.includes('?IDMMSITXRequest=')
+      if (IDMMSITXRequestExist) {
+        this.isRedirectedFromSightline = true
+        this.IDMMSITXRequest = Number(url.split('?IDMMSITXRequest=')[1])
+
+        // remove query params from url once we get it
+        // this way if page is refreshed we prevent processing as if it was redirected back from external page
+        this.$router.replace({'query': null})
+      }
+    },
+
+    initialize () {
+      if (this.isLoggedIn && !this.isInstructionVerified) {
+        this.isInitialized = true
+        if (this.isRedirectedFromSightline) {
+          this.$store.dispatch('sightline/completeEnrollmentFlow', { IDMMSITXRequest: this.IDMMSITXRequest })
+        } else {
+          this.$store.dispatch('sightline/fetchInstruction')
+        }
+      }
+    }
+  },
+
+  watch: {
+    isLoggedIn (newVal, oldVal) {
+      if (newVal) {
+        this.initialize()
+      }
+    }
+  },
+
+  mounted () {
+    this.checkIfRedirectedFromSightline()
+    this.initialize()
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+@import "~@/css/config";
+@import "~@/css/mixins";
+@import "~@/css/sportIcons";
+
+.transaction-container
+  border 1px solid #cfd6db
+  margin-top 48px
+  border-radius 2px
+  background-color white
+  @media mobile-big-and-below
+    margin-top 8px
+  .sightline,
+  .cashinshop
+    margin 20px 0
+    .label
+      color #21335a
+      font-size 15px
+      text-transform uppercase
+      text-align center
+    .content
+      display flex
+      justify-content center
+      background white
+      .transaction
+        flex 1
+        height 60px
+        margin 5px
+        max-width 200px
+        font-size 15px
+
+.note
+  color #21335a
+  text-align center
+  margin 4px auto
+
+.processing-wrapper
+  margin 8px auto
+  color: #fff
+  text-align center
+  display flex
+  justify-content center
+  align-items center
+  span
+    margin-left 5px
+  .pw
+    color #21335a
+
+.inline-block
+  display inline-block
+
+#spanexpress
+  display none
+
+</style>

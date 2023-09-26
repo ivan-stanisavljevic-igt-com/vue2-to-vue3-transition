@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="130px" height="140px" viewBox="0 0 130 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>used/C1_cash</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="65.6140669%" y1="36.7755102%" x2="28.3356616%" y2="63.2244898%" id="linearGradient-1">
+            <stop stop-color="#4CACFF" offset="0%"></stop>
+            <stop stop-color="#0181F1" stop-opacity="0.256501311" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="4" y="30" width="105" height="54" rx="9"></rect>
+        <filter x="-21.0%" y="-20.4%" width="141.9%" height="181.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="4" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.846382473   0 0 0 0 0.846382473   0 0 0 0 0.846382473  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMorphology radius="5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter2"></feMorphology>
+            <feOffset dx="0" dy="11" in="shadowSpreadOuter2" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="8.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.384227808   0 0 0 0 0.384227808   0 0 0 0 0.384227808  0 0 0 0.65 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#0181F1" stop-opacity="0.140652316" offset="0%"></stop>
+            <stop stop-color="#0181F1" stop-opacity="0.256501311" offset="100%"></stop>
+        </linearGradient>
+        <path d="M66.6073881,46.3926119 C72.464204,52.2494278 72.464204,61.7471656 66.6073881,67.6073881 C60.7471656,73.464204 51.2494278,73.464204 45.3926119,67.6073881 C39.535796,61.7471656 39.535796,52.2494278 45.3926119,46.3926119 C51.2494278,40.535796 60.7471656,40.535796 66.6073881,46.3926119" id="path-5"></path>
+        <filter x="-40.0%" y="-20.0%" width="160.0%" height="160.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="-3" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.11642055   0 0 0 0 0.312342658   0 0 0 0 0.61463648  0 0 0 0.139286495 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="-3" dy="3" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0.322795894   0 0 0 0 0.605242301  0 0 0 0.132402753 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="54.2841317%" y1="0%" x2="44.0558165%" y2="100%" id="linearGradient-7">
+            <stop stop-color="#4CACFF" offset="0%"></stop>
+            <stop stop-color="#0181F1" stop-opacity="0.256501311" offset="100%"></stop>
+        </linearGradient>
+        <path d="M55.4903382,65.4620278 C55.052273,65.4620278 54.6475907,65.443138 54.2769726,65.4060332 C53.9070358,65.3682537 53.5439118,65.3122591 53.1882819,65.2373747 C52.8333333,65.1624904 52.4817912,65.0653431 52.1336554,64.9452583 C51.7862009,64.8258481 51.4080887,64.6835004 51,64.5188897 C51.0599529,63.9798574 51.1621454,63.433404 51.3058962,62.8795297 C51.449647,62.3249807 51.6274619,61.7340015 51.8386597,61.1045682 C52.5499195,61.4041056 53.1923696,61.6253855 53.7666914,61.7677332 C54.3416945,61.9094063 54.893534,61.9809175 55.4228911,61.9809175 C56.1784343,61.9809175 56.7609315,61.8574595 57.1690202,61.6105436 C57.5771089,61.362953 57.7814939,60.9777371 57.7814939,60.4535466 C57.7814939,59.9893986 57.6036789,59.6338666 57.2487303,59.3869507 C56.8931005,59.1393601 56.4584417,58.9113338 55.9440728,58.7015227 L54.7422891,58.2076908 C54.2885544,58.0127217 53.8573021,57.7954896 53.4492134,57.5559946 C53.0411247,57.3164996 52.6895826,57.028431 52.3945869,56.6917887 C52.0995912,56.3544719 51.8652298,55.9577872 51.6915025,55.5010601 C51.5177753,55.0443331 51.430571,54.5019275 51.430571,53.8724942 C51.430571,52.5549345 51.7896073,51.5031804 52.5083612,50.7172321 C53.2264338,49.9312837 54.2204261,49.425983 55.4903382,49.20133 L55.4903382,47.1794526 C55.732875,47.1045682 55.9747306,47.0559946 56.2165862,47.0337317 C56.4584417,47.0114688 56.6628267,47 56.8290598,47 C56.995293,47 57.2030844,47.0114688 57.452434,47.0337317 C57.7017837,47.0559946 57.9402329,47.1045682 58.1671002,47.1794526 L58.1671002,49.1338666 C58.6964573,49.1932344 59.2292209,49.2910563 59.7660721,49.425983 C60.3029233,49.5602352 60.8738387,49.7322668 61.4788183,49.9420779 C61.3725381,50.9452583 61.0625542,52.0084811 60.5488666,53.1317463 C60.0344977,52.9070933 59.5283042,52.7195451 59.0289236,52.5697764 C58.5302242,52.4200077 57.8870928,52.3451234 57.1008919,52.3451234 C56.9046823,52.3451234 56.7118791,52.3565921 56.5224823,52.3788551 C56.3337669,52.4017926 56.1600396,52.4537394 56.0013006,52.5360447 C55.8425616,52.6190247 55.7137991,52.7310139 55.6156943,52.8733616 C55.5169082,53.0157093 55.4678558,53.2066307 55.4678558,53.4461257 C55.4678558,53.8799152 55.6231884,54.2057633 55.9331723,54.4229954 C56.2431562,54.6402274 56.5797101,54.8163069 56.9421529,54.950559 L58.2127462,55.4228026 C58.7264338,55.6170971 59.2101449,55.8343292 59.6638796,56.0738242 C60.1176143,56.3133192 60.5182088,56.6128566 60.8663446,56.9724364 C61.2137991,57.3313416 61.4897188,57.7732267 61.6941038,58.2974171 C61.8984888,58.8216076 62,59.4652082 62,60.2288936 C62,61.4418851 61.6716215,62.4821704 61.0135018,63.3510987 C60.3560634,64.2193524 59.4070358,64.8258481 58.1671002,65.1699113 L58.1671002,67.8205474 C57.9402329,67.8954318 57.7017837,67.9440054 57.452434,67.9662683 C57.2030844,67.9892059 56.995293,68 56.8290598,68 C56.6628267,68 56.4584417,67.9892059 56.2165862,67.9662683 C55.9747306,67.9440054 55.732875,67.8954318 55.4903382,67.8205474 L55.4903382,65.4620278 Z" id="path-8"></path>
+    </defs>
+    <g id="used/C1_cash" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(9.000000, -2.000000)">
+            <g id="Rectangle" transform="translate(56.500000, 57.000000) rotate(-45.000000) translate(-56.500000, -57.000000) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="#0181F1" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+            <g id="Fill-1" transform="translate(56.000000, 57.000000) rotate(-45.000000) translate(-56.000000, -57.000000) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                <use fill="url(#linearGradient-4)" fill-rule="evenodd" xlink:href="#path-5"></use>
+            </g>
+            <g id="Fill-3" transform="translate(56.500000, 57.500000) rotate(-50.000000) translate(-56.500000, -57.500000) ">
+                <use fill="#0181F1" xlink:href="#path-8"></use>
+                <use fill="url(#linearGradient-7)" xlink:href="#path-8"></use>
+            </g>
+        </g>
+    </g>
+</svg>

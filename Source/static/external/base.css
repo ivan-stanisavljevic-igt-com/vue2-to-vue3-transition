@@ -1,0 +1,137 @@
+body {
+  background-color: transparent;
+  font: 14px/22px BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,sans-serif;
+}
+
+#sr-widget {
+  width: 100%;
+}
+#sr-widget.mobile {
+  display: none;
+}
+
+/* display scoreboard and pitch next to each other */
+#sr-widget.desktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*justify-content: space-around;*/
+}
+#sr-widget .score, #sr-widget .lmt {
+  width: 50%;
+}
+
+/* remove the expand trigger from widget */
+#sr-widget .sr-bb .sr-lmt-plus__footer-wrapper {
+  visibility: hidden;
+}
+
+
+#list_soccer, #list_basketball {
+  color: #1f375b;
+  padding: 8px;
+}
+#list_soccer li, #list_basketball li {
+  padding: 16px 0;
+}
+#list_soccer a, #list_basketball a {
+  color: inherit;
+}
+
+.header {
+  height: 88px;
+
+  width: 100%;
+  background-image: linear-gradient(180deg, #0090FF 0%, rgba(0, 144, 255, 0) 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 200px;
+
+}
+
+.middle {
+  margin: 0 26px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 200px - 320px);
+
+}
+.banner {
+  height: 344px;
+  display: flex;
+  align-items: flex-end;
+}
+.tabs {
+  background: #082e45;
+  height: 56px;
+  width: 100%;
+  border-radius: 2px 2px 0 0;
+}
+
+.content {
+  background-color: #E5E8ED;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+}
+.bg {
+  content: "";
+  width: 100%;
+  height: calc(100% - 488px);
+  top: 488px;
+  position: absolute;
+  background: #E5E8ED;
+  z-index: -1;
+}
+
+.betslip {
+  width: 320px;
+}
+
+/* FIX */
+.sr-loader__container {
+  width: 360px
+}
+
+.sr-wwrap.srm-fullyloaded{
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width:1240px) {
+  input, select, textarea { font-size: 16px; }
+}
+/* only mobile hide the other two widgets*/
+@media screen and (max-width: 650px) {
+
+  #sr-widget.desktop {
+    display: none;
+  }
+  #sr-widget.mobile {
+    display: block;
+  }
+  .betslip {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+  }
+  .middle {
+    margin: 0;
+    width: 100%;
+  }
+  .banner {
+    height: auto;
+  }
+  /*#sr-widget .sr-bb .sr-lmt-plus__footer-wrapper {*/
+    /*display: block;*/
+  /*}*/
+}

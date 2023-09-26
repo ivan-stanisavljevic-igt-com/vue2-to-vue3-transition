@@ -1,0 +1,67 @@
+@import "~@/css/mixins"
+
+.clearfix
+  clearfix()
+
+.ir
+  ir()
+
+.text-overflow
+  text-overflow()
+
+.no-wrap
+  no-wrap()
+
+.hyphenate
+  hyphenate()
+
+.wrap-long-words
+  wrap-long-words()
+
+.scroll-x
+  scroll-x()
+
+.absolute-center
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3D(-50%, -50%, 0);
+
+.absolute-center-x
+  position: absolute;
+  left: 50%;
+  transform: translate3D(-50%, 0, 0);
+
+
+.absolute-center-y
+  position: absolute;
+  top: 50%;
+  transform: translate3D(0, -50%, 0);
+
+.noscroll
+  overflow: hidden !important;
+  position: relative;
+
+.scroll-off
+  scroll-off()
+
+
+.flip-image-x
+  transform: scaleX(-1);
+
+.flip-image-y
+  transform: scaleY(-1);
+
+.vertical-align
+  vertical-align-function()
+
+.round
+  round(5px)
+  &3
+    round(3px)
+  &5
+    round(5px)
+  &7
+    round(7px)
+  &10
+    round(10px)

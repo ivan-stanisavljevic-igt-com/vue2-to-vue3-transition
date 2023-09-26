@@ -1,0 +1,691 @@
+@import "config"
+
+headline-coupon-selection-width = 60px
+headline-coupon-selection-height = 37px
+headline-coupon-selection-margin = 2px
+headline-coupon-selection-border-radius = 4px
+headline-coupon-selection-price-font-size = 12px
+
+headline-coupon-selection-background-color = transparent
+
+headline-coupon-color-sport-default = #1B2C56
+headline-coupon-color-sport-football = #182955
+headline-coupon-color-sport-tennis = #206D2D
+headline-coupon-color-sport-baseball = #C9E9C6
+headline-coupon-color-sport-soccer = #91D4D1
+headline-coupon-color-sport-icehockey = #F3DF9A
+headline-coupon-color-sport-basketball = #EBC7C7
+
+headline-coupon-color-light = #fff
+headline-coupon-color-dark = #213158
+
+headline-coupon-icon-opacity = 0.08
+
+.headlines
+  // resets
+  &
+  .active
+    .headline-coupon
+      .names
+      .selectionprice
+      .value
+        background: transparent !important
+
+      .selection-wapper
+        background: headline-coupon-selection-background-color
+
+  .jumbotron
+    height: 100% !important
+
+  .headline-coupon
+  .headline-coupon .coupon
+  .headline-coupon .headline-coupon-markets    
+  .marketgroup
+    height: 100%
+    .coupon-event
+      background transparent !important
+  // reset end
+
+  // .headline-mobile
+  //   .carousel mobile
+
+
+  .headline-coupon.headline-coupon.headline-coupon.headline-coupon.headline-coupon
+    position: relative
+    .headline-coupon-markets
+      padding: 5px 10px
+      @media mobile-big-and-below
+        padding: 10px
+      .names.names.names.names.names.names
+        color: #fff !important
+        overflow: hidden
+      .outright-event-name
+      .more-button
+        display: none
+
+      .hheader.hheader
+        background: transparent !important
+        margin 0
+        h4
+        .head
+          color: headline-coupon-color-light 
+          text-transform: none
+          font-weight: normal
+          font-family 'Open sans Bold'
+          
+          .coupontitle
+            display: none
+
+        .markets-header
+        .big3-markets-header
+          margin: 0
+          display: flex
+          justify-content: flex-end
+          .markets-title
+            width: headline-coupon-selection-width !important
+            margin: 0 4px 0 0
+            line-height: 1.8 !important
+
+            @media mobile-big-and-below
+              line-height: 17px !important
+        .markets-header
+          display: flex
+          justify-content: flex-end
+        h4
+          margin: 0
+
+          @media mobile-big-and-below
+            &.big3-market-name
+              font-size: 11px !important
+        .head
+          padding: 0
+          display: flex
+          align-items: center
+          h4
+            font-family 'Open sans SemiBold'
+
+            @media mobile-big-and-below
+              font-size: 12px
+          .igt-icon
+          .font-icon
+            display: none
+
+        &.not-big3
+          .no-draw
+            // display: none
+      
+      .market-name
+        margin: 0
+        font-family 'Open sans Bold'
+        font-size: 15px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 5px
+        z-index 5
+        span
+          padding: 0 15px 0 0
+
+          &:last-child
+            padding: 0
+
+          &.event-name
+            font-size: 12px
+            font-weight: normal
+            font-family: "Open Sans Regular"
+
+        @media mobile-big-and-below
+          font-size: 13px
+
+      .single-coupon-footer
+      .more-markets
+      .more_bets
+        display: none
+      .event-info
+        .eventTitleWrapper
+          margin: 0
+          .eventTitle
+            height: 40px
+            &:last-child
+              margin: 0 0 5px
+            .name
+              height: auto !important
+        .eventTitle
+          color: headline-coupon-color-light
+          font-family 'Open sans SemiBold'
+          justify-content: center
+          line-height: normal
+          display: flex
+          flex-direction: column
+          margin: 0 0 5px
+          height: 34px
+
+          &:last-child
+            margin: 0
+
+          .name
+          .pitcher-name
+            line-height: normal
+            text-overflow()
+            white-space: normal
+            display: block
+            padding: 0 10px 0 0
+            font-weight: bold
+          
+          .pitcher-name
+            line-height: 1.2
+            color: #b1b1b1
+            font-size: 11px
+
+
+          @media mobile-big-and-below
+            font-size: 12px
+            display: flex
+            flex-direction: column
+        .showResult
+          display: none
+      .coupon-threeselections
+        .eventTitle
+          height 25px    
+      .market
+        .selection
+        .selections-mobile
+          .selection-wapper
+            border-radius: headline-coupon-selection-border-radius
+            .value
+              color: headline-coupon-color-light 
+              .sh.sh.sh.sh
+                display: flex
+                flex-direction: column
+                border-radius: 0
+              .currenthandicap 
+                .currenthandicap
+                .uo-currenthandicap
+                .had-value
+                  color: headline-coupon-color-light
+                  font-weight: normal
+                  line-height: normal
+
+                  @media mobile-big-and-below
+                    font-size: 11px
+              .selectionprice
+                color: headline-coupon-color-light
+                line-height: normal
+                font-size: headline-coupon-selection-price-font-size
+
+                @media mobile-big-and-below
+                  font-size: 11px
+            
+            &.selection-data
+              width: headline-coupon-selection-width
+              height: headline-coupon-selection-height
+              margin: headline-coupon-selection-margin
+
+              @media mobile-big-and-below
+                width: 63px
+                margin: 1px 2px
+                height: 37px
+        .selections-mobile
+          .selection-wapper
+            padding-left: 0
+            padding-right: 0
+            .value
+              .sh.sh.sh.sh.sh
+                background: headline-coupon-selection-background-color
+                border-radius: headline-coupon-selection-border-radius
+                border: 1px solid  #cbcbcb
+                
+                .selectionprice
+                  color: headline-coupon-color-light
+        .selection
+          .selection-wapper
+            border: 1px solid  #cbcbcb 
+
+        .active
+          .selection-wapper
+          .value
+            background: #fff 
+
+            .selectionprice
+              color: headline-coupon-color-dark
+
+            .currenthandicap 
+              .currenthandicap
+              .uo-currenthandicap
+              .had-value
+                color: headline-coupon-color-dark 
+
+          &.selections-mobile 
+            .selection-wapper 
+              .value 
+                .sh.sh.sh.sh.sh
+                  background: #fff 
+      .markets
+        &.single
+          .market
+            .selections
+              > .selection
+                margin-left: 0
+                margin-right: 0
+                width: auto
+              .selection.U
+              .selection.A
+                @media mobile-big-and-below
+                  margin-bottom: 0
+              .selection.O
+              .selection.A
+                @media mobile-big-and-below
+                  margin-top: 0
+        .markets
+          display: flex
+          .market
+            margin: 0
+      &.show-more-button
+        .more-button
+          display: inline-block
+          background: transparent
+          height: 25px
+          
+          .btn__content
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            background: #fff
+            min-width: 80px
+
+        .market
+          .time
+          .show-more-btn
+          .selections-mobile
+            display: none
+            
+          .selections-mobile
+            margin: 10px 0 0
+            padding-right: 5px
+            border: none !important
+            width: 100%
+            &:nth-child(-n+1)
+              display: flex
+
+            .selection-wapper
+              background: transparent
+
+            .value.value.value.value.value.value.value.value.value
+            .value.value.value.value.value.value.value.value.value .sh
+            .selection-wapper.selection-wapper
+              height: auto
+
+    .live-headline-coupon
+      position: relative
+      z-index: 1
+
+    .background
+      &.font-icon
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+
+    &.no-background
+      .headline-coupon-markets
+        display: flex
+        flex-direction: column
+        background-color: headline-coupon-color-sport-default
+        color: headline-coupon-color-light
+
+        // &.FOOTBALL
+        // &.NFL
+        //   background-color: headline-coupon-color-sport-football
+        // &.TENNIS
+        //   background-color: headline-coupon-color-sport-tennis
+        // &.BASEBALL
+        //   background-color: headline-coupon-color-sport-baseball
+        // &.SOCCER
+        //   background-color: headline-coupon-color-sport-soccer
+        // &.ICEHOCKEY
+        //   background-color: headline-coupon-color-sport-icehockey
+        // &.BASKETBALL
+        //   background-color: headline-coupon-color-sport-basketball
+
+        // &.BASEBALL
+        // &.SOCCER
+        // &.ICEHOCKEY
+        // &.BASKETBALL
+        //   color: headline-coupon-color-dark
+        //   .headline-coupon-header
+        //     color: headline-coupon-color-dark
+        //     border-bottom: dashed 1px headline-coupon-color-dark   
+
+        //   .hheader.hheader
+        //     h4
+        //     .head
+        //       color: headline-coupon-color-dark !important
+
+        //   .event-info
+        //     .eventTitle
+        //       color: headline-coupon-color-dark
+
+        .background
+          width: 100%
+          height: 100%
+          padding: 0
+
+          &.font-icon
+            &:before
+              opacity: headline-coupon-icon-opacity
+              position: absolute
+              top: 7px
+              right: 55px
+              font-size: 175px
+              color: headline-coupon-color-light
+
+              @media mobile-big-and-below
+                right: 55px
+
+            &.font-icon-icehockey
+            &.font-icon-mma
+              &:before
+                opacity headline-coupon-icon-opacity
+    .headline-coupon-header
+      color: headline-coupon-color-light
+      border-bottom: dashed 1px headline-coupon-color-light
+      display: flex
+      align-items: center
+      margin-bottom: 4px
+      font-size: 12px
+      z-index 5
+      h2
+        margin: 0
+        flex: 1 1 auto
+        font-weight: normal
+        font-size: 15px
+        padding-right: 15px
+
+        @media mobile-big-and-below
+          font-size: 14px
+      .time
+        flex: 0 0 auto
+        @media mobile-big-and-below
+          font-size: 12px
+        .live-box
+          background: #af010c
+          border-radius: 3px
+          color: #fff
+          font-style: normal
+          padding: 0 5px
+          font-size: 11px
+          margin: 1px
+          font-family: 'Open Sans Bold'
+    .coupon
+      font-family 'Open sans Bold'
+      display: flex
+      flex-direction: column
+      &.coupon.coupon.coupon.coupon
+        width: 100%
+      .hheader
+        flex-grow: 0
+        border: none
+      .event
+        display: flex
+        flex-grow: 1
+
+        .coupon-event-wrapper
+          width: 100%
+
+        .event-info
+          flex-grow: 1
+
+    .coupon-event
+      display: flex
+      padding: 0
+      .names.participants
+        flex-grow: 1
+
+  // &.login-headlines.login-headlines
+  //   width: auto
+  //   padding 0 !important
+  //   margin: 25px !important
+  //   .carousel
+  //     width: auto
+  //     height: auto
+  //     max-height: 100%
+
+  //     .jumbotron
+  //       position: static !important
+
+  //     .jumbotron__wrapper
+  //       display: flex
+  //       align-items: center
+  //       justify-content: center
+  //       width: auto
+  //       min-width: auto
+
+  //       .jumbotron__image
+  //         position: static;
+  //         max-width: 800px
+  //         max-height: 800px
+  //         transform: none
+  //         height: auto
+  //         width: auto
+  //         min-width: 0
+
+  //       .jumbotron__content
+  //         .close
+  //           position: absolute
+  //           top: 0
+  //           right: 0
+  
+  &.login-headlines.login-headlines.login-headlines
+    padding 0 !important
+    margin: 25px !important
+    height: 100%
+    background: transparent
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .carousel-wrapper
+      height: 100% !important
+      display: flex
+      align-items: center
+      justify-content: center
+    .v-carousel
+      height: auto !important
+      box-shadow: none
+      .v-window__container
+        height: auto !important
+      .v-image.v-carousel__item
+        height: auto !important
+        max-height 700px !important
+      .v-carousel__left
+        left: 15px
+      .v-carousel__right
+        right: 15px
+      img
+        max-width: 100%
+        max-height: 700px
+        display: block
+      .close.close.close.close.close
+        position: absolute
+        right: 10px
+        top: 14px
+        height: 41px
+        width: 41px !important
+        min-width: 41px
+        min-height: 41px
+        margin: 0
+        border-radius: 50%
+        line-height: 1
+        .v-btn__content
+          padding: 0
+          .v-icon
+            font-weight: normal
+            font-size: 24px
+            color transparent !important
+            background-image: url('~@/assets/images/icons/icon-close-grey.svg')
+            height: 21px
+            width: 21px
+    .single-headline
+      .v-carousel__prev
+      .v-carousel__next
+        display: none
+
+    .carousel-wrapper
+    .carousel
+      height: 100%
+
+.headlines-container
+  .headlines
+    position: relative
+
+  .headline-tiles
+    overflow: hidden
+
+    &.to-left
+      .controls
+        .button.left
+          display: none
+    &.to-right
+      .controls
+        .button.right
+          display: none
+
+    @media mobile-big-and-below
+      padding: 3px 4px
+      overflow-x: scroll
+
+    .scroll-container
+      height: 165px
+      display: flex
+      position relative
+      transition: 0.3s left
+      left: 0
+
+
+    button-height = 32px
+
+    .controls
+      @media mobile-big-and-below
+        display: none
+
+      .button
+        position: absolute
+        top: 50%
+        margin-top: -(button-height/2)
+        background: #fff
+        border-radius: 50%
+        border: solid 1px #CBCFD9
+        height: button-height
+        width: button-height
+        z-index: 2
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        user-select: none
+
+        .v-icon
+          color: #AF010C
+          font-size: 20px
+          position: relative
+
+        &.left
+          left: 20px
+          .v-icon
+            left: 3px
+        &.right
+          right: 20px
+          .v-icon
+            left: 2px
+
+    .item
+      flex: 0 0 365px
+      margin: 0 4px 0 0
+      border-radius: 3px
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      background-color: #1B2C56
+      overflow: hidden
+      cursor: pointer
+
+      &:last-child
+        margin: 0
+
+      @media mobile-big-and-below
+        width: 350px
+
+    @media only screen and (max-width: 370px)
+      .item
+        flex-basis: 315px
+
+      .scroll-container
+        height: 155px
+      
+      .headline-coupon.headline-coupon.headline-coupon.headline-coupon
+        .headline-coupon-markets
+          .market-name
+            margin-bottom: 2px
+
+.headline-dialog
+.login-headlines
+  .close
+    background: transparent
+  img
+    border-radius: 5px
+    border: solid 3px #ABABAB
+
+.headline-dialog
+  width: auto
+
+.app-body .headline-coupon
+  .selection .selection-wapper.selection-data
+    &.priceup
+      background-image none !important
+      background-color transparent !important
+      position relative
+      &:before
+        color #fff
+        background #249225
+      .value
+        .selectionprice
+          color #fff !important
+    &.pricedown
+      background-image none !important
+      background-color transparent !important
+      position relative
+      color #fff !important
+      &:before
+        color #fff
+        background #af010c
+      .value
+        .selectionprice
+          color #fff !important
+  .selection .selection-column.active .selection-wapper.selection-data,
+  .selection.active .selection-wapper.selection-data
+  .selections.active .selection-wapper.selection-data
+    &.priceup
+      background-image none !important
+      background-color #fff !important
+      &:before
+        color #fff
+        background #249225
+      .value
+        .selectionprice
+          color #1b2c56 !important
+    &.pricedown
+      background-image none !important
+      background-color #fff !important
+      position relative
+      color #1b2c56 !important
+      &:before
+        color #fff
+        background #af010c
+      .value
+        .selectionprice
+          color #1b2c56 !important
+  .selection .selection-wapper .value.suspended .v-icon
+    color #fff !important
+  .selection.active .selection-wapper .value.suspended .v-icon
+    color #1b2c56 !important

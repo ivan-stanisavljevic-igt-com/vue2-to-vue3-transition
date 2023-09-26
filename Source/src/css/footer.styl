@@ -1,0 +1,220 @@
+@import "config"
+
+$image-base-url = '~@/assets/images/icons/svg/'
+
+
+  footer
+    display flex
+    flex-direction column
+    border-top 1px solid #DCDFE9
+    background #fff
+    padding-bottom 70px
+    .footer-top
+      display flex
+      justify-content space-between
+      width 100%
+      //padding 0 24pxbackground-image
+      background #fff
+      padding-top 20px
+      .footer-top-right
+        display flex
+        flex-direction column
+        color #06283b
+        margin-right 20px
+        .social-icons
+          .navigation
+          .navigation-item
+            margin-left 10px
+          .site-navigation
+            .navigation
+              display flex
+              flex-direction row
+              justify-content flex-end
+
+        .fan-duel
+          font-size 16px
+          padding-top 20px
+          .location
+            padding-top 5px
+            font-size smaller
+            text-align right
+     .footer-top-left
+        display flex
+
+        .site-navigation
+          padding 20px
+          width 150px
+          h3
+            display inline !important
+            color: #1F375B
+            font-size 14px
+        .igt-icon
+          display none
+        .about
+          .navigation
+            ul
+              padding 0 !important
+
+       a:hover
+        border 1 px solid goldenrod
+
+        .help
+          margin-bottom 0
+
+       .about,
+       .help,
+       .more
+         align-items flex-start
+         margin-bottom 0
+
+
+      .navigation
+        .navigation-item
+          a
+            cursor: pointer;
+            color: #06283b
+            text-decoration: none;
+          a:hover
+            cursor: pointer;
+            color: #2396FC
+
+
+
+      .hide-icon-text
+        span
+          display none
+
+  .bottom-info
+    width 100%
+    background-color #fff
+    color #000
+    border-top 1px solid #DCDFE9
+    padding 20px 20px 0 20px
+    font-size 12px
+    text-align: center;
+    p
+      display block
+
+  .footer-bottom
+    width 100%
+    position relative
+    .back-to-top a
+      // background: transparent url($image-base-url + 'back-to-top-arrow.svg') center right no-repeat;
+      padding-right 20px
+      color: #818E95
+      text-decoration: none
+      cursor pointer
+
+      &:hover
+        color: #06283b
+
+    .back-to-top
+      padding-right  20px
+      padding-top  15px
+      padding-bottom 10px
+      position absolute
+      right 0
+      bottom 0
+      cursor pointer
+      @media mobile-big-and-below
+         padding-right  5px
+      .v-icon 
+        font-size 37px
+        color #fff
+        border-radius 50%
+        background #2C72CB
+        max-width 39px
+        @media mobile-big-and-below
+          font-size 27px
+          max-width 29px
+
+    ul
+      display flex
+      li
+        padding-right 7px
+
+
+@media mobile-big-and-below
+
+  footer
+    hr
+      display none
+  .footer-top
+    display flex
+    flex-direction column
+
+    .about
+      margin-left 5px
+    .footer-top-left
+      li
+        .navigation
+          padding-botom 10px
+    .footer-top-right
+      display flex
+      flex-direction row !important
+      justify-content space-between
+
+
+      .fan-duel
+          width 110px
+          margin-left 20px
+          .location
+            padding-top 5px
+            font-size smaller
+            text-align left
+  .bottom-info
+    flex-direction column
+    margin-bottom 0
+    padding-bottom 10px
+    .bottom-info-right
+      padding-top 10px
+      text-align left
+
+  .footer-bottom
+    flex-direction column
+    .back-to-top
+      text-align: center
+
+        /* iphone XS MAX */
+.os-ios
+  @media only screen and (min-device-width: 414px) and (min-device-height: 896px) and (-webkit-device-pixel-ratio: 3)
+    .footer-bottom
+      .back-to-top
+        padding 0 0 95px 0
+
+        /* iphone XS */
+.os-ios        
+  @media only screen and (min-device-width: 375px) and (min-device-height: 812px) and (-webkit-device-pixel-ratio: 3)
+    .footer-bottom
+      .back-to-top
+        padding 0 0 95px 0
+
+        /* iphone XR */
+.os-ios        
+   @media only screen and (min-device-width: 414px) and (min-device-height: 896px) and (-webkit-device-pixel-ratio: 2)
+    .footer-bottom
+      .back-to-top
+        padding 0 0 95px 0
+
+@media mobile
+  footer
+    .footer-top
+      padding 10px 20px
+      .footer-top-left
+        padding-left 20px
+      .about, .help, .more
+        .site-navigation.navigation-groups
+          padding 0px
+          width: 100px
+
+
+  .bottom-info
+    padding 20px
+    p:nth-child(1)
+      margin 0
+    p:nth-child(3)
+      margin-bottom 15px
+  .about,
+  .help,
+  .more
+    flex 1

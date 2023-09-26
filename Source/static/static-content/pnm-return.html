@@ -1,0 +1,71 @@
+<head>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+      color: #12341;
+      cursor: default;
+      font-family: 'Segoe UI';
+      font-size: 20px;
+    }
+    .container__button {
+      background-color: rgb(229, 234, 240);
+      color: #394a5c;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="container__title">Payment Complete! Thank you for making your deposit.</div>
+    <div class="container__button" onclick="redirect()">Return to Cashier</div>
+  </div>
+</body>
+<script>
+let isRedirectedFromPayNearMe = () => {
+  let returnUrl = window.location.search
+  console.log(`PayNearMeGateway queryString: ${returnUrl}`)
+  if (returnUrl.includes('amp%3B')) returnUrl = returnUrl.replaceAll('amp%3B', '')
+  return new URLSearchParams(returnUrl).get('pnm_order_identifier')
+}
+
+let isPayNearMePaymentCompleted = () => {
+  let returnUrl = window.location.search
+  if (returnUrl.includes('amp%3B')) returnUrl = returnUrl.replaceAll('amp%3B', '')
+  let exist = new URLSearchParams(returnUrl).get('payment') || new URLSearchParams(returnUrl).get('?payment')
+  return exist === 'true'
+}
+
+let getMobileAppPort = () => {
+  let returnUrl = window.location.search
+  console.log(`PayNearMeGateway queryString: ${returnUrl}`)
+  if (returnUrl.includes('amp%3B')) returnUrl = returnUrl.replaceAll('amp%3B', '')
+  return new URLSearchParams(returnUrl).get('mobile-app-port')
+}
+
+let redirect = () => {
+  window.location.href = `http://localhost:${getMobileAppPort()}/account/wallet-page`
+}
+
+let doPNMActions = () => {
+  if (isRedirectedFromPayNearMe()) {
+    // Web/Mobile Web method
+    window.top.postMessage({
+      data: 'closePNMIFrame',
+      URIqueryString: window.location.search
+    }, '*')
+    if (isPayNearMePaymentCompleted()) {
+      window.top.postMessage('navigate2PaymentCompletedPage', '*') // Web/Mobile Web method
+    } else {
+      redirect()
+    }
+  }
+}
+
+doPNMActions();
+</script>

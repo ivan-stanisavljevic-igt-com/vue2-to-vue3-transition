@@ -1,0 +1,761 @@
+@import "config"
+
+.main-column.account
+.page-content.account
+  .account_links
+    width 250px
+    background #0b4da1
+    .acc_header
+      color #fff
+      font-size 18px
+      font-family 'Open Sans SemiBold'
+      padding 0 16px
+      line-height 48px
+      background rgba(255,255,255,0.3)
+      border-radius 5px
+      margin-bottom 10px
+    .site-navigation
+      .navigation .navigation-item:after
+        border none !important
+      .navigation .navigation-item:last-child
+      .navigation .navigation-item:first-child
+        border-top 0px solid #aabdd1
+      .navigation-group
+        border-top 1px solid #aabdd1
+        padding 10px 0
+      .navigation-item
+        line-height 38px
+        &:hover
+          background none !important
+          a
+            font-family 'Open Sans SemiBold'
+            color #ff671f !important
+        .router-link-exact-active.router-link-active
+          font-family 'Open Sans SemiBold'
+          color #ff671f !important
+        a
+          color #fff
+  @media tablet-and-above
+    display flex
+
+.page-content.account:not(.loggedIn)
+   @media tablet-and-above
+      justify-content center
+
+.url-bethistory
+  .bethistorylink
+    font-family 'Open Sans SemiBold'
+
+.accpage
+  background-color #fff
+  max-width 800px
+  width 100%
+  margin 0 10px 10px 10px
+  font-size 14px
+  border-radius 4px
+  padding 40px
+  @media tablet-and-below
+    max-width 95%
+    margin auto
+    padding 20px
+  &.static-content
+    // margin auto
+  &.notloggedIn
+    margin auto
+  .txtable-wrapper
+    overflow-x: auto
+
+.accpage .ap-menu { max-width :90%; margin:0 auto; }
+.accpage .ap-menu { text-align:center; }
+.accpage ol { text-align: justify; }
+.accpage .ap-menu .ap-linkbut { display: block; margin: 5px auto; font-size:16px; line-height:24px; }
+.accpage .indent { margin-left: 30px; }
+.accpage .indent li { padding-left: 20px; }
+.accpage .to_ask { background: red; color: #fff; }
+.accpage .to_ask a { color: #fff; }
+.accpage .to_know { font-weight: bold; }
+.accpage .inplay_headline { font-weight: 400; }
+
+@media tablet-and-below {
+  .accpage { padding: 30px; }
+}
+
+@media tablet-and-below {
+  .accpage:not(.account-summary) { padding: 10px !important; }
+  .accpage.acc_summary_flow { padding: 0px !important; }
+  .url-joinUs .accpage.acc_summary_flow { padding: 10px !important; }
+  .static-content.accpage { padding: 30px; }
+}
+@media desktop-and-above {
+  // .accpage { padding: 50px; width: 800px; }
+  .accpage.bet-history { padding: 20px 50px; margin:0; }
+}
+.url-joinUs .accpage.acc_summary_flow h1
+  margin-bottom 10px !important
+.accpage.bethistory
+  padding 0px
+.accpage.bet-history
+  // padding 0px
+  @media mobile-big-and-below
+    font-size 12px !important
+    padding 20px 5px !important
+    max-width 100%
+    .stmnt-bets
+      padding 0 !important
+    .stmnt
+      border 0px !important
+.accpage
+  .add-funds
+    .generic-icon-note
+      .v-icon
+        display none
+    ul
+      padding-left 20px
+    li
+      text-align left
+      padding 3px 0
+    .main-column #form
+      max-width 100%
+  .PlayPlusImg
+    margin: auto
+    text-align: center
+    max-height: 55px
+    padding: 0 0 10px 0
+    display: block
+
+.url-verify-personal-data
+  .ctsform .control-block
+    overflow: hidden
+    text-overflow: ellipsis
+    display:block
+
+.igt
+  .accpage h2
+    font-size: 1.6rem
+    text-align center
+  .accpage h1
+    text-align center
+  .notification-preferences
+    .table_head
+      background #0b4da1 !important
+      color #fff !important
+.page-content.account
+  .account_links
+    .navigation-item
+      .igt-icon
+        display none
+.account_links
+  .igt-icon
+    width: 40px
+    text-align: center
+
+/**** Account summary General ******/ 
+.acc_summary_on
+  .account_links
+    .igt-icon > span
+      width 25px
+      height 25px 
+.acc_summary_flow
+  .v-progress-circular
+    color #0b4da1  !important
+  .close-account-page
+  .w2g-page
+    @media mobile-big-and-below
+      padding 10px
+  .transactions-history-page
+    .caca
+      @media mobile-big-and-below
+        padding 10px
+        background #fff
+  .expansion-container
+    .v-expansion-panel__container--active
+      padding-bottom 10px
+    .v-expansion-panel
+      .v-expansion-panel__body
+        .acc_verification
+          .verify
+            .mail-verify, .phone-verify
+              h2
+                background-color: #0b4da1
+                color: #fff
+              .verify-content
+                padding: 0
+                .account-page
+                  span
+                    display: block
+                    text-align: left
+                    font-size: 12px
+                    padding: 0 10px
+                    a
+                      text-decoration: none
+                      font-size: 16px
+                      font-weight: bold
+                  .control-block
+                    input, label 
+                      width: 95%
+                      margin: 0 auto
+                      text-align: left
+                  .vmsg.invalid
+                    text-align: left
+                    margin-left: 10px
+                  #confirmEmalByPinForm
+                    margin-top: -15px
+                    margin-bottom: 0
+                div
+                  padding: 0
+        .security-settings
+          padding: 0 10px 10px 10px
+          .component-container
+              .change-pass-component
+                width: 70%
+                margin: auto
+                border: 1px solid #0b4da1
+                @media mobile-big-and-below
+                  width: 100%
+                .page-info
+                  background #e5e5e5
+                  border-radius 5px
+                  padding 10px
+                  font-size 14px
+                  margin 5px
+                  @media mobile-big-and-below
+                    font-size 12px
+                h2
+                  font-size: 16px
+                  padding: 11px
+                  margin: 0
+                  text-align: left
+                  background-color #0b4da1
+                  color #fff
+                .reset-password 
+                  .control-block
+                    width: 95%
+                    margin: 0 auto
+                  .save-container
+                    margin-bottom: 5px
+                  .vmsg.invalid
+                    margin-left: 10px
+                    
+  .account-heading
+    padding 15px
+    margin-right: 0 !important
+    font-size: 16px
+    line-height: 14px
+    font-weight: bold
+    font-family: "Open Sans Bold"
+    border-bottom: 5px solid #e8e7eb
+    .igt-icon
+      padding 0 0 0 5px
+      margin-right 5px
+  .rg-title
+    padding 10px
+    margin-right: 0 !important
+    font-size: 14px
+    line-height: 18px
+    font-family: "Open Sans Regular"
+    border-bottom: 5px solid #e8e7eb
+  .expansion-container
+    .v-expansion-panel
+      margin: 0
+      box-shadow none
+      h1
+        font-size 18px
+        margin 0px
+        font-family: 'Open Sans Bold'
+        @media mobile-big-and-below
+          font-size 16px
+    .v-expansion-panel__header
+      height: 70px
+      padding: 12px 0px !important
+      @media mobile-big-and-below
+        padding: 12px 10px !important
+      .header-subtitle 
+        font-size: 14px
+        color: #777978
+        @media mobile-big-and-below
+          font-size: 12px
+      .v-icon
+        font-size 30px
+    .v-expansion-panel:last-child
+      .panel-bottom-border
+        margin 0px
+        margin-bottom: none
+    .panel-bottom-border
+      width: 100%
+      @media mobile-big-and-below
+        margin-left : 10px
+        margin-right : 10px 
+    .v-expansion-panel__body
+      .personal-info
+      .change-password-component
+      .transactions-history
+      .responsible-gaming-history
+      .playbalance
+      .acc_verification
+      .notification-preferences
+        @media mobile-big-and-below
+          padding 0 10px 10px 10px
+      .career-stats
+        @media mobile-big-and-below
+          padding 0 10px 14px 10px
+      .acc_verification
+        flex-direction: unset
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        @media mobile-big-and-below
+          display: block
+        .not-verified
+          margin-bottom: 10px
+        .verify
+          flex: 0 0 48%
+          justify-content: space-between
+          margin: 0 0 18px 0
+          @media mobile-big-and-below
+            margin: 0
+          .mail-verify, .phone-verify
+            padding: 0
+            margin 0
+            border: none
+            h2
+              padding: 11px
+              margin: 0
+            div
+              padding: 10px
+              text-align: center
+      .career-stats
+      .deposit-threshold
+        .dep-treshold-container
+          border: none
+          margin 0
+          padding-top: 0
+          p
+            border-radius: 5px
+            padding: 20px
+            margin: 0 100px
+            margin-bottom: 10px
+            text-align: center
+            border: 1px solid #368ffe
+            span 
+              font-family 'open Sans Bold'
+            @media mobile-big-and-below
+              padding: 10px
+              margin: 0
+              margin-bottom: 10px
+      .play-limits-container
+        @media mobile-big-and-below
+          padding 10px
+          .play-limits
+            padding 0
+      .play-limits
+        display flex
+        flex-wrap wrap
+        justify-content: space-between
+        @media mobile-big-and-below
+          padding 0 10px 10px 10px
+        .play-limits-container
+          padding: 0 !important
+          margin 0 0 5px 0 !important
+          flex 0 0 48%
+          @media mobile-big-and-below
+            flex 0 0 100%
+          h2
+            background #0b4da1
+            color white
+            margin: 0
+            padding: 11px
+            font-size: 16px
+            text-align: left
+            margin-top -1px
+          span
+            font-size: 12px
+            display: block
+            padding: 0 5px
+            line-height: 15px
+          span:first-of-type
+            padding-top: 5px
+          span:last-of-type
+            padding-bottom: 5px
+          br
+            display: none
+          .save-button-container
+            margin-bottom: 10px
+          .control-block
+            width: 95%
+            margin: 0 auto
+          .vmsg.invalid
+            margin-left: 5px
+        .save-button-container span
+          font-size 14px
+        .play-limits-header
+          background #0b4da1
+          display flex
+          align-items: center
+          justify-content: space-between
+          color #fff
+          .limit-info
+            background transparent
+            display: flex
+            align-items: center
+            .val
+              background transparent
+              font-family 'Open Sans SemiBold'
+              
+
+      .self-exclusion
+        @media mobile-big-and-below
+          // padding 0 5px 5px 5px
+        .temp-self-excl-container, .permanent-self-excl-container
+          padding: 0px !important
+          margin-bottom: 10px !important
+          h2
+            margin: 0
+            padding: 11px
+            font-size: 16px
+            text-align: left
+            background #0b4da1
+            color #fff
+          p:not(.generic-icon-note)
+            font-size: 12px
+            line-height: 15px
+            background: #E8E7EB
+            padding: 10px
+          .block-wrapper
+            display flex
+            justify-content: center
+            margin-bottom 5px
+            .control-block
+              // flex: auto
+              border 1px solid #1a9ddd 
+              margin-right 5px
+              margin-bottom 0
+              height 40px
+              .vdp-datepicker
+                ::placeholder
+                  color #1a9ddd 
+                color 
+                input 
+                  padding: 10px
+                  text-align: center
+            .v-btn
+              margin 0
+          .invalid2
+            margin-left: 5px
+            font-weight normal
+            text-align:  center
+          .perm-excl-info
+            margin: 0
+            border: none 
+            color: #ff5656
+            background: none
+            font-family: 'Open Sans Regular'
+            font-size: 14px
+            line-height: normal
+            @media mobile-big-and-below
+              font-size: 12px
+            .generic-icon-note
+              background: none
+              position: relative
+              top: -5px
+              @media mobile-big-and-below
+                top: 0
+          .v-input--selection-controls
+            margin-top: 0
+            .v-input__control
+              margin-left: 15px
+              .v-label
+                font-family: 'Open Sans SemiBold'
+        .permanent-self-excl-container
+          .save-button-container
+            margin-bottom: 10px
+    h1
+      font-size 18px 
+      margin 0px
+      font-family: 'Open Sans Bold'
+      @media mobile-big-and-below
+        font-size 16px  
+    .career-stats 
+      .car-sts-cointainer
+        border 0px!important
+        padding 0 !important 
+        margin 0 !important
+      .cld
+        padding: 8px 10px !important
+        &:nth-child(odd)
+          background #fff !important
+        &.total
+          font-size 16px !important
+          font-family 'Open Sans Bold'
+          font-weight normal
+          background #0b4da1 !important
+          color #fff
+          .amount
+          .type
+            font-family 'Open Sans Bold'
+        .amount
+          font-family 'Open Sans Bold'
+        .type
+          font-family 'Open Sans SemiBold'
+    .acc_verification
+      h2
+        font-size 16px
+    .playbalance 
+      .balance-info
+        font-size 14px
+        @media mobile-big-and-below
+          font-size 12px
+    .career-stats
+      .car-sts-info
+        background #e5e5e5
+        border-radius 5px
+        padding 10px
+        margin 0
+        font-size 14px
+        @media mobile-big-and-below
+          font-size 12px
+          margin 0
+
+  .notification-preferences
+    .form 
+      margin 0px 0 0 0 !important
+      max-width: 100% !important
+      border 0px !important
+    .info-text-phone
+      margin-top 10px
+    .info-text
+      background #e5e5e5
+      border-radius 5px
+      padding 10px
+      margin 0
+      font-size 14px
+      @media mobile-big-and-below
+        font-size 12px
+        margin 0
+    .notifications-holder
+      padding-left 10px
+      padding-bottom 15px
+    h3.category-name
+      text-align left
+      margin 0
+      border-bottom solid 1px #e2e2e2
+      font-size 14px
+      font-family 'Open Sans Bold'
+      @media mobile-big-and-below
+        font-size 14px
+    .category-table 
+      td
+        padding 5px 0
+        line-height normal
+      th
+        padding 0
+        font-weight normal
+        font-family 'Open Sans Bold'
+      .text-align-center
+        width 100px
+        @media mobile-big-and-below
+          width 60px
+    .category-table tr:not(.table_head)
+      border-bottom 0px
+    .table_head
+      padding 10px 5px 10px 10px
+      background #0b4da1
+      color #fff
+      font-size 16px
+      font-family 'Open Sans Bold'
+      th  
+        background transparent
+      .text-align-center
+        width 100px
+        @media mobile-big-and-below
+          width 60px
+    .v-input--checkbox
+      margin 0
+      padding 0
+      .v-messages
+        display none
+      .v-input__slot
+        margin 0
+        padding 0
+  .personal-info
+    .personaldetails-intro
+      background #e5e5e5
+      border-radius 5px
+      padding 10px
+      margin 0
+      font-size 14px
+      @media mobile-big-and-below
+        font-size 12px
+        margin 0
+    &.ctsform .vmsg.invalid 
+      top 0
+    .form-actions
+      padding 20px 0
+    .diss
+      background #fff !important
+      padding 0
+    h1  
+      padding 20px 0
+    &.ctsform
+      .control-block
+        display flex
+        align-items: center
+        margin-bottom: 0
+        height 45px
+        padding 0
+      .control-block input
+      .control-block select
+        font-family 'Open Sans Bold'
+        font-size 13px !important
+      .control-block label
+        font-size 13px !important
+        @media mobile-big-and-below
+          font-size 12px !important
+      .control-block input
+        width: auto
+        order: 1
+        flex 1 0 auto
+        padding 10px 5px
+      .control-block:not(.not-inline) select
+        width: 50%
+        order: 1
+        flex 1 0 auto
+        padding 10px 5px
+      .control-block.not-inline select
+        padding 25px 0px 10px
+      .control-block:not(.not-inline) label
+        height: 45px
+        line-height: normal
+        position static
+        padding: 0
+        display: flex
+        align-items: center
+        width: 29%
+        align-items: center
+        text-transform: none !important
+      .control-block.not-inline
+        height 50px
+        border-bottom 1px solid #ddd
+      .control-block.not-inline label
+        height 50px
+        text-transform: none !important
+        line-height 14px
+        width 80%
+        @media mobile-big-and-below
+          line-height 12px
+      .control-block.not-inline
+        select:focus + .control-label
+          width 100%
+      .edit_btn
+        order 2
+        color #fff !important
+        min-width auto
+        padding 5px
+        font-size 14px
+        padding 0px 15px
+        font-size 12px
+        margin 0
+        z-index 5
+      .control-label.inactive:after
+        background-color #ddd !important
+      select:focus + .control-label
+      input:focus + .control-label
+        background #fff !important
+      select:focus + .control-label + .edit_btn
+      input:focus + .control-label + .edit_btn
+        display none !important
+  .responsible-gaming-history
+  .transactions-history
+    .select-page
+      display flex
+      justify-content center
+      padding 10px 0
+    .calendar-container
+      border solid 1px #efefef
+      margin-bottom: 5px
+    .tablehead
+      background #0b4da1 !important
+      color #fff
+      min-height 40px
+      th  
+        background-color transparent !important
+        font-family 'Open Sans Bold'
+        padding: 10px 5px
+    .responsible-gaming-filter.datefilter
+    .transactions-filter.datefilter
+      padding 0
+    .txtable-wrapper
+      padding 0
+    .txtable 
+      tr:not(.tablehead):nth-child(odd)
+        background #E8E7EC !important
+      td    
+        padding 5px
+    .no-amount
+      background transparent !important
+  .datefilter
+    border none !important
+    .filter
+      border-radius 25px
+      border 1px solid #1f375b
+      color #1f375b !important
+      font-family 'Open Sans Bold'
+      padding 5px 10px
+    .date_range_text
+      font-family 'Open Sans Bold'
+      color #1f375b !important
+    .date_range
+      color #1f375b
+  .responsible-gaming-filter.datefilter
+    border-bottom 1px solid #e5e5e5 !important
+    border-radius 0px !important
+/**** Account summary General END ******/ 
+
+.no-data
+  text-align center
+  padding 20px 0
+  font-size 18px
+  @media mobile-big-and-below
+    font-size 16px
+
+/***** Payments *****/
+.payment__instrument
+  &.injected
+    .pi-item-wrapper
+      flex 1
+      display flex
+      min-height 60px
+    .payments__spinner
+      display flex
+      flex 1
+      justify-content center
+      align-items center
+  @media mobile-big-and-below
+    background-color #fff
+    padding 10px
+  .label
+    font-size 15px
+    text-transform uppercase
+    text-align center
+    padding-bottom 5px
+    font-family 'Open Sans SemiBold'
+  .desc
+    text-align center
+    margin-bottom 15px
+  .pi-btns-wrapper
+    display flex
+    justify-content center      
+  .go-back
+    display flex
+    justify-content center
+    align-items center
+    cursor pointer
+    margin-top 10px
+.payments__spinner
+  text-align center
+.payments__info
+  border 1px solid #e5e5e5
+  font-size 12px
+  border-radius 5px
+  padding 10px
+  margin 0 0 10px 0
+  cursor default

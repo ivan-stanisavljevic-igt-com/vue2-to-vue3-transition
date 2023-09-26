@@ -1,0 +1,38 @@
+grid(column-number = 3, padding = gap, method = 'inline-block')
+  if method == 'flex'
+    display: flex
+    flex-wrap wrap
+
+  .item
+    if method == 'float'
+      display block
+      float left
+    else if method == 'flex'
+      display block
+    else
+      display: inline-block
+      margin-right: -3px
+
+    width: (100% / column-number)
+    padding-bottom: padding
+    vertical-align: top
+
+    for i in (1..column-number)
+      padding-left = ((i - 1) / column-number) * padding
+      padding-right = ((column-number - i) / column-number) * padding
+
+      &:nth-child({column-number}n + {i})
+        padding-left: padding-left
+        padding-right: padding-right
+
+      if column-number > 1
+        &:nth-child({column-number}n + 1)
+          &:nth-last-child(-n + {column-number})
+          &:nth-last-child(-n + {column-number}) ~ .item
+            padding-bottom: 0
+      else if column-number == 1
+        &:nth-child(n)
+          padding-bottom padding
+          &:nth-last-child(n)
+          &:nth-last-child(n) ~ .item
+            padding-bottom padding

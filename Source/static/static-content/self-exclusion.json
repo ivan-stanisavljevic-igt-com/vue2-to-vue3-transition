@@ -1,0 +1,19 @@
+{
+  "waiverAndRelease": {
+    "paragraphOne": {
+      "text": "I hereby release and forever discharge the State of New Jersey, the Division of Gaming Enforcement and its employees and agents and all New Jersey Internet gaming licensed permit holders from any liability to me and my heirs, administrators, executors, and assigns, for any harm, monetary or otherwise, which may arise out of or by reason of any act or mission relating to this Request for Self-Exclusion from Internet Gaming activities, or my request for removal from the Self-Exclusion List for Internet Gaming activities including:<br>1) its processing or enforcement;<br>2) the failure of a New Jersey Internet gaming licensed permit holder to withhold gaming privileges from, or to restore gaming privileges to me;<br>3) permitting me to engage in gaming activity on sites of Internet gaming license permit holders while on the list of self-excluded persons; and<br>4) disclosure of the information contained in the self-exclusion request or list. except for a willfully-unlawful disclosure of such information."
+    }
+  },
+  "acknowledgment": {
+    "paragraphOne": {
+      "text": "I am voluntarily requesting exclusion from all New Jersey Internet gaming because I am a problem Internet gambler. I certify that the information I have provided is true and accurate, and that I have read and understand and agree to the walver and release included with this request for Internet self-exclusion. I am aware that my digital slgnature authorizes the Division of Gaming Enforcement to direct all New Jersey casino licensees to restrict my Internet gaming in accordance with this request and, unless I have requested in person to be excluded for life, until such time as the Division removes my name from the Internet self-exclusion list in response to my request to terminate my voluntary Internet self-exclusion. You cannot request the removal of your name from the Internet Gaming Self-Exclusion List until one year or five years, respectively, have elapsed from the date you submitted your Request Form. Additionally, your name will continue to remain on the Internet self-Exclusion List until you request Its removal. A request for the removal of your name from the Internet Gaming Self-Exclusion List must be done in person at the Division Offices (only). I am aware and agree that during any period of Internet self-exclusion any money or thing of value seized from me, or owed to me by, a casino licensee shall be subject to forfeiture."
+  },
+  "paragraphTwo": {
+    "text": "I acknowledge the fact that casino companies might enact responsible gaming programs that are stricter than New Jersey's Self-Exclusion program for Internet gaming. By way of example, a casino may enact a more restrictive responsible gaming program in which persons signing up for state self-exclusion Ilsts are banned from all of their casino properties worldwide for the length of the state self-exclusion terms. A casino ban may Include its gaming, hotel and entertainment venues. Current policies may automatically remove a person from Its worldwide ban upon being notified of that person's removal from a state self-exclusion list. The terms and existence of any such responsible gaming program could change, and the Division is not responsible for keeping you Informed of such changes."
+  },
+  "paragraphThree": {
+      "text": "I acknowledge that It may take up to 7 days in order for the self-exclusion to take effect on all state approved internet gaming permit holder sites."
+    }
+  },
+  "dgeUrl": "https://www.njportal.com/DGE/SelfExclusion/OptOut/Instructions"
+}

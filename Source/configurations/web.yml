@@ -1,0 +1,228 @@
+---
+# all parameters with default values can be omitted
+WEBCLIENT:
+# app-config.js
+  TRANSACTION_SERVER_CALL_MODE: 'API' # default value: 'API'
+  TRANSACTION_SERVER_API_VERSION: 'v1' # default value: 'v1'
+  TRANSACTION_SERVER_API_AUTO_REFRESH_TOKEN: 'false' # default value: 'false'
+  REGION: '1' # default value: '1'
+  IS_BUYBACK_ENABLED: 'false' # default value: 'false'
+  BUYBACK_REFRESH_INTERVAL: '30' # default value: '30'
+  SHOW_LEG_STATUS_IN_BETHISTORY: 'false' # default value: 'false'
+  BETSLIP:
+    config:
+      BETSLIP_CHECKBOXES:
+        REGULAR: 'false'
+        TEASER: 'false'
+        RR: 'false'
+      maxSno: '25' # default value: '25'
+      showEventTsStart: 'false' # default value: 'false'
+      showEventTsInBetHistory: 'false' # default value: 'false'
+      isFastBetEnabled: 'true' # default value: 'true'
+      calculateAsync: 'true' # default value: 'true'
+      updateBetSlipInt:
+        default: '60' # default value: '60'
+        live: '20' # default value: '20'
+      derivatives:
+        teasers:
+          mixed: 'false' # default value: 'true'
+          defaultActiveLevel: # default value: {}
+            NFL: 'T1'
+        pitchers:
+          enabled: 'true' # default value: 'true'
+        buyPoints:
+          enabled: 'true' # default value: 'true'
+      SGM:
+        enabled: 'true' # default value: 'true'
+      SGMPlus:
+        enabled: 'true' # default value: 'true'
+      specialOffers:
+        enabled: 'true' # default value: 'false'
+        translations: # default value: {}
+          'SpecialOffer.PARLAYINSURANCE.offer.Description': ''
+          'SpecialOffer.PARLAYBOOST.offer.Description': '%{Description}'
+    isFOPreferredInSingles: 'true' # default value: 'true'
+    isFPPreferredInMultiples: 'true' # default value: 'true'
+    priceTypesToIgnore: ['SGM'] # default value: ['SGM']
+  INJECT_SELECTIONS_FROM_3RD_PARTY:
+    abortIfHasSuspended: '!true' # default value: '!true'
+    allowSuspended: 'true' # default value: 'true'
+  SHOW_ZERO_HCP_AS_PK: 'false' # default value: 'false'
+  LANGUAGE: 'UK' # default value: 'UK'
+  CURRENCY: '$' # default value: '$'
+  TIME_ZONE: 'America/New_York' # default value: 'America/New_York'
+  BRAND: 'igt' # default value 'igt'
+  SIGHTLINE_IMG: 'true' # default value: 'false'
+  SHOW_BETHISTORY_IN_BETSLIP: 'true' # default value: 'false'
+  WELCOME_PAGE: 'false' # default value: 'false'
+  HIDE_PITCHER_NAME: 'false' # default value: 'false'
+  SHOW_TEAM_LOGOS: 'false' # default value: 'false'
+  transaction_history_amounts: # default value: ['AmountDebit', 'AmountCredit', 'CurrentBalance']
+    - 'AmountDebit'
+    - 'AmountCredit'
+    - 'CurrentBalance'
+    - 'PromoBalance'
+  sessionExpirationInterval: 'false' # default value: 'false'
+  TermsAndConditionsIsMandatory: 'true' # default value: 'true'
+  autologinAfterRegistration: 'true' # default value: 'true'
+  LIVE_SPORTS_IDS: # default value: []
+    - 'FOOTBALL'
+    - 'TENNIS'
+    - 'BASKETBALL'
+    - 'BASEBALL'
+    - 'SOCCER'
+    - 'NFL'
+    - 'ICE HOCKEY'
+    - 'GOLF'
+    - 'BOXING'
+    - 'MMA'
+    - 'DARTS'
+    - 'AUSRULES'
+    - 'MOTORSPORT'
+    - 'CRICKET'
+    - 'RUGBY'
+    - 'RUGBYUNION'
+    - 'RBLNRL'
+    - 'RUGBYLEAGUE'
+    - 'TABLE TENNIS'
+    - 'ESPORTS'
+    - 'COLL BSKT'
+  providersWithSeparateBetForWPS: ['LVDC'] # default value: []
+#  MICROBLINK: 'true' # renamed to SCAN_DRIVERS_LICENSE
+  SCAN_DRIVERS_LICENSE: 'true' # default value: 'true'
+  HeadlinesPeriodicalUpdateInterval: '400000' # default value: '300000'
+  ROUTERNAVGROUPS: # default value: [{'key': 'sports', 'isactive': 'true', 'exitpath': '/pm'}, {'key': 'pm', 'isactive': 'false', 'exitpath': '/'}]
+    groups:
+      - key: 'sports'
+        isactive: 'true'
+        exitpath: '/pm'
+      - key: 'pm'
+        isactive: 'false'
+        exitpath: '/'
+    navset: 'sports' # default value: 'sports'
+    statementset: 'sports' # default value: 'sports'
+  mediaServerTranslation: 'false' # default value: 'false'
+  customerContextUpdateInterval: '50000' # default value: '60000'
+  includeHouseRulesInRegistrationPage: 'false' # default value: 'false'
+  displayAllGamePeriodsAsBig3: 'false' # default value: 'false'
+  BR_WIDGET_ENABLED: 'false' # default value: 'false'
+  BR_WIDGET_VERSION: '' # default value: ''
+  BR_WIDGET_CLIENTID: '' # default value: ''
+  BR_WIDGET_SPORTS: [] # default value: []
+  DISABLE_PROPAGATE_HEADLINES_FROM_PARENT_BONODES: 'true' # default value: 'true'
+  userNameMinLength: '5' # default value: '5'
+  userNameMaxLength: '15' # default value: '15'
+  pwdMinLength: '8' # default value: '8'
+  pwdMaxLength: '15' # default value: '15'
+  HideDaysLeftInfo: 'false' # default value: 'false'
+  GooglePlacesApiKey: 'null' # default value: 'null'
+  GooglePlacesApiMobileAppEnabled: 'true' # default value: 'false'
+  IS_SEARCH_ENABLED: 'false' # default value: 'true'
+  SEARCH_NUMBER_OF_CHARS_TO_START: '3' # default value: '3'
+  BUILD_VERSION: '2.15.7' # default value: 'BUILD_VERSION'
+  INCOME_ACCESS_ENABLED: 'false' # default value: 'false'
+  BIG3_COLUMN_ORDER: # default value: {}
+    'NFL': ['PS', 'TP', 'ML']
+    'BASKETBALL': ['PS', 'TP', 'ML']
+    'BASEBALL': ['ML', 'TP', 'PS']
+    'ICE HOCKEY': ['ML', 'TP', 'PS']
+    'MMA': ['ML', 'TP', 'PS']
+  BIG3_IGNORE_SPORTTYPES: ['SOCCER', 'TENNIS', 'DARTS', 'MMA', 'BOXING'] # default value: ['SOCCER', 'TABLE TENNIS', 'TENNIS', 'DARTS', 'MMA', 'BOXING']
+  US_PRICE_FORMAT_SIMPLE_FRACTIONS: 'false' # default value: 'false'
+  DOWNLOAD_APPS_SINGLE_PAGE: 'false' # default value: 'false'
+  SESSION_TIME_POPUP: 'false' # default value: 'false'
+  DISABLE_JOIN_BUTTON: 'false' # default value: 'false'
+  loginUsernameType: 'MIXED' # default value: 'MIXED'
+  IP_CHECK_INTERVAL: '60000' # default value: '60000'
+  CHECK_ACTIVITY_INTERVAL: '180000' # default value: '18000'
+  MOBILE_BOTTOMNAV_MENUITEMS: ['HOME', 'SPORTS', 'BETSLIP', 'PROMOS', 'PROFILE'] # default value: ['HOME', 'SPORTS', 'BETSLIP', 'PROMOS', 'PROFILE']
+  APP_BIOMETRICS_AUTOMATIC_LOGIN: 'false' # default value: '15000'
+  CASHINSHOP_ROUND_TO_5_CENTS: 'true' # default value: 'true'
+  UseRafPromoCode: 'false' # default value: 'false'
+  LOGIN_USERNAME_PERSIST: 'false' # default value: 'false'
+  ROBO: 'false' # default value: 'false'
+  SHOW_APP_DOWNLOAD_POPUP_FOR_ROBO: 'false' # default value: 'false'
+  USE_ONLY_SHORT_PARTICIPANT_NAMES_ON_MOBILE: 'false' # default value: 'false'
+  PM_NEXT_RACE_TIME_TO_START_OFFSET: '60' # default value: '60'
+  SHOW_UNKNOWN_ERROR_MODAL: 'true' # default value: 'true'
+  appRating: 'true' # default value: 'false'
+  PLAYER_FAVORITES: 'false' # default value: 'false'
+  CONTESTS: 'true' # default value: 'false'
+  APP_RATING:
+    ENABLE: 'true' # default value: 'false'
+    DELAY: '2000' # default value: '2000'
+    BET_COUNT: '20' # default value: '20'
+  HIDE_SCORES: 'false' # default value: 'false'
+  HEADLINES_TILES: 'false' # default value: 'false'
+  BETSLIP_LAYOT_2: 'false' # default value: 'false'
+  SECONDARY_BANNERS: 'false' # default value: 'false'
+  PAGE_TITLE_IN_HEADER_ON_MOBILE: 'false' # default value: 'false'
+  SHOW_WELCOME: 'false' # default value: 'false'
+  SHOW_WHATS_NEW: 'false' # default value: 'false'
+  SHOW_LOCALTAX_IN_W2GFORM: 'false' # default value: 'false'
+  CLOSE_ACCOUNT_CONFIRMATION_POPUP: 'false' # default value: 'false'
+  SHOW_LIMITS_AFTER_REGISTRATION: 'false' # default value: 'false'
+  BETTING_DATA_MATCHER: 'false' # default value: 'false'
+  MIN_NUM_OF_DAYS_FOR_COOL_OFF: '1'  # default value: '1'
+  DISABLE_FORGOTTEN_PASSWORD_VIA_EMAIL: 'false' # default value: 'false'
+  DISABLE_LOGIN_REDIRECT: 'false' # default value: 'false'
+
+# env-config.js
+  MOBILE_LS: 'false' # default value: 'false'
+  CONTENT_SERVER_HOSTNAME_PREFIX: '' # default value: ''
+  CONTENT_SERVER_HOSTNAME: 'https://main.dev.igt.rs' # default value: ''
+  MEDIA_CONTENT_HOSTNAME: 'https://main.dev.igt.rs' # default value: ''
+  WEB_SERVER_HOSTNAME: 'https://main.dev.igt.rs' # default value: ''
+  WEBPUSH_SERVICE_HOSTNAME: 'https://iw.dev.igt.rs' # default value: ''
+  SEARCH_MANAGER_HOSTNAME: '' # default value: ''
+  BETCALC_SERVER_HOSTNAME: '' # default value: ''
+  BETCALC_SERVER_API_NAME: '' # default value: ''
+  BETCALC_SERVER_API_VERSION: '' # default value: ''
+  STATE: 'OH' # default value: ''
+  SOFTGEOLOCATION: 'false' # default value: 'false'
+  HARDGEOLOCATION: 'false' # default value: 'false'
+  MOCKUP_GEOCOMPLY: 'false' # default value: 'false'
+  SEO_ENABLED: 'false' # default value: 'false'
+  WALLET_PROVIDER: 'SHW' # default value: 'SHW'
+  EXTERNAL_WALLET_URL: '' # default value: ''
+  WALLET_URL: '/account/' # default value: '/account/'
+  GOOGLE_TAGMNGR_ID: '' # default value: ''
+  FIREBASE_ANALYTICS: 'false' # default value: 'false'
+  CASHIER_URL: '' # default value: ''
+  CASHIER_PARAMS: # default value: {}
+    cashierSystemId: '1|2002'
+    sentFromHome: '1'
+    onepayMode: 'redirect'
+  IGT_PAY_PROFILES: # default value: {}
+    homeDesktop: '2002_HP1'
+    homeIOS: '2002_HI1'
+    homeAndroid: '2002_HA1'
+    depositDesktop: '2002_DP1'
+    depositIOS: '2002_DI1'
+    depositAndroid: '2002_DA1'
+    withdrawalDesktop: '2002_WP1'
+    withdrawalIOS: '2002_WI1'
+    withdrawalAndroid: '2002_WA1'
+  IOS_LINK: '' # default value: ''
+  ANDROID_LINK: '' # default value: ''
+  PLAY_PLUS: 'https://playplus.mycardplace.com' # default value: 'https://playplus.mycardplace.com'
+  ACCOUNT_SUMMARY_FLOW: 'true' # default value: 'true'
+  GEOCOMPLY_PLUGIN: 'stg-ums.geocomply.net' # default value: 'stg-ums.geocomply.net'
+# if ZINRELO_LOYALTY_REWARDS_PARTNER_ID is not defined or equals '' whole block will be disabled
+# if ZINRELO_LOYALTY_REWARDS_PARTNER_ID is defined, ZINRELO_LOYALTY_REWARDS_PAGE_URL and ZINRELO_LOYALTY_REWARDS_SDK_URL must be defined as well
+  ZINRELO_LOYALTY_REWARDS_PAGE_URL: 'https://zinrelo.dev.igt.rs'
+  ZINRELO_LOYALTY_REWARDS_SDK_URL: 'https://cdn.zinrelo.com/js/all.js'
+  ZINRELO_LOYALTY_REWARDS_PARTNER_ID: 'e6ae3b3b93' # default value: ''
+  NUVEI_APPLEPAY_PROXY_URL: 'https://cdn.safecharge.com/safecharge_resources/v1/sc_applepay.min.js' # default value: 'https://cdn.safecharge.com/safecharge_resources/v1/sc_applepay.min.js'
+  CONTESTS_MEDIA_URL: '' # default value: 'false'
+  MOBILE_DEBUGGER_DIALOG:
+    ENABLED: 'false' # default value: 'false'
+  APPSFLYER_ANALYTICS: 'false' # default value: 'false'
+  BETTING_DATA_MATCHER_SERVICE_HOSTNAME: ''  # default value: ''
+  XTREMEPUSH_ANALYTICS:
+    WEB_KEY: '' # default value: ''
+    MOBILE_APP: 'false' # default value: 'false'
+    CHANNEL:
+      INBOX: 'true' # default value: 'true'
+      ON_SITE: 'true' # default value: 'true'
+      IN_PLAY_NOTIFICATIONS: 'false' # default value: 'false'

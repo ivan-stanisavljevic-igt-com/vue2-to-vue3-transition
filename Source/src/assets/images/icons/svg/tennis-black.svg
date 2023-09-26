@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-icon_tennis_black);
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: rgba(139,139,139,0);
+      }
+    </style>
+    <clipPath id="clip-icon_tennis_black">
+      <rect width="22" height="22"/>
+    </clipPath>
+  </defs>
+  <g id="icon_tennis_black" class="cls-1">
+    <rect class="cls-3" width="22" height="22"/>
+    <path id="tennis_icon" data-name="tennis icon" class="cls-2" d="M4.929,5.839c-.809,2.716-1.573,5.282-.722,7.788A7.39,7.39,0,0,0,11,18.258a7.383,7.383,0,0,0,6.789-4.631c.847-2.5.085-5.066-.721-7.778a27.11,27.11,0,0,1-1.089-4.658,11.007,11.007,0,0,0-9.958,0A27.12,27.12,0,0,1,4.929,5.839ZM17.543,2.165c.21,1.075.533,2.164.866,3.285.833,2.8,1.694,5.7.7,8.627a8.693,8.693,0,0,1-16.233,0c-.994-2.929-.13-5.832.706-8.638.333-1.119.655-2.2.866-3.277a11,11,0,1,0,13.089,0Z" transform="translate(0.003 0)"/>
+  </g>
+</svg>

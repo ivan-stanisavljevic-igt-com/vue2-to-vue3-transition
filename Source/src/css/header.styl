@@ -1,0 +1,281 @@
+@import "~@/css/config";
+
+//fix USD-173
+.date
+  margin-bottom 4px
+
+.browser-version-10.os-ios .eventTitleWrapper .eventTitle:not(.live-e)
+  width 70px
+  hyphens  auto
+
+.browser-version-10.os-ios .score-value
+  margin-left 5px
+
+.browser-version-11.os-ios  .eventTitleWrapper .eventTitle:not(.live-e)
+  width 120px
+  hyphens:  auto
+
+
+
+// fix heigth for betradar widget
+
+ .url-navigation .container.fluid.hasHeadline.not-plain
+    min-height 140px
+
+
+
+
+// Fix aligment when there is no icon
+.hheader .css.icon-empty
+.hheader .css.font-icon-empty
+  display none !important
+  border 1px solid red
+
+
+//
+//GOLF LIVE v1.0
+//
+.selections.active .selection-data
+  background-color #157cc1 !important
+  border-radius 2px
+
+.url-live, .live-coupon
+    .event.GOLF,
+    .event.MOTORSPORT,
+    .event.NASCAR
+      .selection
+        border-right 1px solid #cfd6db
+        padding 5px 10px 5px
+        width 33%
+        margin 0px
+        .selection-column
+          display flex
+          justify-content: space-between
+          .selection-name
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
+            line-height 40px
+            font-size 14px
+        .selection-wapper
+          width 60px
+      .selection:nth-child(3)
+        border none
+      .markets-wrapper
+        width 100%
+        background-color white !important
+        border-bottom-right-radius: 5px
+        border-bottom-left-radius: 5px
+      .selections-mobile
+        .selection-wapper.selection-data
+          //margin 2px
+          font-size 14px
+          padding 10px
+          .names.names
+             margin-top 0
+            color #1f375b
+          .sh
+            width 60px
+            height 40px
+            text-align center
+          .selectionprice
+            border-radius 2px
+            background-color rgb(240, 243, 248) !important
+            color #0d7fe1
+            padding 9px 0
+            //&.suspended
+            //  //border 1px solid green
+           .value.suspended
+              //border 1px solid red
+              min-width 60px
+
+      .selections-mobile.active
+        .selection-wapper.selection-data
+          background-color #fff !important
+          max-width 100%
+          .names.names
+            background-color #fff !important
+            color #157cc1 !important
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width 100%
+
+
+          .selectionprice
+            background-color #157cc1 !important
+            color #fff
+            padding 9px 19px
+
+// PreMatch GOLF -> to Live
+.info-markets-container.GOLF,
+.info-markets-container.MOTORSPORT,
+.info-markets-container.NASCAR
+  .selection
+    border-right 1px solid #cfd6db
+    padding 5px 10px 5px
+    width 33%
+    margin 0px
+    .selection-column
+      display flex
+      justify-content: space-between
+      .selection-name
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+        line-height 40px
+        font-size 14px
+    .selection-wapper
+      width 60px
+  .selection:nth-child(3)
+    border none
+  .markets-wrapper
+    width 100%
+    background-color white !important
+    border-bottom-right-radius 5px
+    border-bottom-left-radius 5px
+  .selections-mobile
+    .selection-wapper.selection-data
+      //margin 2px
+      font-size 14px
+      padding 10px
+      &.active 
+        background-color #fff
+      .names.names
+        margin-top 0
+        color #0e4fa2
+      .sh
+        width 60px
+        height 40px
+        text-align center
+      .selectionprice
+        border-radius 2px
+        background-color rgb(240, 243, 248)
+        color #0e4fa2
+        padding 9px 0
+      .value
+        &.active
+          border-radius 2px
+          background-color #157cc1
+          color #fff !important
+          padding 9px 0
+
+      .value.suspended
+        //border 1px solid red
+        min-width 60px
+  .selections-mobile.active
+    .selection-wapper.selection-data
+      background-color #fff !important
+      max-width 100%
+      .names.names
+        background-color #fff !important
+        color #0e4fa2 !important
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width 100%
+      .selectionprice
+        background-color #157cc1 !important
+        color #fff
+        padding 9px 19px
+
+@media mobile-big-and-below
+  .url-live, .live-coupon
+     .live-event-container
+        .event.GOLF,
+        .event.MOTORSPORT,
+        .event.NASCAR
+          .selection
+            border none
+            // padding-right 0px
+            width 100% !important
+          .selections.layout.all.non-had
+            flex-direction column
+          .selections-mobile
+            background-color white
+            coursor pointer
+            .selection-wapper.selection-data
+              display flex
+              margin 2px
+              font-size 14px
+              padding 10px 0px 10px 10px
+              .names.names
+                margin-top 0
+                color #0e4fa2
+              .value
+                .sh
+                  width 60px
+                  height 40px
+                .selectionprice
+                  border-radius 2px
+                  background-color rgb(240, 243, 248) !important
+                  color #0e4fa2
+                  //padding 9px 19px
+
+  // PreMatch GOLF -> to Live
+  .info-markets-container.GOLF,
+  .info-markets-container.MOTORSPORT,
+  .info-markets-container.NASCAR
+    .selection
+      border none
+      padding-right 0px
+      width 100% !important
+    .selections.layout.all.non-had
+      flex-direction column
+    .selections-mobile
+      background-color white
+      coursor pointer
+      .selection-wapper.selection-data
+        display flex
+        margin 2px
+        font-size 14px
+        padding 10px 0px 10px 10px
+        .names.names
+          margin-top 0
+          color #0e4fa2
+        .value
+          .sh
+            width 60px
+            height 40px
+          .selectionprice
+            border-radius 2px
+            background-color rgb(240, 243, 248) !important
+            color #0e4fa2
+    .selections-mobile.active.mobile
+      .selection-wapper.selection-data 
+        .selectionprice
+          background-color #157cc1 !important
+          color #fff
+          padding 9px 19px 
+
+.selections-mobile.active .value
+  background-color #157cc1 !important 
+  
+
+// Fix showing red arrows on golf coupons
+.GOLF,
+.MOTORSPORT,
+.NASCAR
+  .activelead.dot
+  .activelead.dot-mobile
+    display none
+
+
+// ADDING Subtitle for Golf live
+.outright-golf.outright-event-name
+  padding 15px 0 0 15px
+  font-weight normal
+
+// Golf Prematch
+//.GOLF
+//  .flex.names.participants
+//    display none
+
+// MMA
+.MMA
+  .selection-name
+    display none
+
+  .selections.layout.all
+    flex-direction column
+

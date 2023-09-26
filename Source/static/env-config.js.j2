@@ -1,0 +1,108 @@
+/**
+ * Environment configuration - use to define parameters values different per environment.
+ * Do not reference directly in the code. Use via config.app.autoconf.XXX
+ */
+window.ctsautoconf = window.ctsautoconf || {}
+
+window.ctsautoconf.MOBILE_LS = {{ WEBCLIENT.MOBILE_LS | default('false') }}
+
+// content server
+window.ctsautoconf.CONTENT_SERVER_HOSTNAME_PREFIX = '{{ WEBCLIENT.CONTENT_SERVER_HOSTNAME_PREFIX | default('') }}'
+window.ctsautoconf.CONTENT_SERVER_HOSTNAME = '{{ WEBCLIENT.CONTENT_SERVER_HOSTNAME | default('') }}'
+window.ctsautoconf.MEDIA_CONTENT_HOSTNAME = '{{ WEBCLIENT.MEDIA_CONTENT_HOSTNAME | default('') }}'
+
+// callbroker.ashx
+window.ctsautoconf.WEB_SERVER_HOSTNAME = '{{ WEBCLIENT.WEB_SERVER_HOSTNAME | default('') }}'
+
+// livewire
+window.ctsautoconf.WEBPUSH_SERVICE_HOSTNAME = '{{ WEBCLIENT.WEBPUSH_SERVICE_HOSTNAME | default('') }}'
+window.ctsautoconf.portPerEnvironment = { 'default': '' }
+
+// Search
+window.ctsautoconf.SEARCH_MANAGER_HOSTNAME = '{{ WEBCLIENT.SEARCH_MANAGER_HOSTNAME | default('') }}'
+
+// BetCalculator Service
+window.ctsautoconf.BETCALC_SERVER_HOSTNAME = '{{ WEBCLIENT.BETCALC_SERVER_HOSTNAME | default('') }}'
+window.ctsautoconf.BETCALC_SERVER_API_NAME = '{{ WEBCLIENT.BETCALC_SERVER_API_NAME | default('') }}'
+window.ctsautoconf.BETCALC_SERVER_API_VERSION = '{{ WEBCLIENT.BETCALC_SERVER_API_VERSION | default('') }}'
+
+// setup params
+window.ctsautoconf.STATE = '{{ WEBCLIENT.STATE | default('') }}'
+window.ctsautoconf.SOFTGEOLOCATION = {{ WEBCLIENT.SOFTGEOLOCATION | default('false') }}
+window.ctsautoconf.HARDGEOLOCATION = {{ WEBCLIENT.HARDGEOLOCATION | default('false') }}
+window.ctsautoconf.MOCKUP_GEOCOMPLY = {{ WEBCLIENT.MOCKUP_GEOCOMPLY | default('false') }} // Geolocation mock - should be true on DEV only !!!
+window.ctsautoconf.SEO_ENABLED = {{ WEBCLIENT.SEO_ENABLED | default('false') }}  // Set true on SEO Server only.
+
+// wallet - possible wallet values are from - src/config/walletParams.js
+window.ctsautoconf.WALLET_PROVIDER = '{{ WEBCLIENT.WALLET_PROVIDER | default('SHW') }}'
+window.ctsautoconf.EXTERNAL_WALLET_URL = '{{ WEBCLIENT.EXTERNAL_WALLET_URL | default('') }}'
+
+// urls for specific environment
+window.ctsautoconf.WALLET_URL = '{{ WEBCLIENT.WALLET_URL | default('/account/') }}'
+window.ctsautoconf.GOOGLE_TAGMNGR_ID = '{{ WEBCLIENT.GOOGLE_TAGMNGR_ID | default('') }}'
+window.ctsautoconf.FIREBASE_ANALYTICS = {{ WEBCLIENT.FIREBASE_ANALYTICS | default('false') }}
+
+// IGT PAY params and URL
+window.ctsautoconf.CASHIER_URL = '{{ WEBCLIENT.CASHIER_URL | default('') }}'
+window.ctsautoconf.CASHIER_PARAMS = {
+{%- for key, value in (WEBCLIENT.CASHIER_PARAMS | default({})).items() %}
+'{{ key }}': {% if key=='onepayMode' %}'{% endif %}{{ value }}{% if key=='onepayMode' %}'{% endif %}{% if not loop.last %}, {% endif %}
+{% endfor -%}
+}
+{% if WEBCLIENT.IGT_PAY_PROFILES | default({}) == {} %}
+window.ctsautoconf.IGT_PAY_PROFILES = {}
+{% else %}
+window.ctsautoconf.IGT_PAY_PROFILES = {
+{% for key, value in WEBCLIENT.IGT_PAY_PROFILES.items() %}
+  {{ key }}: '{{ value }}'{% if not loop.last %}, {% endif +%}
+{% endfor -%}
+}
+{% endif %}
+// download links
+window.ctsautoconf.IOS_LINK = '{{ WEBCLIENT.IOS_LINK | default('') }}'
+window.ctsautoconf.ANDROID_LINK = '{{ WEBCLIENT.ANDROID_LINK | default('') }}'
+
+// Play+ link
+window.ctsautoconf.PLAY_PLUS = '{{ WEBCLIENT.PLAY_PLUS | default('https://playplus.mycardplace.com') }}'
+
+// new layout for accounting
+window.ctsautoconf.ACCOUNT_SUMMARY_FLOW = {{ WEBCLIENT.ACCOUNT_SUMMARY_FLOW | default('true') }}
+
+// URL for geocomply plugin download. This is important just for desktop, mobile app doesn't use it
+// non prod: window.ctsautoconf.GEOCOMPLY_PLUGIN = 'stg-ums.geocomply.net'
+// prod: window.ctsautoconf.GEOCOMPLY_PLUGIN = 'ums.geocomply.com'
+window.ctsautoconf.GEOCOMPLY_PLUGIN = '{{ WEBCLIENT.GEOCOMPLY_PLUGIN | default('stg-ums.geocomply.net') }}'
+
+{% if WEBCLIENT.ZINRELO_LOYALTY_REWARDS_PARTNER_ID | default('') == '' %}
+window.ctsautoconf.ZINRELO_LOYALTY_REWARDS = {}
+{% else %}
+window.ctsautoconf.ZINRELO_LOYALTY_REWARDS = {
+  PAGE_URL: '{{ WEBCLIENT.ZINRELO_LOYALTY_REWARDS_PAGE_URL }}',
+  SDK_URL: '{{ WEBCLIENT.ZINRELO_LOYALTY_REWARDS_SDK_URL }}',
+  PARTNER_ID: '{{ WEBCLIENT.ZINRELO_LOYALTY_REWARDS_PARTNER_ID }}'
+}
+{% endif %}
+
+window.ctsautoconf.NUVEI_APPLEPAY_PROXY_URL = '{{ WEBCLIENT.NUVEI_APPLEPAY_PROXY_URL | default('https://cdn.safecharge.com/safecharge_resources/v1/sc_applepay.min.js') }}'
+
+window.ctsautoconf.CONTESTS_MEDIA_URL = {% if WEBCLIENT.CONTESTS_MEDIA_URL | default('false') == 'false' %}false{% else %}'{{ WEBCLIENT.CONTESTS_MEDIA_URL }}'{% endif +%}
+
+window.ctsautoconf.MOBILE_DEBUGGER_DIALOG = { // for testing/ non-production ONLY!!
+  ENABLED: {{ WEBCLIENT.MOBILE_DEBUGGER_DIALOG.ENABLED | default('false') }},
+  DEVICE_ID: []
+}
+
+window.ctsautoconf.APPSFLYER_ANALYTICS = {{ WEBCLIENT.APPSFLYER_ANALYTICS | default('false') }}
+
+window.ctsautoconf.XTREMEPUSH_ANALYTICS = {
+  WEB_KEY: '{{ WEBCLIENT.WEB_KEY | default('') }}', // Web key for Web XP SDK import.
+  MOBILE_APP: {{ WEBCLIENT.MOBILE_APP | default('false') }}, // Enable/disable XP communication between Web and Mobile app.
+  CHANNEL: {
+    INBOX: {{ WEBCLIENT.CHANNEL.INBOX | default('true') }}, // Inbox on Web and Mobile app.
+    ON_SITE: {{ WEBCLIENT.CHANNEL.ON_SITE | default('true') }}, // Banners on Web and Mobile app.
+    IN_PLAY_NOTIFICATIONS: {{ WEBCLIENT.CHANNEL.IN_PLAY_NOTIFICATIONS | default('false') }} // Live event notifications on Web and Mobile app.
+  }
+}
+
+// betting data matcher service
+window.ctsautoconf.BETTING_DATA_MATCHER_SERVICE_HOSTNAME = '{{ WEBCLIENT.BETTING_DATA_MATCHER_SERVICE_HOSTNAME | default('') }}'

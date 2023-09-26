@@ -1,0 +1,128 @@
+mobile-big-size = 601px
+tablet-size = 1024px
+// tablet-big-size = 1025px
+desktop-size = 1241px
+desktop-big-size = 1441px
+
+mobile = 'only screen and (max-width: mobile-big-size - 1)'
+mobile-big-and-below = 'only screen and (max-width: tablet-size - 1)'
+mobile-big = 'only screen and (min-width: mobile-big-size) and (max-width: tablet-size - 1)'
+mobile-big-and-above = 'only screen and (min-width: mobile-big-size)'
+tablet-and-below = 'only screen and (max-width: desktop-size - 1)'
+tablet = 'only screen and (min-width: tablet-size) and (max-width: desktop-size - 1)'
+tablet-and-above = 'only screen and (min-width: tablet-size)'
+// tablet-big-and-below = 'only screen and (max-width: desktop-size - 1)'
+// tablet-big = 'only screen and (min-width: tablet-big-size) and (max-width: desktop-size - 1)'
+// tablet-big-and-above = 'only screen and (min-width: tablet-big-size)'
+desktop-and-below = 'only screen and (max-width: desktop-big-size - 1)'
+desktop = 'only screen and (min-width: desktop-size) and (max-width: desktop-big-size - 1)'
+desktop-and-above = 'only screen and (min-width: desktop-size)'
+desktop-big-and-above = 'only screen and (min-width: desktop-big-size)'
+
+euro-sign = "€"
+
+/* Paths */
+images-path = '~@/assets'
+icons-path = '~@/assets/images/icons/'
+svg-path = icons-path'/svg'
+
+icon-names = baseball basketball boxing football golf home soccer tennis icehockey nfl boxing motorsport racing nascar motorracing ausrules aurules mma rugby rugbyunion cricket darts collbskt horseracing tabletennis volleyball cycling formula f1 rugbyleague boost esports hotdog torch wifi promomarket
+social-icon-names = facebook twitter instagram youtube
+gap = 15px
+
+/* Colors */
+general-color-background = #E5E5E5
+general-color-font = #444
+color-yellow-dark = #9E864D
+color-yellow-dark-contrast = #ffe8b3
+color-yellow-light-contrast = #9a7f3c
+color-primary = #9E864D
+color-secondary = #8A4659
+
+color-yellow = #ffb80c
+color-yellow-hit = #e6a40b
+color-yellow-light = #ffdc86
+color-yellow-disable-text = #8e7c51
+
+color-blue = #2797e6
+color-blue-hit = #0285cc
+color-blue-disable = #93cbf2
+color-blue-info = #d9edf7
+
+color-green = #20a052
+color-green-dark = #1c8c47
+color-green-light = #1c8c47
+
+color-orange = #ef853f
+color-orange-dark = #db7a39
+
+color-red = #d54d4d
+
+color-black-carbon = #424242
+color-black-carbon-dark = #303030
+color-black-carbon-light = #525252
+color-black-grey-dark = #626262
+color-black-grey = #7f7f7f
+
+color-white = #fff
+color-white-grey-light = #dcdcdc
+color-white-grey-light-blue = #f0f1f5
+color-white-grey-dark-blue = #e1e6ea
+
+/* Colors by function */
+color-primary = color-yellow
+color-primary-hit = color-yellow-hit
+color-primary-light = color-yellow-light
+color-primary-disable-text = color-yellow-disable-text
+
+color-price-button = color-blue
+color-price-button-hit = color-blue-hit
+color-price-button-disable = color-blue-disable
+
+color-inplay = color-green
+color-inplay-dark = color-green-dark
+color-inplay-light = color-green-light
+
+color-live-video = color-orange
+color-live-video-dark = color-orange-dark
+
+color-notifications-info = color-blue-info
+color-notifications-warning = color-yellow-light
+color-notifications-error = color-red
+color-notifications-success = color-green
+
+color-neutral-carbon = color-black-carbon
+color-neutral-carbon-dark = color-black-carbon-dark
+color-neutral-carbon-light = color-black-carbon-light
+color-neutral-grey = color-black-grey
+color-neutral-grey-dark = color-black-grey-dark
+
+color-neutral-white = color-white
+color-neutral-grey-light = color-white-grey-light
+color-neutral-grey-light-blue = color-white-grey-light-blue
+color-neutral-grey-dark-blue = color-white-grey-dark-blue
+
+item-tab-active = '#06283b'
+item-tab-inactive = '#17285f'
+
+/* Typography */
+/* Typography */
+font-family-opensans = 'Open Sans Regular',-apple-system,Segoe UI,Roboto,Helvetica,sans-serif
+font-family-opensans-bold = 'Open Sans Bold',-apple-system,Segoe UI,Roboto,Helvetica,sans-serif
+
+font-line-height = 1.5
+font-size-regular = 12px
+font-size-large = 13px
+font-size-small = 11px
+font-size-extra-small = 10px
+
+font-heading = bold font-size-large\/font-line-height font-family-opensans
+font-body = normal font-size-regular\/font-line-height font-family-opensans
+font-body-light = normal font-size-regular\/font-line-height font-family
+font-team-names = normal font-size-small\/font-line-height font-family
+font-labeling = normal font-size-extra-small\/font-line-height font-family
+
+use("config.js")
+
+brand = brand-key()
+layout = layout-key()

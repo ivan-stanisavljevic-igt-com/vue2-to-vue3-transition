@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-icon_boxing_black);
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: rgba(139,139,139,0);
+      }
+    </style>
+    <clipPath id="clip-icon_boxing_black">
+      <rect width="22" height="22"/>
+    </clipPath>
+  </defs>
+  <g id="icon_boxing_black" class="cls-1">
+    <rect class="cls-3" width="22" height="22"/>
+    <path id="boxing_icon" data-name="boxing icon" class="cls-2" d="M19.58,12a23.686,23.686,0,0,1-5.358,5.5l-2.7-2.365a24.248,24.248,0,0,0,5.847-5.967A35.773,35.773,0,0,0,13,3.072S8.894-1.808,5.283.733c0,0-7.113,4.8-4.832,8.155A7.032,7.032,0,0,0,2.66,10.471s2.455,1.007,2.166,2.23l-3.6-1.6a3.464,3.464,0,0,0,.689,4.781C3.251,17.031,7.16,17.57,7.16,17.57a8.536,8.536,0,0,1,4.358,1.8L13.8,21.5c5.777-3.742,7.7-7.579,7.7-7.579Z" transform="translate(0.189 0.189)"/>
+  </g>
+</svg>

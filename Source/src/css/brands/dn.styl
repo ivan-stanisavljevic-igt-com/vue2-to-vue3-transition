@@ -1,0 +1,4639 @@
+@import "config"
+@import "mixins"
+@import "mixins/dn-mixins"
+
+dn-images-path = images-path'/images/brands/dn'
+
+.dn
+  &,
+  .application
+    font-family: "Montserrat Regular"
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    font-family: "Montserrat Bold"
+
+  .header, button
+    letter-spacing: 1px
+  @media mobile-big-and-below
+    &.app-body.url-state-name-sports.url-sports .sports-page .tab-coupons .v-tabs
+      background: transparent
+  &.scrolled
+    .header
+      background-color transparent !important
+  .application--wrap
+    min-height calc(100vh - 280px)
+
+    @media mobile-big-and-below
+      min-height calc(100vh - 260px)
+
+      .v-content
+        background: #e8e7eb
+  .sports-page
+  .live-sports-page
+    @media mobile-big-and-below
+      background #e7e6ea !important
+  &.app-body
+    background-image url("/static/brand-img/dn/dn-bg.png")
+    background-repeat no-repeat
+    background-position top center
+    background-attachment: fixed
+    background-color #202C38
+    background-size 100%
+    @media mobile-big-and-below
+      background-color #202C38
+      background-image none
+    .content
+      background transparent
+  .header_background
+    background #fff
+    background-image: none
+    background-repeat: no-repeat
+
+    @media mobile-big-and-below
+      .header_holder
+        box-shadow 0 0 3px 0 rgba(0,0,0,0.25)
+
+        .header.header
+          .top-container
+            background: #fff
+            display: flex
+            align-items: center
+            padding: 0 13px
+            .account-widget
+              margin: 0
+              align-self: center
+            .hambMenu
+              background none
+              color transparent !important
+              background-image: url('~@/assets/images/brands/dn/hamburger.svg')
+              height: 25px
+              width: 22px
+              background-repeat: no-repeat
+
+    .sub_header
+      height 35px
+      // background #3B495F
+      margin-top -40px
+      box-shadow none
+      background linear-gradient(90deg, #fff 50%, #3B495F 50%);
+      @media mobile-big-and-below
+        display none
+        box-shadow 0 2px 2px rgba(0, 0, 0, 0.2)
+  header.header
+    min-height 138px
+    flex-direction column
+    margin auto
+    position unset
+    .logo
+      margin-top: 20px
+
+      @media mobile-big-and-below
+        margin-top: 0
+      img
+        max-height 120px
+        max-width: 162px
+    @media mobile-big-and-below
+      min-height 50px
+      background #000
+      .icon
+        position relative
+        margin-left 20px
+        font-size 30px
+      .top-container
+        background #000
+        padding 0 5px
+        justify-content space-between
+        .v-icon
+          color #fff
+          background #0B4DA1
+          padding 3px
+      .logo
+        padding 0 !important
+        img
+          max-height 63px
+          padding: 6px 8px 11px
+    .header-back-btn
+      .icon
+        margin-left 0 !important
+        color #3b495f
+
+    .main-navigation
+      margin-right 10px
+      position: absolute
+      bottom: 0
+      background #3B495F
+      text-align: left
+      width: 100%
+
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        background: #3b495f
+        height: 100%
+        width: 100px
+        left: -18px
+        border-top-left-radius: 7px
+        transform: skewX(-25deg)
+      ul li a
+        padding: 18px 35px
+        padding-bottom: 11px
+        font-size: 13px
+        border-bottom 4px solid transparent
+
+      .router-link-active
+        border-bottom 4px solid #ebe200
+        font-family: 'Montserrat Regular'
+  header.header.postLoginAlertExist
+    min-height 173px
+  .flex.menu.sm12.align-content-end
+    margin-left 10px
+
+  .top_nav
+  header .account-widget
+    align-self: baseline
+    margin-top: 10px
+
+  .top_nav
+    width 100%
+    text-align right
+    padding-right 10px
+    white-space: nowrap
+    .site-navigation
+      .navigation
+        .navigation-item
+          display inline
+          margin 0 5px
+        a
+          color #000
+          text-decoration none !important
+          font-family 'Montserrat SemiBold'
+          font-size 14px
+
+  .popular
+  .bo-navigation
+    .badgeIconLive
+      display none
+    .navigation-item
+      a
+        display flex
+        align-items center
+        text-transform uppercase
+        override-svg-icon(icon-names, 'white')
+        span
+          display inline-block
+
+        @media mobile-big-and-below
+          override-svg-icon-with-default(icon-names)
+          padding: 10px 0
+          color: #364A5E
+          font-family 'Montserrat SemiBold'
+      &:hover a
+      a.active
+        color: #ebe200 !important
+        override-svg-icon(icon-names, 'white')
+
+        @media mobile-big-and-below
+          override-svg-icon-with-default(icon-names)
+  .sports-menu
+    .navigation-group .router-link-exact-active.router-link-active
+      color: #ebe200 !important
+  .sports-menu h3
+    color #fff
+  .sports-menu a
+    color #fff
+  .content .background-headline .headline-wrapper
+    background transparent !important
+  .headline-mobile
+    background-color #fff !important
+    .v-carousel__controls__item
+      &:before
+        display none !important
+    .v-carousel .v-carousel__controls
+      background transparent !important
+    .v-carousel__controls>.v-item-group
+      // margin-right auto
+      .v-carousel__controls__item .v-icon
+        opacity 1
+        color #C6CCD1 !important
+        font-size: 14px !important
+      .v-btn.v-btn--active .v-icon
+        color #EBE200 !important
+        border 0px !important
+  .headline-mobile
+    @media mobile
+      margin -25px 0
+      .v-carousel__controls
+        bottom 20px
+  .account-info-widget-component
+    .join-now
+      background-color #EBE200 !important
+      color #4B5757 !important
+      padding 0 16px
+      text-transform uppercase
+      border-radius 25px
+      button()
+
+    .login_btn
+      margin-right 0
+      border 0px
+      background-color #636E80 !important
+      color #fff
+      border-radius 25px
+      margin-left auto
+      button()
+
+    .login-info
+      .v-btn__content
+        font-family: "Montserrat Bold"
+
+      .join-now
+      .v-btn
+        // flex 1
+        text-transform: uppercase
+        height: 37px
+        min-width: 9em
+
+        @media mobile-big-and-below
+          small-button()
+    .account_btn
+      position relative
+      z-index 10
+      width 30px !important
+      min-width 30px !important
+      transition none !important
+      padding 0
+      padding 0 5px
+      margin 0
+      background-color #000 !important
+      &:active
+        box-shadow none
+      .v-icon
+        color #fff
+        font-size 25px
+  .header_holder
+    .header
+      .main-navigation
+        .site-navigation
+          position: relative
+    .account-info-widget-component
+      position relative
+      margin-right 0
+      .sessionDetails
+        position absolute
+        right 0
+        top -20px
+      .account-info
+        margin-right 0
+        .acc_buttons
+          align-items center
+
+          .shw-balance
+            border: none
+            color: #43505a
+            font-family: "Montserrat Bold"
+            .dots-loader span
+              color #43505a
+
+            .text
+              display: none
+
+          .logout
+            display: none
+        .balance
+          color #fff!important
+          .value
+          .span_balance
+            color #fff !important
+            @media mobile-big-and-below
+              color #fff !important
+          .span_balance_hidden
+            color #fff !important
+        .deposit
+          background-color #e5b96c !important
+          min-width 120px
+          border-radius 25px
+          transition none !important
+          &.mobile
+            background-color transparent !important
+            font-size 12px
+            padding-right 3px
+            z-index 20
+            font-weight 600
+            .balance
+              margin-right 0px
+        .menu__activator
+          button
+            min-width 120px
+            border-radius 25px
+        .logout
+          margin 6px 0
+          background #000
+          border 1px solid #666
+          color #fff
+          min-width 40px
+          border-radius 0
+        .my_profile
+          background-color #43505a !important
+          min-width 120px
+          transition none !important
+          color #ffffff
+          border-radius 3px
+          margin-right 1px
+          padding: 0 5px
+          .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/brands/dn/profile-white.svg')
+            height 22px
+            width 22px
+          .v-btn__content
+            font-weight normal
+            line-height 14px
+            div
+              display flex
+              flex-direction column
+        .shw-balance
+          padding-left: 5px
+          border 1px solid #666666
+          margin-right -1px
+          height 40px
+          .text
+            color #e5b96c
+            font-family 'Montserrat Bold'
+            font-size 13px
+        .header-txt
+          color #43505a
+          font-size 11px
+          .clock
+            color #43505a
+        .balance-deposit
+          background-color #e5b96c !important
+          border-radius 0 25px 25px 0
+          color #AABDD1
+          margin-right 0
+          .balance
+            margin-right 5px
+
+  .footer
+    position relative
+    background #364A5E
+    border: none
+    color: #fff
+    font-size: 11px
+    padding: 40px
+    margin-top 20px
+    .footer_bottom_holder
+      background #fff
+      margin 0 -40px -40px -40px
+      padding 30px 0 10px 0
+      .responsible_text
+        font-size 10px
+        color #000
+        padding-right 100px
+        @media mobile-big-and-below
+          padding-right 0px
+          padding-bottom 10px
+      .lottery-logo
+        img
+          max-width 70px
+      .lottery-logo-primary
+        img
+          max-width 140px
+      .copyright
+        color #000
+        font-family 'Montserrat Bold'
+        text-align center
+        font-size: 10px
+        @media mobile-big-and-below
+          padding-top 10px
+
+    @media mobile-big-and-below
+      margin-left 0
+      margin-top 0px
+
+    h3
+      font-size: 11px
+      color: #fff
+
+    p
+      margin-bottom: 5px
+
+    .footer-holder
+      display: flex
+      flex-direction: column
+      width: desktop-big-size
+      margin: 0 auto
+      padding: 0 15px
+
+      @media mobile-big-and-below
+        flex-direction: column
+        width: 100%
+
+      .footer-content
+        display: flex
+        flex-direction: row
+        margin-bottom: 40px
+
+        .section
+          max-width: 500px
+          min-width: 10%
+
+          @media mobile-big-and-below
+            margin: 0 0 15px
+
+        @media mobile-big-and-below
+          flex-direction: column
+          width: 100%
+
+          .section
+            max-width: 100%
+    .section
+    .navigation-group
+      margin: 0 50px 0 0
+      text-align: left
+      padding: 0
+
+      @media mobile-big-and-below
+        text-align: center
+        margin: 0
+    .footer_contact.section
+      margin-left -30px
+      @media mobile-big-and-below
+        margin-left 0
+
+    .section
+      &:last-child
+        margin-right: 0
+      .site-navigation
+        padding: 0
+        display: flex
+
+        @media mobile-big-and-below
+          justify-content: center
+
+        .navigation
+          .navigation-item
+            display: block
+            border: none
+            margin-bottom: 5px
+            margin-right 20px
+            @media mobile-big-and-below
+              margin-right 0
+
+    .footer-menu
+      text-align center
+    .bottom-info
+      background-color #000
+      border-top 0px
+      padding 0
+      margin 0
+      ul
+        display flex
+        @media mobile-big-and-below
+          display inline-block
+        li
+          padding 0 10px
+          @media mobile-big-and-below
+            display inline-block
+          a
+            color #2f40af
+            font-size 13px
+            font-weight bold
+            @media mobile-big-and-below
+              font-size 11px
+              font-weight normal
+    .good_to_be_connected
+      margin auto
+    .footer_nav
+      width auto
+      .site-navigation h3
+        display block
+      .navigation
+        .navigation-item
+          &:last-child
+            border-right 0px
+          a
+            color #fff
+          a.router-link-active
+            color #d8d8d8 !important
+          .igt-icon
+            display none
+      &.about
+        .navigation
+          columns 2
+          @media mobile-big-and-below
+            columns 1
+
+      .site-navigation
+        .hide-icon-text
+          > span
+            display: inline
+          .item-text
+            display: none
+          .igt-icon
+            display: inline-block
+
+      &.social-icons
+        .site-navigation
+          .HORIZONTAL
+            .navigation
+              .igt-icon > span
+                width: 30px
+                height: 30px
+              .navigation-item
+                margin: 0 8px 0 0
+                display: inline-block
+                &:last-child
+                  margin: 0
+    .footer-responsible
+      display: flex
+      align-items: center
+      font-size: 9px
+      @media mobile-big-and-below
+        flex-direction column
+      .copy_text
+        padding-right 10px
+      .build_version_text
+        color #6f6f6f
+        padding 25px 0 0 10px
+        @media mobile-big-and-below
+          padding 0
+      .v-icon
+        color #666
+        font-size 15px
+        @media mobile-big-and-below
+          display none
+      .navigation-group
+         margin auto
+        .navigation-item
+          display inline
+          padding 0 10px
+          border-right 1px solid #fff
+          &:last-child
+            border-right 0px
+          a
+            color #ffffff
+            font-size 9px
+            text-transform uppercase
+
+      .lottery-logo
+        margin-right: 20px
+
+        @media mobile-big-and-below
+          margin: 0 0 10px
+
+    .footer-bottom
+      position static
+      @media mobile-big-and-below
+        padding-bottom 70px
+
+    .footer-address
+      display: flex
+
+      @media mobile-big-and-below
+        flex-direction: column
+
+      .logos
+        display: flex
+        flex-direction: column
+        margin-right: 30px
+        margin-left 50px
+
+        span
+          margin-bottom: 10px
+          text-align: center
+
+          img
+            height: 60px
+
+        @media mobile-big-and-below
+          margin: 0 0 10px
+
+    .back-to-top
+      .v-icon
+        background: #6f6f6f
+  /******************************  ACCOUNT AND LOGIN  ****************************************************/
+  header
+    .account-widget
+      margin-right 0
+      @media mobile-big-and-below
+        &.flex
+          flex unset
+  .ctsform .auth-recovery
+    select
+      padding-top: 44px
+    label
+      height: 68px
+  .ctsform .control-label
+    font-size 12px !important
+    text-transform uppercase
+    .max
+      color: #e5b96c !important
+  .loginHolder
+    flex 2 !important
+  .loginDialogIntro
+    background #000 !important
+    background-image url(/static/brand-img/dn/login_photo.jpg) !important
+    background-repeat no-repeat !important
+    background-size: 100% !important
+    background-position: center !important
+    flex 2.5 !important
+    .joinNow
+      display none
+    .login-intro
+      display none
+  .login-component
+    color: #3b495f
+    &.not-initial-form
+      .loginDialogIntro
+        display: none
+
+      .ctsform.sa
+        padding: 30px 140px
+
+        @media mobile-big-and-below
+          padding: 15px
+    .login-header .flex.logo
+      justify-content center !important
+      padding-top 15px
+      margin 0
+
+      img
+        max-width: 95% !important
+    .faceBtn
+      margin-bottom 20px
+
+    .v-text-field .v-label
+      left 5px !important
+    input
+      // background #fff
+    .v-text-field.v-input--is-focused>.v-input__control>.v-input__slot:after
+       display none !important
+    .show_hide
+      color: #364A5E !important
+      font-size 12px
+      margin-right 5px !important
+      text-align: right
+      width: 5em
+      align-self: flex-end
+    .forgotPass
+      span
+        color: #364A5E !important
+    .error
+      background-color #fff !important
+    .loginHolder
+      .flex.close
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        margin-bottom: 18px
+        .v-btn
+          height: auto !important
+      .close
+        width: auto
+        color: #3b495f
+
+        p
+          margin: 0
+          text-transform: uppercase
+          font-family: "Montserrat Bold"
+          font-size: 22px
+
+          @media mobile-big-and-below
+            font-size: 17px
+        .close
+          margin: 0
+        .v-icon
+          color #364a5e !important
+          font-size: 40px
+
+          @media mobile-big-and-below
+            font-size: 30px
+    .v-btn
+      height 55px !important
+    .v-btn.primary-btn-blue
+      background #3B495F  !important
+      color #fff !important
+      border 1px solid #364A5E
+      &.login
+        background #364A5E !important
+        color #fff !important
+    .primary-btn-blue.v-btn.v-btn--disabled:not(.v-btn--icon):not(.v-btn--flat)
+      background-color: #3B495F !important
+      border: 1px solid #3B495F
+      color: #fff !important
+    .float-right.forgot_pass span
+      color #3B495F
+      float left
+      font-family: "Montserrat Bold"
+      text-decoration underline
+      font-size 12px
+
+    form
+      display: flex
+      flex-direction: column
+      padding: 15px 30px !important
+      .securityquestion
+        color #3b495f
+
+      .buttons
+        order: 1
+        display: flex
+
+        .v-btn
+          flex 1
+          font-family: "Montserrat Bold"
+          text-transform: uppercase
+          font-size: 18px !important
+          width: fit-content
+          .span
+            white-space: normal
+
+          &.join-now
+            background: #EBE200
+
+      .forgotPass
+        text-align: left
+
+        span
+          margin-top: 29px
+          color: #3B495F !important
+          letter-spacing: 0
+
+  &.url-state-name-logout
+    .primary-btn-blue
+      width auto !important
+    .card__actions
+      justify-content center
+  .dialogMyAccountDesktop
+  .dialog-myaccount
+    background #1B2C56 !important
+    .navigation-group
+      border-bottom 0px
+      .navigation
+        margin-bottom -1px
+    .account_mobile
+      background #e7e6ea !important
+      padding 5px 5px
+      .account_details
+        padding 20px 10px !important
+    .account_desktop
+      background #fff !important
+      // padding 16px 5px
+    .account_links
+      margin-top 0px
+      border-radius 0px
+      text-align left
+      .site-navigation
+        .navigation-item
+          a
+            color #364A5E
+            justify-content flex-start
+            font-family 'Montserrat SemiBold'
+          .router-link-exact-active.router-link-active
+            color #ebe200 !important
+        .navigation .navigation-item:last-child
+          border-top 0px
+          &:after
+            content: ""
+            display block
+            width 100%
+            border-bottom 1px solid #364A5E !important
+        .navigation-group:last-child
+          .navigation .navigation-item:last-child:after
+            display none
+          .navigation-item
+            padding-top 0px
+            padding-bottom 10px
+            border-radius 0
+            border-top 0px !important
+            justify-content: flex-start;
+            @media mobile-big-and-below
+              padding-bottom 60px
+            a
+              border 0px
+              width 100%
+        // .navigation-item:not(:last-child):after
+        .navigation-item:after
+          width 100%
+          border-bottom 1px solid #364A5E
+    .account_details
+      background #364A5E !important
+      padding 0 !important
+      border-radius 0px
+      .buttons
+        background transparent
+        margin-top 0
+        padding 0
+      .user_details
+        background #364A5E
+        display flex
+        align-items flex-start
+        width 100%
+        @media mobile-big-and-below
+          padding 0 5px
+        .user_title
+          margin-right 0 !important
+          text-align: left
+          text-transform uppercase
+          font-size 16px
+          line-height 14px
+          font-family "Montserrat SemiBold"
+        .user_image
+          border: 2px solid #fff
+          border-radius: 50%
+          height 55px
+          width 55px
+          min-width 55px
+          position relative
+          margin-right 10px
+          .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/brands/dn/profile-white.svg')
+            height 40px
+            width 40px
+            font-size: 40px
+            background-position: center
+            position absolute
+            bottom 5px
+            left 5px
+            margin-right 0
+          span
+            color #fff
+        .lastlogdur
+            color #fff !important
+      .account_buttons
+        background #fff
+    .buttons
+      .transactions
+        background-color #EBE200 !important
+        color #364A5E !important
+        &.withdraw
+          border 2px solid #ffffff !important
+          color #fff !important
+          background-color transparent !important
+          &:hover
+            color #364A5E !important
+      .v-btn
+        border-radius 3px
+        text-transform none
+        font-family "Montserrat SemiBold"
+        letter-spacing: 0
+    .sessionDetails
+      margin-top -30px
+      padding-left 70px !important
+      font-family "Montserrat SemiBold"
+    .account_balance
+      flex-wrap wrap !important
+      margin-top 0
+      display: flex
+      flex-direction: column-reverse
+      margin 20px 0 0 0 !important
+      padding-left 0px !important
+      @media mobile-big-and-below
+        max-height: 26px !important
+      .dots-loader span
+        color #fff
+        text-align center
+        font-size: 46px !important
+      .loading
+        margin auto
+        max-height: 26px !important
+      span
+        text-transform none
+      .value
+        font-size 14px !important
+        text-align left
+        cursor: pointer
+        color #ebe200 !important
+        @media mobile-big-and-below
+          width 120px
+      .text
+        max-width unset
+        line-height 12px
+        font-size 14px !important
+        margin-right 5px
+        font-weight normal
+        color #fff
+      .bonus
+        display flex !important
+        flex-wrap wrap
+        align-items center
+        justify-content flex-start
+      .balance
+        display flex !important
+        flex-wrap wrap
+        align-items center
+        justify-content space-between
+  .dialogMyAccountDesktop
+    position fixed
+    right -24px
+    top -24px !important
+    max-height 100%
+    height 100%
+    background #dadbdf!important
+    overflow-y scroll
+    overflow-x hidden
+    .user_details
+      .user_title
+        font-size 20px
+        text-align center
+    .session_details
+      margin-left 0 !important
+      padding-left 65px
+      margin-top -45px
+      text-transform: none
+      font-family "Montserrat SemiBold"
+    .account_balance
+      padding: 0px !important
+      background transparent !important
+      border-top 0px !important
+      text-transform uppercase
+      font-weight normal
+      .balace_bonus
+        display flex
+        justify-content: space-between
+        align-items: center
+        padding-top 20px
+      .value
+        color #ebe200 !important
+        font-family "Montserrat SemiBold"
+      .text
+        max-width unset
+        line-height 12px
+      .balance
+      .bonus
+        margin-bottom 10px
+        font-family "Montserrat SemiBold"
+        text-transform none
+
+    .account_desktop
+      margin -16px -16px 0 -16px
+      .account_details
+        padding 16px !important
+        border-radius 0
+        .buttons
+          padding 0
+          background transparent
+          .v-btn
+            text-transform none
+       .account_links
+        background #dadbdf !important
+        margin 0px !important
+        // padding 0 16px !important
+        .site-navigation
+          background #fff !important
+          .navigation-group:last-child
+            .navigation-item:last-child
+              background #fff !important
+              border-top 1px solid #364A5E !important
+              padding-top 0px
+              padding-bottom 0px
+
+     /**********************************VERIFICATION*******************************/
+
+  .accpage
+    .verification
+      .blue-heading
+        background: #364a5e
+      .verTitles
+        .verTextContainer
+          .titles
+            .guidedTitle
+              color #364a5e
+      .acc_verification
+        .upload-doc-form
+          .pd-verify
+            .input-file
+              border 2px solid #ebe200
+              color #364a5e
+        .verify-content
+          .account-page
+            #confirmEmalByPinForm
+              strong
+                color #364a5e
+
+   /**********************************VERIFICATION ENDS*******************************/
+
+  /**********************************PICK & CLAIM*******************************/
+  .accpage
+    .pnc-container
+      padding-top: 10px
+      .available-promos
+        .available-promos-header
+          background #43505a !important
+        .promos
+          .grouped-promos
+            border: 2px dashed #43505a !important
+            .grouped-promos--header
+              span
+                i
+                  color #43505a 
+            .grouped-promos--container
+              input[type="radio"]
+                border: 1px solid #43505a !important
+                box-shadow: 0 0 0 1px #43505a !important
+              input[type="radio"]:checked
+                outline 2px solid #43505a !important
+                background-color: #43505a !important
+                border: 2px solid #fff !important
+
+              span
+                i
+                  color #43505a
+          .standalone-promos
+            div
+              span
+                i
+                  color #43505a
+      .no-available-promos
+        .no-available-promos-header
+          background #43505a !important
+  .pick-and-claim-dialog
+    background: #202c38 !important
+  .v-dialog
+    .pnc-claim-dialog
+      .promo
+        .v-icon
+          display block
+          margin 15px auto
+          color transparent !important
+          background-image: url("~@/assets/images/brands/dn/promo-orange.svg")
+          height 50px
+          width 50px
+          background-position: center
+      .promotion-name
+        border: 2px dashed #ff671f !important
+      .claim-buttons
+        .claim-buttons--close
+          border: 2px solid #ff671f !important
+          color: #ff671f !important
+        .claim-buttons--claim
+          background: #ff671f !important
+          color: #202c38 !important
+  /**********************************PICK & CLAIM END*******************************/
+
+  .accpage
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+      margin: 40px 0
+      text-align: center
+      line-height: 1.2
+
+      &:first-child
+        margin-top: 0
+
+    h1
+      font-size: 2.1rem
+    h2
+      font-size: 1.8rem
+    h3
+      font-size: 1.5rem
+
+    ul
+      padding-left: 40px
+
+    .message
+      &,
+      &.info
+        padding: 20px
+        margin: 20px 0
+        background: #b2e6ff
+
+    .description
+      margin-bottom: 40px
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6
+        text-align: left
+
+    .personal-info
+      border: none
+
+      .sqaa
+        padding: 20px
+        margin: 30px 0
+
+    .ca
+      display: flex
+      align-items: center
+      margin-bottom: 10px
+  /******************************  ACCOUNT AND LOGIN END  ****************************************************/
+
+  /*********************MENU MOBILE********************/
+  .v-navigation-drawer
+    background #fff
+    z-index 20 !important
+    max-height 100% !important
+    &.dialog-menu
+      ul
+        list-style none
+
+      .header
+        .logo-wrapper
+          flex-grow: 1
+        .close
+          padding: 0
+          margin: 0
+          position: static
+          align-self: flex-start
+          top: 0
+          bottom: 0
+          left: 0
+          right: 0
+          .v-icon
+            color: #43505a !important
+            font-size: 34px
+    .user_details
+      display none
+    .navigation-group.VERTICAL h3
+      // display none !important
+      .v-icon
+        display inline-block !important
+        margin-left -30px
+        margin-right 10px
+        &.info
+          background-color transparent !important
+          color transparent !important
+          background-image: url('~@/assets/images/brands/dn/info.svg')
+          height: 20px
+          width: 20px
+    .icon-home
+      background-image: url('~@/assets/images/brands/dn/home.svg') !important
+      height 22px
+      width 22px
+      margin-left -30px
+    .icon-user
+      color transparent !important
+      background-image: url('~@/assets/images/brands/dn/profile.svg')
+      height 22px
+      width 22px
+      margin-left -30px
+      margin-right 10px
+
+    .header
+      background none
+      margin: 0
+      padding: 0 0 10px
+
+      .title
+        padding: 0
+    .logo img
+      max-height 90px
+      max-width 200px
+      height: auto
+    .main-navigation
+      h3
+        display none
+      .site-navigation
+        margin-left auto
+    .sports-menu
+      padding-left 20px
+      h3
+        color #364A5E
+        font-size 14px
+        font-weight normal
+        display flex
+        align-items center
+        margin-bottom 0
+        font-family: "Montserrat SemiBold"
+        padding: 10px 0
+    .about-us
+      h3
+        border-bottom 0px !important
+        padding-top: 5px
+      li
+        display block !important
+        a
+          text-decoration none
+          padding 5px 5px 5px 0px
+    .about-us:last-child a
+        padding-bottom 10px
+        .head_link
+          border-bottom none
+          padding-bottom 0px
+          padding-left 0px!important
+    &.dialog-menu.hamburger
+      z-index 15
+      .header
+        display flex
+        justify-content space-between
+        align-items center
+        .close
+          position relative!important
+          min-width unset
+          .btn__content
+            padding 0
+      .sports-menu
+        .v-expansion-panel__container--active .v-expansion-panel__header
+         h3
+          font-family 'Montserrat Bold'
+        .wrapper
+          margin: 11px 10px 7px
+          h3
+            border-bottom: solid 1px #E9E8EC
+
+          &:last-child
+            border: none
+
+          .navigation
+            padding-top: 0px
+
+          &.navigation
+            .navigation-item
+              a
+                padding: 10px 0
+                color #364a5e
+      .menu_holder
+        position relative
+        height calc(100% - 110px)
+        overflow-y: scroll
+        padding-bottom 110px
+      .menu_footer
+        position fixed
+        bottom 0px
+        left 0px
+        padding 8px 3px 8px 8px
+        display flex
+        flex-direction row
+        background #fff
+        .footer_text
+          color #000
+          font-size 6px
+          font-family 'Montserrat SemiBold'
+        .footer_logo img
+          max-width 70px
+          margin-right 5px
+
+      .browser-safari.os-ios&
+        .menu_holder
+          padding-bottom: 0
+          overflow-y: auto
+          height: calc(100% - 79px)
+          display: flex
+          flex-direction: column
+
+          .sports-menu
+            flex: 1 0 auto
+            height: calc(100% - 130px)
+            overflow-y: scroll
+
+          .menu_footer
+            position: static
+            flex: 0 0 auto
+
+
+  /*********************  MENU MOBILE END  ********************/
+
+  /*********************  HEADLINES  **************************/
+  .headlines
+    padding-right 5px !important
+    margin-bottom 5px !important
+    background transparent
+    @media mobile-big-and-below
+      padding-right 0px !important
+    .headline-big
+      .v-carousel__controls
+        display flex
+    .v-carousel__next
+      .v-icon
+        color transparent !important
+        background-image: url('~@/assets/images/icons/arrow_right_white.svg')
+        height 25px
+        width 25px
+        background-position center center
+    .v-carousel__prev
+      .v-icon
+        color transparent !important
+        background-image: url('~@/assets/images/icons/arrow_left_white.svg')
+        height 25px
+        width 25px
+        background-position center center
+    .v-carousel .v-carousel__controls
+      background transparent !important
+      height 25px
+    .v-carousel__controls>.v-item-group
+      .v-carousel__controls__item .v-icon
+        opacity 1
+        color #C6CCD1 !important
+        font-size: 14px !important
+      .v-btn.v-btn--active .v-icon
+        color #EBE200 !important
+        border 0px !important
+      .v-btn--icon.v-btn--small
+        width 10px
+      .v-btn
+        &:before
+          display none
+  .headline-mobile
+    .v-window.v-carousel.mobile
+      @media mobile-big-and-below
+        box-shadow: none
+  /********************************  TABS  **********************************************************/
+  .app-body.url-state-name-sports.url-sports .sports-page .tab-coupons .tabs
+    background #fff !important
+
+  .tab-content
+    background-color #fff
+    padding 5px !important
+  .bo-node-content
+    .v-tabs__wrapper
+      background #E7E6EA !important
+      padding 10px 10px 0 10px
+      @media mobile-big-and-below
+        padding 10px 10px 0 10px
+  &.url-state-name-sports
+    .v-tabs__wrapper
+      background #fff !important
+      padding 0
+  .tabs_home
+    padding-top 10px
+    .v-tabs__wrapper
+      background #E7E6EA !important
+      padding 0
+    @media mobile-big-and-below
+      padding-top 7px !important
+  .tab-coupon
+    @media mobile-big-and-below
+      background #E7E6EA !important
+  .container
+    .tab-coupons
+      .container.tab-coupon
+        .v-tabs-wrapper
+          @media mobile-big-and-below
+            margin-left 0px !important
+            margin-right 0px !important
+    .p404
+      height: 70%
+    .p404 a
+      color #ebe200
+  .application .v-tabs .v-tabs__bar
+    margin 0 5px 0 0
+    box-shadow none !important
+    @media mobile-big-and-below
+      margin 0
+  .live-coupon.not-on-tab
+    .v-tabs .v-tabs__bar
+      margin 0 !important
+  .child-navigation
+    @media mobile-big-and-below
+      background #fff !important
+      // margin 0 5px 0 5px
+  .v-menu.v-tabs__div
+    background #E7E6EA !important
+  .more_tabs
+    margin-top 10px !important
+    background #364A5E !important
+    align-items center
+    border-radius: 3px !important
+    span
+      color: #fff !important
+      padding-right: 5px
+    .v-icon
+      color transparent !important
+      background-image: url('~@/assets/images/icons/arrow_down_white.svg')
+      height 15px
+      width 15px
+      background-position center
+  .tab-li:hover
+    .v-list__tile
+      color #ebe200 !important
+  .tab-li.active
+    .v-list__tile
+      color #ebe200 !important
+  .container
+    .tab-coupons
+      .container.tab-coupon
+        .v-tabs-wrapper
+          position relative
+          z-index: 1
+          @media mobile-big-and-below
+            margin 0
+
+      .v-tabs:not(.tabs_holder) .v-tabs__bar .v-tabs__container .v-tabs__div.tab.active
+        box-shadow: none !important
+  .application .tabs_home.v-tabs-wrapper
+    @media mobile-big-and-below
+      margin 0 !important
+    .v-tabs .v-tabs__bar
+      margin-right 0px
+  .application .v-tabs .v-tabs__bar .v-tabs__container .v-tabs__div
+    min-width unset
+    max-width unset
+  .application .v-tabs:not(.tabs_holder) .v-tabs__bar .v-tabs__container .v-tabs__div.tab
+    background-color #e7e6ea
+    // border 2px solid #fff
+    border-bottom-width 1px
+    border-left-width 1px
+    // padding 15px
+    border-radius 0
+    a
+      color: #5A769B !important
+      text-transform uppercase
+      font-family: 'Montserrat Bold'
+      .ripple__container
+        display none !important
+    &.active
+      // margin-top 3px
+      box-shadow none !important
+      background #fff  !important
+      border-bottom 0px !important
+      a
+        color #5A769B !important
+        .ripple__container
+          display none !important
+    &.tabLive
+      @media mobile-big-and-below
+        padding 10px
+      .v-tabs__item
+        color transparent !important
+        &:before
+          content 'LIVE'
+          color: #3b495f
+          background-color: #ebe200 !important
+          border 2px solid #3b495f
+          font-style normal
+          font-family 'Montserrat SemiBold'
+          border-radius 3px
+          font-size 13px
+          padding 5px 20px
+          position absolute
+          @media mobile-big-and-below
+             padding 5px
+  &.url-live
+    .application .v-tabs .v-tabs__bar .v-tabs__container .v-tabs__div.tab
+      height 56px
+      background #e7e6ea !important
+      a
+        flex-direction row !important
+        white-space nowrap
+        color #5a769b  !important
+        font-weight normal
+        &.active
+          color #fff !important
+      &.active
+        background #fff !important
+        a
+          color #5a769b !important
+      .numberOfEvents
+        color: #3b495f
+        background: #ebe200 !important
+        border 2px solid #3b495f
+        width: 35px
+        height: 35px
+        font-size: 14px
+        font-family: "Montserrat Bold"
+        line-height: 31px
+        border-radius: 50%
+      span
+        display block !important
+        line-height 20px
+    .not-on-tab .sports
+      height 56px
+      .v-tabs__bar
+        margin -5px -5px 2px -5px !important
+        .v-tabs__wrapper .v-tabs__container
+          height 56px !important
+    .event.GOLF,
+    .event.MOTORSPORT,
+    .event.NASCAR
+      .selections-mobile
+        .selection-wapper.selection-data
+          .selectionprice
+            border-radius 2px
+            background-color #fff !important
+            color #3b495f
+            padding 9px 0
+            border: 2px solid #e4e5e8
+
+  .live-coupon
+    .event.GOLF,
+    .event.MOTORSPORT,
+    .event.NASCAR
+      .selections-mobile
+        .selection-wapper.selection-data
+          .selectionprice
+            border-radius 2px
+            background-color #fff !important
+            color #3b495f
+            border: 2px solid #e4e5e8
+            padding 9px 0
+
+  .tabs_holder
+    .v-tabs__bar
+      .v-tabs__div.tab
+        background #f2f2f2 !important
+        a
+          color #5a769b !important
+      .v-tabs__div.tab.active
+        background #5a769b !important
+        a
+          color #fff !important
+
+  /********************************TABS END*********************************************************/
+
+  /******************************  COUPONS  *******************************************************/
+  .application
+    .tabs_holder
+      background #fff
+      .v-tabs__wrapper
+        background #fff !important
+        padding 0 !important
+        @media mobile-big-and-below
+          padding 0 !important
+
+    .coupon-event
+      .names.participants
+        .eventTitle
+          color #3b495f
+          font-family 'Montserrat Bold'
+          text-transform uppercase
+    .coupon-event.outright.twoselections
+      .market
+        .more-markets
+          border 0px
+          border-radius 0
+          display inline-flex
+          align-items center
+          justify-content center
+          width 30px
+          height 30px
+          margin-left 25px
+          background transparent
+          .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/icons/arrow_right.svg')
+            height 20px
+            width 20px
+    .coupon-event:not(.outright)
+      .market
+        display flex
+        align-items center
+        .markets-wrapper.markets-container.coupon
+          display inline-block
+          width calc(100% - 65px)
+          @media mobile-big-and-below
+            width 100%
+        .more-markets
+          border 0px
+          border-radius 0
+          display inline-flex
+          align-items center
+          justify-content center
+          width 30px
+          height 30px
+          margin-left 25px
+          background transparent
+          // margin-right 10px
+          .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/icons/arrow_right.svg')
+            height 20px
+            width 20px
+        .big3
+          .market
+            .selection
+              .selection-wapper.selection-data
+                margin 2px 1px 2px 0px
+                border-radius: 3px
+                letter-spacing: 0
+      &.odds-boost
+        .market
+          .markets-wrapper.markets-container.coupon
+            width 100%
+      .participants
+        .eventTitle
+          @media mobile-big-and-below
+            display table
+            .name
+              @media mobile-big-and-below
+                display table-cell
+                max-width 125px
+    .coupon-event.GOLF
+      .market
+        .markets-wrapper.markets-container.coupon
+          width 100% !important
+
+    .coupon-threeselections:not(.outright) .market
+      display flex
+      align-items center
+      .more-markets
+        margin-bottom 4px
+
+    .marketgroups
+      background #fff
+      padding 5px 0 2px 0
+    .marketgroup
+      margin 0 !important
+      .coupon-event
+        background none
+        padding 12px 5px 0px 45px
+        @media mobile-big-and-below
+          padding 12px 5px 0px 12px
+      .coupon .date
+        .head
+          padding-left 45px
+          @media mobile-big-and-below
+            padding-left 12px
+        h4
+          background transparent !important
+          color #3b495f
+          font-family 'Montserrat Bold' !important
+          @media mobile-big-and-below
+            color #3b495f
+          .igt-icon
+            display none
+          // override-svg-icon-with-default(icon-names)
+          .coupontitle
+            top 0
+        .event
+          &.last
+            border-bottom 0px solid #dadbdf !important
+          &:not(:first-child)
+            border-top 0px solid #dadbdf  !important
+          &:nth-child(odd)
+            background #E7E6EA !important
+    .v-expansion-panel__header
+      background #E7E6EA !important
+      min-height unset
+    .hheader
+      background #E7E6EA !important
+      border 0 !important
+      .igt-icon .css
+        display none
+        width 25px
+        height 25px
+      .head
+        color #3b495f
+      .markets-title
+        line-height 43px !important
+        @media mobile-big-and-below
+          width 63px !important
+        h4
+          color #3b495f !important
+          font-size 12px !important
+          font-family: "Montserrat Bold" !important
+          @media tablet-and-above
+            margin-left 20px
+      .more_bets
+        color #3b495f
+        text-transform uppercase
+        font-family 'Montserrat Bold' !important
+    .marketgroups
+      margin-right 5px
+      @media mobile-big-and-below
+        margin 0
+    .tab-content
+      .marketgroups
+        margin-right 0px
+    .tab-coupons
+      background #ffffff
+      margin-right 5px
+      @media mobile-big-and-below
+        margin 0
+      .tab-coupon
+        padding 0px 10px 10px 10px !important
+        background #E8E7EB
+    .marketgroup .coupon.group-by-date .date.live .event
+      .info-markets-container
+        padding: 12px 5px 0px 45px
+        @media mobile-big-and-below
+          padding: 12px 5px 0px 9px
+      .single-coupon-footer
+        padding 0px 6px 6px 45px !important
+        @media mobile-big-and-below
+          padding 0px 11px 0px 8px !important
+      .event-info .event-info .eventTitleWrapper .eventTitle
+        color #3b495f !important
+        font-family: 'Montserrat Bold'
+
+
+
+    .markets
+      .selection .selection-wapper
+        border-radius 0px
+        background #fff
+        border 2px solid #E4E5E8
+        @media mobile-big-and-below
+          min-width 63px
+          width 63px
+        .value
+          .currenthandicap
+          .selectionprice
+            line-height: 16px
+            font-size: 15px
+          .currenthandicap
+            font-family 'Montserrat Regular'
+            font-weight: normal
+            font-size: 14px
+          .selectionprice
+            font-family 'Montserrat Bold'
+            color: #43505A !important
+      .active .selection-wapper
+      .active .value
+      .active .names
+        background #EBE200 !important
+        border-radius 0px
+        border: 0px !important
+      .active .selectionprice
+        color #3b495f !important
+      .active .currenthandicap
+        color #3b495f
+      .active .selection-wapper.estmated-price
+        background none !important
+        // border: 1px solid #dfdfe2 !important
+        .value
+          .selectionprice
+            color #43505A !important
+    .odds-boost
+      .selection .selection-wapper.current-price
+        background: #fff !important
+      .selection.active .selection-wapper.current-price
+        background: #EBE200 !important
+    .marketgroup .coupon-event .market .markets-container .markets.single .market.three-and-more-selections .selections-mobile
+      &.active .selection-wapper
+        background none !important
+        .name.names
+        .value
+          background none !important
+          .sh
+            background-color #EBE200 !important
+            border none
+            .selectionprice
+              color #fff
+      .selection-wapper
+        .value .sh
+          background: #fff
+          border: 2px solid #e4e5e8
+          border-radius 3px
+          .selectionprice
+            font-family: 'Montserrat Bold'
+            color: #43505a !important
+    .coupon-event.twoselections.BASEBALL,
+    .coupon-event.twoselections.GOLF,
+    .coupon-event.twoselections.MOTORSPORT,
+    .coupon-event.twoselections.NASCAR,
+    .coupon-event.twoselections.MMA
+      .market
+        .selections-container
+          .selections
+            .selection
+              .selection-column
+                .selection-name
+                  color #3b495f !important
+                  font-family: 'Montserrat Bold'
+    .v-expansion-panel__container
+      background none !important
+      .v-expansion-panel__header
+        .market-name
+          background  #e7e6ea
+          border 1px solid #e7e6ea
+    .marketgroup.clearfix:nth-child(odd)
+      .v-expansion-panel__body
+        .event
+          background  #fff !important
+      .v-expansion-panel__header
+        .market-name
+        .hheader
+          background  #fff !important
+    .name.names
+      background none
+      background-color transparent !important
+      color #3b495f !important
+      font-family 'Montserrat Bold'
+
+    .show-more-btn
+      background-color transparent !important
+      border none !important
+      .v-btn
+        border 1px solid #5a769b
+        border-radius 3px
+        background #fff !important
+        color #5a769b !important
+        height 28px
+        .btn__content
+          height 28px
+    .single-coupon-footer .time .live-box
+      color: #3b495f
+      background-color: #ebe200 !important
+      border 2px solid #3b495f
+      font-style normal
+      font-family 'Montserrat SemiBold'
+      border-radius 3px
+      width 35px !important
+    .live-coupon
+      background #ffffff !important
+      padding 5px 5px 2px 5px
+      .hheader .head h4 .pd-icon
+        position relative
+        top 2px
+        font-weight bold
+      .live-event-container
+        .event
+          border-left 0px solid #dadbdf !important
+          border-right 0px solid #dadbdf !important
+          border-top 0px solid #dadbdf !important
+          &.last
+            border-bottom 0px solid #dadbdf !important
+          .wrapper
+            background-color transparent !important
+          &:nth-child(odd)
+            background #e7e6ea !important
+        .wrapper .more-markets
+            border 0px
+            background none
+            border-radius 0
+            display inline-flex
+            align-items center
+            justify-content center
+            width 30px
+            height 30px
+            margin-left 25px
+            margin-right 10px
+            @media mobile-big-and-below
+              margin 0 !important
+              width 15px
+              height 15px
+            .v-icon
+              color transparent !important
+              background-image: url('~@/assets/images/icons/arrow_right.svg')
+              height 20px
+              width 20px
+              background-position center
+              @media mobile-big-and-below
+                background-position center right
+                height 15px
+                width 15px
+  .eventmarketgroup
+    .hheader
+      .markets-title
+        h4
+          @media tablet-and-above
+            margin-left 0px !important
+  .event-info .event-info .eventTitleWrapper .eventTitle
+      color #3b495f !important
+      font-family: 'Montserrat Bold'
+  .noLive-msg
+    @media mobile-big-and-below
+      background #fff !important
+  .live-sports-page
+    background #e7e6ea
+    padding 10px
+    margin-right 10px
+    @media mobile-big-and-below
+      margin-right 0
+  &.url-state-name-sports-live .live-coupon
+  &.url-state-name-bonavigation2 .live-coupon
+    margin-right 5px
+    padding 5px 5px 2px 5px !important
+  &.url-state-name-bonavigation2 .tab-coupon .live-coupon
+    margin-right 0 !important
+    padding 0 !important
+    @media mobile-big-and-below
+      margin-right 0
+  &.url-event .hheader .more_bets
+    display none
+
+  &.url-sports.url-navigation
+    @media mobile-big-and-below
+      .content
+        padding 0
+        background #E8E7EB
+      .main-column
+        background #E8E7EB
+        .container
+          .tab-coupons
+            .container.tab-coupon
+              background-color #fff
+  &.url-sports.url-event
+    .center-column
+      padding-right 5px
+      @media mobile-big-and-below
+        padding-right 0px
+  .main-column
+    @media mobile-big-and-below
+      background #E8E7EB !important
+  .big3-event
+    .names.participants
+      .eventTitle
+        text-transform uppercase
+        font-family: "Montserrat Bold"
+        color #3b495f !important
+      .time
+        margin-top 10px
+        color #3b495f
+  .selections-container
+    .time
+      color #3b495f !important
+      font-family 'Montserrat Bold'
+      font-size: 14px !important
+  .GOLF .flex.wrapper .more-markets
+    display none !important
+  .more-markets.notInFooter
+    .v-icon
+      color transparent !important
+      background-image: url('~@/assets/images/icons/arrow_right.svg')
+      height 15px
+      width 15px
+      background-position: center right
+  .coupon-event .names.participants
+    @media mobile-big-and-below
+      flex 1
+   .single-coupon-footer
+    padding 0px 6px 6px 45px
+    margin-top 0px !important
+    background transparent
+    @media mobile-big-and-below
+      padding 0px 11px 0px 8px !important
+      background transparent
+    .more-markets
+      color #3b495f !important
+      span
+        display none
+      @media mobile-big-and-below
+        padding 5px 3px
+      .v-icon
+        color transparent !important
+        background-image: url('~@/assets/images/icons/arrow_right.svg')
+        height 20px
+        width 20px
+    .time
+      // color #476790
+      font-size 14px
+      color: #3b495f
+      font-family: "Montserrat Bold"
+      background transparent
+      padding 5px 3px
+      text-transform: uppercase
+      .live-time
+        color #3b495f !important
+        font-size 14px !important
+        margin-top 0 !important
+  .info-markets-container
+    align-items center
+  .morebets
+    border 0px
+    border-radius 50%
+    display inline-flex
+    align-items center
+    justify-content center
+    width 30px
+    height 30px
+    margin-left 25px
+    margin-right 10px
+    .v-icon
+      color transparent !important
+      background-image: url('~@/assets/images/icons/arrow_right.svg')
+      height 20px
+      width 20px
+    &.notInFooter
+      margin-right 0px
+      margin-left 0px
+      width: 20px
+
+  .icon-live:before
+    content: 'LIVE'
+    font-size: 13px
+    border-radius 3px
+    color: #3b495f
+    background: #ebe200 !important
+    border 2px solid #3b495f
+    font-style normal
+    padding 0 5px
+    font-size 11px
+    margin 1px
+    font-family 'Montserrat SemiBold'
+
+  .site-navigation
+    .navigation-item
+      .icon-live:before
+        content: 'LIVE'
+        font-size: 13px
+        border-radius: 3px
+        color: #3b495f
+        background: #ebe200 !important
+        border: 2px solid #3b495f
+        font-style: normal
+        padding: 0 3px
+        font-size: 11px
+        margin: 1px 1px 1px -5px
+        font-family: 'Montserrat SemiBold'
+        width: 30px !important
+        height: 20px !important
+        line-height: 17px
+        @media mobile-big-and-below
+          line-height: 20px
+
+  .expand_more_icon
+    color transparent !important
+    background-image: url('~@/assets/images/icons/arrow_down.svg')
+    height 20px
+    width 20px
+    background-position center
+  .expand_less_icon
+    color transparent !important
+    background-image: url('~@/assets/images/icons/arrow_up.svg')
+    height 20px
+    width 20px
+    background-position center
+
+  &.url-live .event.GOLF .markets-wrapper
+  &.live-coupon .event.GOLF .markets-wrapper
+  &.url-live .event.MOTORSPORT .markets-wrapper
+  &.live-coupon .event.MOTORSPORT .markets-wrapper
+  &.url-live .event.NASCAR .markets-wrapper
+  &.live-coupon .event.NASCAR .markets-wrapper
+    background transparent !important
+
+  /******************************  COUPONS END  *******************************************************/
+  /****************************************EVENT PAGE*************************************************/
+
+  .events .event.TENNIS .wrapper
+    padding-left 10px
+  .live-coupon-event
+    .eventTitleWrapper
+      .showResult
+        border 0px
+        font-family: "Montserrat Bold"
+        background transparent !important
+        color #3B495F !important
+        font-size 14px
+      .activelead.dot
+      .activelead.dot-mobile
+        display none
+  .event .event_header
+    background rgba(59,73,95,0.3)
+    border-radius 0px
+    padding 50px 20px 20px
+    margin-bottom 10pxa
+    font-family: "Montserrat SemiBold"
+    @media mobile-big-and-below
+      padding 10px
+      background rgb(59,73,95)
+    .event-info
+      height auto !important
+      @media mobile-big-and-below
+        background-color transparent !important
+    .competition-live
+      .competition-name
+        text-transform uppercase
+        color: #fff
+        font-size: 26px
+        margin-bottom: 20px
+        font-family: "Montserrat SemiBold"
+        div
+          padding-top: 0
+        @media mobile-big-and-below
+          font-size 16px !important
+        .sport_name
+          color #0f244c !important
+          margin-right 5px
+          text-transform uppercase
+      &.pre-match
+      &.live-match
+        margin 0px 0 10px 0 !important
+        display flex
+        align-items center
+        justify-content center
+    .parent
+      align-items center
+      padding 6px 25px
+      background: rgba(255,255,255,0.231)
+      position: relative
+
+      @media mobile-big-and-below
+        padding 0px 18px
+
+      .child-center
+        text-align center
+        margin-bottom 0 !important
+        span
+          display block
+          font-size 18px
+          @media mobile-big-and-below
+            font-size 14px
+
+        .time
+          color #fff !important
+          font-weight 700
+          display: inline-block
+          background: #EBE200
+          color: #43505a !important
+          padding: 11px 32px
+          border-radius: 1000px
+          font-size: 26px
+          font-family: "Montserrat Bold"
+
+          @media mobile-big-and-below
+            font-size: 20px
+            padding: 7px 10px
+
+      .child-left
+      .child-right
+        margin-bottom 0 !important
+        .team-title
+          font-size 25px
+          min-height 0
+          font-weight bold
+          margin-bottom 0 !important
+          @media mobile-big-and-below
+            font-size 14px
+          .pd-icon
+            color #F2F700
+            margin-left 5px
+          @media mobile-big-and-below
+            padding-left 0 !important
+            line-height 15px
+
+    .event-info
+      & > .day
+        display block
+        text-align: center
+        padding: 10px
+        color: #fff
+        font-size: 18px
+
+        @media mobile-big-and-below
+          font-size: 14px
+    .live_header
+      display flex
+      justify-content space-between
+      padding 0 25px
+      @media mobile-big-and-below
+        padding 0
+      .time-period
+        text-align left
+        margin-bottom 0px
+        font-size 16px
+        color: #fff
+        padding-left 0
+
+        @media mobile-big-and-below
+          font-size: 12px
+      .time-display
+        margin-bottom 0px
+        font-size 16px
+        color #96C3E9
+        &:before
+          content '-'
+          color #96C3E9
+          padding-right 10px
+
+      .icon-live:before
+        color: #fff
+        border: none
+        font-size: 20px
+        background: none !important
+
+        @media mobile-big-and-below
+          font-size: 14px
+    .current-main-score
+      background #131f42
+      border-radius 2px
+      color #248adc !important
+      margin 5px 0
+      padding 0 5px
+      font-size 18px
+      // min-height 40px
+    .result-title
+      table
+        border-spacing 2px !important
+        border-collapse unset
+      td
+        background #131f42
+        border-radius 2px
+        font-size 18px
+        padding 5px 10px
+        min-width 40px
+        text-align center
+        @media mobile-big-and-below
+          font-size 14px
+          min-width 30px
+
+      // &.main-score
+      //   display: flex
+      //   background: #ebe200
+      //   color: #43505a !important
+      //   padding: 7px 25px
+      //   border-radius: 1000px
+      //   font-family: "Montserrat Bold"
+      //   margin: 0
+      //   line-height: 1
+      //   absolute-center()
+      //
+      //   @media mobile-big-and-below
+      //     padding: 7px 10px
+      //
+      //   td
+      //   .current-main-score
+      //     background: transparent
+      //     color: #43505a !important
+      //     font-size: 26px
+      //     margin: 0
+      //     display: inline-block
+      //     padding: 0
+      //
+      //     @media mobile-big-and-below
+      //       font-size: 20px
+      //       height: auto
+    .current-score
+      color #248adc !important
+    .current-set-score
+    .main-score
+      color #fff !important
+  /****************************************EVENT PAGE END*************************************************/
+  /******************************  EVENT MARKET GROUPS  **************************************************/
+  &.url-event
+    .v-tabs__bar
+      margin-right 0 !important
+    .eventmarketgroups-tab
+      background #E7E6EA
+      padding-top 10px
+      padding-left 10px
+      padding-right 10px
+  .eventmarketgroup
+    border-bottom  10px solid  #E7E6EA
+    border-left  10px solid  #E7E6EA
+    border-right  10px solid  #E7E6EA
+    .event-market-header
+      &:nth-child(odd)
+        .market-name
+          // background #F7F9FE !important
+      .market-name
+        color #3b495f !important
+        border 1px solid #dadbdf !important
+        .flex.icon-span
+          .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/icons/arrow_down.svg')
+            height 20px
+            width 20px
+            background-position center
+        &.expanded-market
+          .flex.icon-span
+            .v-icon
+              color transparent !important
+              background-image: url('~@/assets/images/icons/arrow_up.svg')
+              height 20px
+              width 20px
+              background-position center
+  .v-expansion-panel
+    .market-name
+      .pd-icon
+        font-size 15px
+
+    .hheader
+      .head h4
+        font-weight bold
+  .marketgroup .hheader .head h4
+  .eventmarketgroup
+    &.marketgroup
+      background #fff
+      padding 5px 5px 2px 5px
+      border-radius 0
+  .eventmarketgroup
+    .markets
+      .market
+        margin-top 0
+        font-family: "Montserrat Bold"
+        .name
+          color #3b495f !important
+          .names
+            color #3b495f !important
+        .smaller
+          color #3b495f !important
+        .parent
+          border 1px solid #e7e6ea !important
+        &.two-selections .selections-in-columns .selections-container .selection
+          border-right 1px solid #e7e6ea
+          @media mobile-big-and-below
+            border-right 0px
+      .big3
+        border 1px solid #e7e6ea !important
+        align-items center
+      .selections-in-columns
+        .selections-container
+          .selections
+            .selection
+              .selection-column
+                .selection-wapper
+                  border-radius 3px !important
+  .eventmarketgroup
+    .selections-container
+      .selection-name
+        color #3b495f !important
+    .markets
+      .market.three-and-more-selections
+        .selections-container
+          .flex:not(:last-child)
+            border-right 1px solid #e7e6ea !important
+            @media mobile-big-and-below
+              border-right 0px !important
+          .flex
+            &:not(.selection)
+              border-bottom 1px solid #e7e6ea !important
+              border-radius 0px
+              .flex-more3-container
+                &.two-columns
+                  .flex-item:not(:last-child)
+                    border-right 1px solid #e7e6ea !important
+                  .selections:not(:last-child)
+                    border-bottom 1px solid #e7e6ea !important
+                &.three-columns
+                  .flex-item:not(:last-child)
+                    border-right 1px solid #e7e6ea !important
+                  .selections:not(:last-child)
+                    border-bottom 1px solid #e7e6ea !important
+              .selections-mobile
+                .selection-wapper
+                  .value
+                    background #fff
+                    border 2px solid #e4e5e8
+                    border-radius 0px
+                    .selectionprice
+                      color #3b495f
+          .show-more-btn
+            border-top 1px solid #e7e6ea !important
+            display: flex
+            align-items: center
+            justify-content: center
+  .selections-container > .flex .selections-mobile
+    border-right 1px solid #e7e6ea !important
+    &.mobile
+      border none  !important
+    &:nth-child(3n)
+      border none  !important
+
+  .nomarkets
+    color #828595 !important
+    border 0px !important
+    margin-bottom: 0
+
+
+   /******************************  EVENT MARKET GROUPS END  *******************************************************/
+
+  /******************************  SPORTS FILTER  *******************************************************/
+  .application
+    .container.tab-coupon
+      .sports-filter
+        background #fff !important
+        min-height 60px
+        margin-top: 0
+        margin-bottom: 0
+        // justify-content center !important
+        // align-items center
+        // display flex
+        .v-tabs__container
+          align-items: center
+          &:before
+            content 'filter'
+            text-transform uppercase
+            font-family 'Montserrat Bold'
+            color #3b495f
+            height 60px
+            width 70px
+            line-height 36px
+            align-items center
+            justify-content center
+            display flex
+        .v-tabs__bar
+          margin-right 0 !important
+          .v-tabs__wrapper
+            height 60px
+          .icon.tabs__icon
+            display block !important
+            background #ffffff
+            width 30px !important
+            line-height 60px
+        .sport.v-tabs__div.tab
+          background-color #fff !important
+          border 1px solid #5A769B !important
+          border-radius 3px !important
+          margin 0 5px
+          height 32px
+          // padding 10px
+          a
+            color #5A769B !important
+          &.active
+            background-color #5A769B !important
+            a
+              color #fff !important
+
+        &.v-tabs:not(.tabs_holder) .v-tabs__bar .v-tabs__container .v-tabs__div.tab.active
+          margin-top: 0
+
+  /******************************  SPORTS FILTER END  *******************************************************/
+  /******************************  BOTTOM NAV  *******************************************************/
+  .bottom-navigation
+    .v-bottom-nav
+      background #364A5E !important
+      border-top 0px !important
+      .v-btn
+        border-top: 4px solid transparent
+        override-svg-icon(icon-names, 'white') !important
+        &.account
+          .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/brands/dn/profile-white.svg')
+            height 22px
+            width 22px
+        &.promo
+          .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/brands/dn/promo-white.svg')
+            height 24px
+            width 24px
+        &.betslip-button
+          .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/brands/dn/betslip-white.svg')
+            height 22px
+            width 22px
+        &.sports
+          .icon-nfl
+            color transparent !important
+            background-image: url('~@/assets/images/brands/dn/sports-white.svg')
+            height 24px
+            width 24px
+        &.home
+          .icon-home
+            color transparent !important
+            background-image: url('~@/assets/images/brands/dn/home-white.svg')
+            height 22px
+            width 22px
+        &.hambMenu
+          .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/brands/dn/hamburger-white.svg')
+            height: 22px
+            width: 22px
+            background-repeat: no-repeat
+        .bottom_nav_text
+          color #fff
+          padding-top 0
+          font-size 11px
+        &.active
+          border-radius 0
+          color #fff
+          border-color: #ebe200
+          .bottom_nav_text
+            color #fff !important
+
+
+        .igt-icon:not(.background)
+          height: 29px
+      a.v-btn
+        border: none
+      .v-icon
+        color #fff !important
+      .badge
+        background-color #EBE200 !important
+        color: #3b495f !important
+
+  /******************************  BOTTOM NAV END  *******************************************************/
+
+  /*********************************  BETSLIP ***********************************************/
+  .bet_rejected
+    background #e5b96c!important
+  .betslip-page .SBbetSlip
+    h2
+      color #3b495f !important
+    .teaser-option-container
+      h2
+        color #fff !important
+  .stakeAll
+    .multiSinglesStake .money-input
+      border-radius 3px
+      &.input-only
+        border 1px solid #3b495f !important
+      label
+        background: #3b495f !important
+  .add-bets-container
+    background #3b495f !important
+    justify-content: space-between !important
+    padding 1px 10px !important
+    .ab-info-msg
+      .ab-label
+        text-align right
+        &.zerobets
+          span
+            color #ebe200 !important
+    .v-icon
+      border-radius: 50% !important
+      color: #ebe200  !important
+      border: 1px solid #ebe200 !important
+      font-size: 40px
+      padding: 0 !important
+  .betslip-column
+    background none
+    box-shadow none !important
+    .circle-loader
+      border-top: 7px solid #0b4da1 !important
+    .selection
+      border 0px !important
+    .banners
+      .headlines
+        padding 0 !important
+        margin 0
+      img
+        max-width 100%
+        // padding-bottom 10px
+        border-radius 5px
+      .jumbotron__image
+        position unset
+        top 0
+        left 0
+        transform none
+        min-width 100%
+        will-change unset
+        transition none
+    @media moblie-big-and-below
+      margin-top 0
+    .betslip-page
+      background #E7E6EA
+      // padding-bottom 20px
+      position unset !important
+      overflow unset !important
+      padding 10px
+      margin-top: -5px
+      .betslipHolder
+        background #fff
+      .betslipHeader
+        margin: 0px -5px 5px -5px
+
+      @media tablet-and-above
+        margin-bottom 50px
+      &.betslip-empty
+        background #E7E6EA
+        min-height 50vh
+        @media tablet-and-above
+          margin-bottom 20px
+        .betslipHolder
+          min-height 50vh
+      .betslip-page-header
+        background  #E7E6EA
+        border-radius 0
+        overflow hidden
+        .tab a
+          color #06283b
+          @media mobile-big-and-below
+            color #fff
+
+      .betslipHeader
+        border-radius 0
+        background #E7E6EA
+        .tab
+          color #000
+          background-color #E7E6EA
+          border 0px solid #fff
+          border-bottom-width 0px
+          border-left-width 0px
+          margin 0
+          border-radius 0
+          font-weight bold
+          a
+            color: #000 !important
+            text-transform: uppercase
+            font-family 'Montserrat SemiBold'
+            font-size 12px
+          &.active
+            box-shadow none
+            background #ffffff
+            border-bottom 0px
+            color #5a769b
+            a
+              color #5a769b !important
+  .dialog-betslip
+    background #3b495f
+    padding-top 0
+    .betslip-page
+      .betslipHeader
+        margin 0
+      .your_receipt
+        color #fff
+      &.bet_placed_sucessfuly
+        .mobile_betslip
+          top 62px
+    .mobile_betslip
+      top 65px
+      height calc(100% - 115px)
+      left 0px
+      right 0px
+      margin 0px
+      .SBbetSlip
+        margin 0 5px
+        background #fff
+        @media mobile-big-and-below
+          margin 0 5px
+          padding 0
+      .bets
+        background #fff
+        padding-bottom 5px
+        padding-top 5px
+      .selection
+        border 0px !important
+    .betslip-page
+      background #3b495f
+      &.bet_placed_sucessfuly
+        .mobile_betslip
+          height 100% !important
+        .betslip-page-header
+          margin 0
+          border-radius 0px !important
+      .betslip-page-header
+        background  #3b495f !important
+        margin 5px
+        overflow hidden
+        &.user_logged_in
+          top 40px
+        .tab
+          min-height 52px
+          padding 5px
+          flex 1
+          a
+            flex-direction row
+            text-transform uppercase
+          .badge
+            background #fff
+            margin-left 5px
+            border-radius 50%
+          &.active
+            background #6A7585 !important
+            a
+              background transparent !important
+              color #fff
+              font-weight normal
+            .badge
+              background #ebe200 !important
+              border: 5px solid #3b495f
+              color #3b495f
+              width 42px
+              height 42px
+              font-family: "Montserrat Bold"
+              font-size 16px
+        &:not(.user_logged_in)
+          .tab
+            flex auto
+            &.active
+              a
+                background transparent !important
+                color #fff
+                .badge
+                  background #ebe200 !important
+                  color #3b495f
+                  border: 5px solid #3b495f
+                  width 42px
+                  height 42px
+                  font-family: "Montserrat Bold"
+                  font-size 16px
+      .betslipHeader
+        border-radius 4px 4px 0 0
+        .tab
+          a
+            color #000 !important
+            text-transform uppercase
+            font-size 12px
+          &.active
+            box-shadow none
+            background #ffffff
+            border-bottom 0px
+            color #004c97
+            a
+              color #004c97 !important
+
+      .preheader
+        display flex
+        justify-content space-between
+        flex-direction row
+        height 40px
+        align-items center
+        font-family: "Montserrat SemiBold"
+        font-weight normal
+      .betslip_balance
+        flex-direction row
+        color #fff
+        padding-top 5px
+        align-items center
+        margin 0 5px
+        .span_balance
+          font-size 14px
+          color: #ebe200
+          opacity 1
+          font-family: "Montserrat SemiBold"
+          margin-right 5px
+          &:after
+            content ':'
+      .close
+        min-width auto
+        margin-left auto !important
+        .icon
+          color #AABDD1
+        .btn__content
+          padding 0
+          margin 0 5px
+  .betslip-empty
+    .action-btns
+      border 0px !important
+      background transparent !important
+  .bets
+    .singles
+      // border-top 1px dashed #2a77aa
+    .header-PARLAY
+      display none
+  .FastBet
+    .selection-core
+      .stake_price .selection-price
+        background #ebe200
+        color: #43505a
+        .price_title
+          text-transform none !important
+  .SBbetSlip .selection
+    &.isClosed
+      .stake_price
+        .price
+          .price_title
+            word-spacing 9999px // forces "CLOSED MARKET" text to break between words
+    &.interRelated
+      // border-color #000
+      border 1px solid #cfd6db !important
+    .isLive
+      color: #3b495f
+      background: #ebe200 !important
+      border 2px solid #3b495f
+      font-style normal
+      padding 0 5px
+      font-size 11px
+      margin 1px
+      font-family 'Montserrat SemiBold'
+      &:before
+        display none
+    .selection-core
+      .columns
+        // padding 10px 5px
+      .event-name-inner
+        justify-content  space-between
+        // height 30px
+        align-items flex-start
+        .name
+          flex-grow unset
+        .market-name
+          font-size 11px
+          display inline-block
+          font-weight normal
+        .currenthandicap
+          color #e5b96c
+          font-weight 600
+          padding 0
+          margin 0
+        .price
+          background #e5b96c
+          color #ffffff
+          padding 3px 5px
+          font-weight 600
+          display block
+          min-width 40px
+    .selection-core .event-name
+      background-color #3B495F !important
+      border 0px
+      color #fff !important
+      font-weight normal
+      justify-content space-between
+      margin: -1px -1px 7px -1px !important
+      .igt-icon
+        margin-right 0px
+      .btnX
+        margin-right 0
+        .igt-icon > span
+          width: 16px !important
+          height: 20px !important
+      .eventname
+        max-width 140px
+        span
+          display inline
+          white-space: normal
+      .market-name
+        color #fff
+        font-size 11px
+        display inline-block
+        text-align right
+      .currenthandicap
+        color #fff
+    .stake_price
+      display flex
+      .selection-price
+        background #ebe200
+        color: #43505a
+        border-radius: 3px
+        border: 1px solid #cfd6db
+        width: 62%
+        .price_title
+          text-transform none
+          font-family 'Montserrat Regular'
+    .selection
+      .stake-n-return
+        padding-top 0
+    .money-input
+      // border 1px solid #939EAE
+      height 50px
+      .label-txt
+        text-transform uppercase
+    .stake-line > span
+      margin-right 0
+      padding 0
+    .stake
+      .money-input
+        border-right-style solid
+        border-radius: 3px
+    .returns
+      .money-input
+        border 1px solid #cfd6db
+    .bs_right
+    .bs_left
+      display flex
+      align-items center
+  .selection
+    margin 10px 0 !important
+    .igt-icon > span
+      width 25px
+      height 25px
+    .selectionName
+    .event-name
+      color #3b495f !important
+    .selection-price
+      background: #ebe200 !important
+      color: #43505a !important
+      border: 1px solid #cfd6db
+      border-radius: 3px
+      font-family: "Montserrat SemiBold"
+      min-width 50px !important
+    .odds
+    .teaser-hcp
+      background #ebe200 !important
+      border 1px solid #cfd6db
+      color #43505a !important
+      font-family: "Montserrat SemiBold"
+      border-radius: 3px
+      min-width 50px !important
+  .selection.isClosed .selection-core .event-name
+    background #828595 !important
+    color: #fff !important
+  .selection.isSuspended .selection-core .event-name
+    background #828595 !important
+    color: #fff !important
+  .selection.isClosed .selection-price
+  .selection.isSuspended .selection-price
+    background: #828595 !important
+    color: #fff !important
+  .selection.isClosed .teaser-hcp
+    background-color: #828595 !important
+    color: #fff !important
+
+  .selection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-1
+  .selection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-2
+  .selection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-3
+  .selection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-4
+  .selection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-5
+  .selection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-6
+  .selection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-7
+  .selection:not(.S):not(.isClosed):not(.isSuspended):not(.isNR).interRelated-8
+    .selection-core
+      border: 1px solid #364A5E !important
+      .event-name
+        border-color: #364A5E !important
+        background-color: #364A5E !important
+  .application
+    .SBbetSlip
+      .RR
+      .TEASER
+        .column-left
+          margin-right 5px !important
+          override-svg-icon-with-default(icon-names)
+      .isClosed .selection-price .price,
+      .isClosed.isSuspended .selection-price .price,
+      .isSuspended .selection-price .price
+      .isNR .selection-price .price
+        display block
+        font-weight normal !important
+        font-size 12px !important
+
+  .allowedRR
+    .betType
+      margin 5px 0
+      border-radius 5px
+  .betType
+    border 0px solid #dadbdf !important
+    background #fff !important
+    border-radius 5px
+  .header-TEASER
+    .teaser_first
+      color #fff !important
+      &:after
+        content ":"
+  .header-RR.rr_title
+    color #fff !important
+
+  .tab-REGULAR
+    .PARLAYS
+      padding-bottom: 10px
+      border-bottom: 2px solid #e7e6ea
+      margin-bottom: 20px
+
+  .header-RR
+  .title-parlay
+  .header-TEASER
+    background #3b495f
+    color #fff !important
+    text-transform uppercase
+    padding 10px 12px !important
+  .parly_first
+    color #fff !important
+    &:after
+      content ":"
+  .bet_content
+    display flex
+    align-items center
+  .odds_div
+    background #ebe200
+    color #43505a !important
+    width 62%
+    height 50px
+    margin 0 0px 0 5px
+    text-align center
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    font-weight bold
+    font-size 14px
+    font-family 'Montserrat SemiBold'
+    border-radius 3px
+    border 1px solid #cfd6db
+    .price_title
+      font-family 'Montserrat Regular'
+      text-transform none
+      font-size 12px
+    .odds
+      color #43505a !important
+  .stake-n-return
+    .money-input
+      height 50px
+      border-radius: 3px
+      &.focused
+        border-color #3b495f !important
+        label
+          color #3b495f  !important
+      .label-txt
+        text-transform uppercase
+        font-size 11px
+    .stake-line > span:not(:last-child)
+      margin-right 5px !important
+      padding 0
+    .stake
+      .money-input
+        border-right-style solid
+    .currency
+      bottom 2px !important
+    .returns
+      .money-input
+        border 1px solid #cfd6db
+  .stake-n-return
+    .stake-n-return
+      padding 0!important
+
+  .singles .header-SING.focused
+  .singles .header-SING.non-empty
+    margin-top 0px !important
+    padding-top 8px !important
+    margin-bottom 0px !important
+
+  .betslip_total_cost
+    color #003865
+    text-align left
+    font-size 14px
+    display flex
+    justify-content space-between
+    align-items center
+    padding-bottom 10px
+    .line1
+      font-size: 14px
+      color: #003865
+  .betslip_actions
+    border 0px !important
+    @media mobile-big-and-below
+      background #fff
+      left: 5px
+      right: 5px
+      z-index 100
+  .betslip-page:not(.betslip-empty)
+    .betslip_actions
+      @media mobile-big-and-below
+        border-top: 1px solid #cfd6db !important
+    button
+     .loader-container
+        top 2px
+        .circle-loader
+          width 25px
+          height 25px
+  .betslip_footer_bottom
+    display flex
+    justify-content space-between
+    align-items center
+    text-transform uppercase
+    margin: 0 -10px -10px -10px
+    padding: 10px
+    background #E7E6EA
+    @media desktop-and-below
+      padding: 0px
+      margin: 0
+      background transparent
+    .preference-switch
+      margin 0 !important
+      padding 5px 0
+      background none !important
+      border 2px solid #364a5e !important
+      padding: 4px 20px !important
+      border-radius 3px !important
+      flex-direction: row-reverse
+      @media desktop-and-below
+        padding: 4px 5px !important
+      @media mobile-big-and-below
+        padding: 4px 10px !important
+      label
+        color #364a5e
+      .checkbox.input-group
+        .input-group__input
+          .icon--selection-control
+            color #364a5e
+      .v-icon
+        color #364a5e !important
+        padding-right 5px
+    .delALL
+      background none !important
+      width auto !important
+      min-height auto !important
+      border 2px solid #364a5e  !important
+      padding: 5px 20px !important
+      border-radius 3px !important
+      @media desktop-and-below
+         padding: 5px 10px !important
+      span
+        color #364a5e
+        text-transform none
+        font-size 14px
+        letter-spacing: 0
+        font-family 'Montserrat SemiBold'
+      .igt-icon
+        .icon-trash-grey
+          background-image: url('~@/assets/images/icons/bin_icon_darkgrey.svg')
+
+  .betSlipBtns
+    .v-btn.primary-button
+      background #364A5E !important
+
+  /*Betsli Messages*/
+  .betslip-page
+    .goodLuck_text
+      color #2471B7
+      text-transform uppercase
+      font-size 16px
+      font-weight bold
+    .bet_placed_img
+      max-width 100px
+    .bet_placed_icon
+      .v-icon
+        color #364A5E
+        font-size 60px
+        background-color #ebe200
+        border-radius 50%
+        margin-top 100px
+        padding 10px
+        border 5px solid #364A5E
+    .Bet-Accepted h3
+      color #5a769b
+    .bet_placed
+      .action-msg h3
+        color #364A5E
+        text-transform uppercase
+        margin-bottom 0
+      .action_buttons
+        .v-btn
+          border-radius 3px
+          &.primary
+            background #364a5e !important
+            border 1px solid #364a5e !important
+            // color #fff !important
+          &.secondary
+            color #364a5e !important
+            border 1px solid #364a5e !important
+            // color #fff !important
+      .bet_placed .totals
+        border-top 0px
+        @media mobile-big-and-below
+          bottom 150px
+        div
+          margin 0
+          line-height 20px
+          label
+            color #5a769b
+          .value
+            color #5a769b
+      .potential-return
+        .value
+          color #364a5e !important
+    .msg:not(.REGULAR):not(.TEASER):not(.RR)
+        padding: 16px 12px
+        font-family 'Montserrat Regular'
+        display: flex
+        text-align: left
+        font-size: 14px
+        line-height: 16px
+        align-items: center
+        justify-content: left
+        &.info
+          background-color: #5a769b !important
+          color: #fff !important
+          .v-icon
+            color #fff
+        &.inRefferal
+          border-radius: 0px !important
+          background-color: #FFE5CF !important
+          color: #D36000 !important
+          border: 1px solid #FFE5CF
+          border-color: #FFE5CF !important
+        &.bet_actions_msg
+          flex-direction: column !important
+
+  .betslip-page
+    .teaserSelection
+      border 0px !important
+    .selection
+      .checkbox
+        color #e5b96c !important
+    .sport-container
+      border 0px !important
+      &.info-msg-on
+        border 0px !important
+        .teaser-option-container
+          border-bottom 0px !important
+          background-color #364a5e !important
+  .teaser-option-container
+    border-bottom 0px !important
+    background-color #364a5e !important
+    h2
+      color #fff !important
+    .teaser-option
+      background-color #6a7585 !important
+      border 0px !important
+      .v-btn
+        border-radius 0px
+      .value
+        border-color #dadbdf
+        border 0px !important
+        min-width 120px
+        .spread-label
+          color #fff
+          text-transform uppercase
+          font-size 12px
+        .spread
+          color #fff
+      .v-icon
+        color #fff
+      .v-btn.v-btn--disabled
+        .v-icon
+          opacity 0.5 !important
+          color #fff !important
+
+  .betslip-page
+    .errorMsg
+      position relative
+      border-radius 0
+      background-color: #FFE5CF !important
+      color: #D36000 !important
+      border: 1px solid #FFE5CF
+      text-align left
+      font-weight normal
+      padding: 10px 10px
+      margin -12px -12px 12px -12px
+      font-family "Montserrat SemiBold"
+      a
+        color #D36000 !important
+
+      &.HAS_ERRORS
+        background-color #FFE5CF
+        font-family "Montserrat Bold"
+        a
+          color #D36000 !important
+      &.NO_STAKES,
+      &.NO_BET_TYPES,
+      &.NO_LIVE_TEASERS_ALLOWED
+        background-color #FFE5CF
+      &.CLOSED_or_SUSPENDED
+        background-color #FFE5CF
+        color #D36000
+      .igt-icon > span
+        margin-right: 12px
+      .v-icon
+        color #D36000
+    .not-geolocated
+      .pls-wait
+        color #5a769b
+        font-size 16px
+      .verify
+        color #5a769b
+        font-size 14px
+  .stmnt-bet .legribbon-void
+    display none
+  .toggleBetslipColumn
+    background #6A7585
+    height 48px
+    top 95px
+    min-width: 100px
+
+    .tab
+      // height 48px
+      a
+        font-family: "Montserrat SemiBold"
+  .toggleBetslipColumn.postLoginAlertExist
+    top 135px
+  .toggleBetslipColumn
+    .tab:not(.history-tab).active
+      background #6A7585 !important
+      a
+        color #fff !important
+    .tab:not(.history-tab)
+      text-align left
+      padding-left 10px
+    .history-tab
+      a
+        display block
+        font-size 12px
+      &.active
+        background #3b495f
+        a
+          color #ebe200
+    .historyTabs
+      display flex
+  .toggleBetslipColumn // :not(.loggedIn)
+    .betslipTabs.noHistory.loggedIn
+      flex 1
+    .betslipTabs .tab.active
+      a
+        .badge
+          color: #3b495f
+          background: #ebe200 !important
+          // border: 5px solid #3b495f
+          width: 48px
+          height: 48px
+          margin: -5px
+          font-size: 17px
+          font-family: "Montserrat Bold"
+          line-height: 0
+          border-radius 0
+    .betslipTabs:not(.noHistory).loggedIn
+      .tab
+        a
+          .badge
+            color: #3b495f
+            background: #ebe200 !important
+            border: 5px solid #3b495f
+            width: 42px
+            height: 42px
+            font-size: 17px
+            font-family: "Montserrat Bold"
+            line-height: 0
+    .betslipTabs.noHistory
+      .betsliptablink
+        justify-content: space-between
+        display: flex
+        align-items: center
+  .toggleBetslipColumn
+    width 320px
+    padding 0 5px
+    @media only screen and (min-width: 1440px)
+      width 375px
+  .inPlacement.notStaked
+    .selection-price
+      width 100% !important
+  .betslip-page
+    &.fixedBetslip
+      position fixed !important
+      margin-bottom 0 !important
+      &:not(.betslip-empty) .betslip_actions:not(.bet_placed)
+        margin: 20px -5px 0 -5px
+        padding 5px
+        border-top: 1px solid #cfd6db !important
+      .betslipHolder
+        height calc(100% - 20px) !important
+      .betslip_footer_bottom
+        background #fff
+
+  /*********************************  BETSLIP END ********************************/
+
+  /******************************** GEOLOCATION***********************************/
+  .overlay-dialog
+    border-radius 0px !important
+    h1
+      color #fff !important
+    .header
+      background-color #43505a !important
+    .geo-content
+      .buttons
+        .primary-btn-blue
+          margin auto
+          border-radius 2px !important
+          background-color: #3b495f !important
+          color: #fff
+      .geo-suggestion
+        color #FF4B4B !important
+  .betslip-gc-msg
+    border-radius 0px !important
+    button
+      background-color #ebe200 !important
+      color: #43505a !important
+      font-family: "Montserrat SemiBold"
+  .betslip-gc-msg .primary-btn
+    background-color: #ebe200 !important
+    border-radius: 3px
+    color: #3b495f
+  .betslip-gc-msg .betslip-gc-details .gc-link
+    color: #3b495f
+
+
+  /******************************** GEOLOCATION END***********************************/
+
+  /************** APPINSTALLER PAGE *************/
+  .app-installer
+    .primary-btn-blu
+      background-color #0b4ca1 !important
+
+  /*TABS SLIDER ARROWS*/
+  .v-tabs
+    .v-tabs__bar
+      .v-tabs__wrapper--show-arrows
+        //margin-left 20px !important
+        //margin-right 20px !important
+        @media mobile-big-and-below
+          margin-left 0px !important
+          margin-right 0px !important
+      .icon.tabs__icon
+        display flex !important
+        width auto !important
+        color #e5b96c
+        font-size 30px
+        background #fff
+        z-index 2
+        @media mobile-big-and-below
+          display none !important
+    .tabs__icon--prev
+      left 0px !important
+    .tabs__icon--next
+      right 0px !important
+  .ripple__container
+    display none !important
+  .dialog
+    .dialog_text
+      text-align center
+    &:not(.dialog-betslip)&:not(.dialog-myaccount)&:not(.dialogMyAccountDesktop)
+      .v-btn
+        width auto !important
+      .v-btn.primary-btn-blue:not(.v-btn--disabled)
+        background-color #3B495F !important
+        background #3B495F !important
+        color #fff !important
+      .v-btn.secondary
+        background-color #ebe200 !important
+        background #ebe200 !important
+        border 1px solid #ebe200 !important
+        color #3B495F !important
+  .application
+    .action-btns
+      .acceptChanges
+        background-color #5a769b !important
+  .dialog-betslip-confirm .primary
+  .dialog-betslip-msg .primary
+    background #3B495F !important
+    border 2px solid #3B495F !important
+    margin-left -2px
+    color #fff !important
+    border-radius 3px
+    &:hover
+      border 0px  !important
+  .dialog-betslip-confirm .secondary
+  .dialog-betslip-msg .secondary
+    background #ebe200 !important
+    border 0px  !important
+    color #3B495F !important
+    border-radius 3px
+  .dialog-betslip-confirm
+  .dialog-betslip-msg
+    h2
+      font-size 20px
+      color #3B495F
+      text-transform none
+      text-align center
+    .dialog_text
+      text-align center
+
+
+  /*********************************BET HISTORY*****************************/
+  .bet-history
+    padding 0 !important
+    .hs_tabs
+      .tab
+        background #ffffff
+        border 2px solid #3b495f !important
+        border-radius 3px
+        a
+          color #3b495f !important
+          font-family: "Montserrat SemiBold"
+        &.active
+          background #ebe200 !important
+          border 0px
+          a
+            color #3b495f !important
+    .stmnt-ctrls .v-btn
+      background #3b495f !important
+  .stmnt
+    background #fff !important
+    color #3b495f !important
+    overflow auto!important
+    border solid 0px #dadbdf
+    border-radius 0px
+    padding 0px
+  .stmnt-bet .buyback
+    background transparent !important
+  .stmnt-bet .result + .buyback
+    padding-top 10px !important
+  .betsporticon
+    padding-right 5px
+    .igt-icon
+      > span
+        width: 25px
+        height: 25px
+
+  .legliveicon
+    background #ebe200 !important
+    color #3b495f !important
+    border 2px solid #ebe200 !important
+    font-style normal
+    padding 0 5px !important
+    font-size 11px
+    margin 1px
+    border-radius 3px
+    font-family: "Montserrat SemiBold"
+  .stmnt-bet
+    border 0px solid #dadbdf !important
+    background #fff !important
+    .leginfo-sub
+      color #000 !important
+      font-size 12px
+    .block:not(.bethead)
+      margin-top -1px
+      border 1px solid #dadbdf !important
+      padding 5px !important
+    .block.bethead
+      background #3b495f !important
+      color #fff
+      .betoverview
+        padding-right 0
+        display flex !important
+        justify-content space-between
+        align-items center
+      .betttl
+        .unitshint
+          color #fff
+        .leginfo-stats
+          line-height 18px
+        &:not(.whitetitle)
+          color #248ADC !important
+          text-transform uppercase
+      .betrefs
+        color #ebe200 !important
+        margin-left 10px
+        text-align right
+    .leginfo
+      .betrefs
+        display flex
+        justify-content space-between
+        align-items center
+        color #e6b86b !important
+        padding 5px 0
+      .leginfo-odds
+        background #fff !important
+        color #3b495f !important
+        border 1px solid #3b495f
+        border-radius 3px
+        padding 5px
+        min-width 40px
+        text-align center
+        min-width 45px
+  .leginfo-top
+    display flex
+  .legstatus-lost
+    .leginfo-stats
+      &:before
+        display none !important
+    .leginfo-odds
+      background #e7212d !important
+
+  .legstatus-won
+    .leginfo-stats
+      &:before
+        display none !important
+    .leginfo-odds
+      background #34b25d !important
+
+
+  .stmnt-bet .result
+    background #fff  !important
+    border-top 0px
+    border-collapse separate
+    border-spacing 5px
+    > div
+      border 1px solid #dbdce0 !important
+      border-radius 3px !important
+      padding: 4px
+      background #fff
+    .value
+      border-radius: 4px
+      color #3b495f !important
+    .hint
+      color #3b495f !important
+    .betreturn
+      background #ebe200
+      .content-wrapper
+        border-radius 5px
+        font-family 'Open Sans SemiBold'
+      .value
+        background none !important
+        color #3b495f !important
+      &.lost
+        opacity 0.8
+        background #2a77aa !important
+        color #ffffff !important
+        border 1px solid #248ADC
+        .hint
+          color #3b495f !important
+        .value
+          background transparent !important
+      &.Won
+        color #ffffff !important
+        background #1fc600 !important
+        .content-wrapper
+          background transparent !important
+        .hint
+          color #3b495f !important
+        .value
+          background transparent !important
+          span
+            span
+              background-color transparent !important
+      &.Void
+        .content-wrapper
+          background #8db5d4
+        .hint
+          color #fff
+        .value
+          background transparent
+      &.Lost, &.Cancelled
+        background #8db5d4
+        .content-wrapper
+          background transparent
+
+        .hint
+          // color #051e41
+          color #fff
+        .value
+          // color #051e41
+          color #fff
+          background transparent !important
+  .application .betstatus-boughtback // for CASHED OUT bet status
+    .betreturn.Closed
+      color #000 !important
+      background #1fc600 !important
+    .content-wrapper
+      background transparent !important
+      .hint
+        color #000 !important
+      .value
+        color #000 !important
+    .result .betreturn .value span span
+      background-color transparent !important
+  .stmnt-ctrls
+    border 0px !important
+    background:  transparent !important
+  .stmnt-notif .note
+    display flex
+    align-items center
+    justify-content center
+    border-top 1px solid #ddd
+  .stmnt .note .main
+    color #3b495f !important
+  .stmnt .head .inhead.bordered .v-icon
+    color #3b495f !important
+  .stmnt-fdaterang
+    border-top solid 1px #ddd
+    padding-top 10px
+    .datebtn.active
+      border-color #3b495f !important
+    .datebtn.active
+      .headhint
+        color #3b495f !important
+    .stmnt-btn
+      border-radius 3px !important
+      &.datebtn
+        border-radius 2px !important
+        outline none
+        border-color #3b495f !important
+        &:hover
+          background none !important
+          outline none
+          color #111 !important
+    .stmnt-btn.sb-white
+      border 2px solid #3b495f !important
+      color #3b495f  !important
+      &:hover
+        background #3b495f !important
+        border 2px solid #3b495f !important
+        color #fff !important
+    .stmnt-btn.sb-blue
+      background #3b495f !important
+      border 2px solid #3b495f !important
+      &:hover
+        background #3b495f !important
+        border 2px solid #3b495f !important
+    .date-picker-table
+      .btn.accent
+      .btn--outline
+        background-color #3b495f !important
+        border-color #3b495f !important
+    .fdr-footer
+      padding-top 5px
+  .inhead.bordered.clickable
+    display flex
+    align-items center
+    justify-content space-between
+    border 0px !important
+  .fdr-wrap
+    width 400px
+    max-width 90%
+    margin 0 auto
+
+  .bet-history-page
+    .stmnt-bets
+      .result
+        .betreturn
+          &.Open
+            .content-wrapper
+            font-weight 600
+            background #248adc
+              .hint
+                color #fff
+      .Voucher
+        background #e8e7eb !important
+        .discount
+          .voucher-description
+            color #3b495f  !important
+            font-family: "Montserrat SemiBold"
+          .hint
+            color #3b495f  !important
+            font-family: "Montserrat Bold"
+          .value
+            color #5a769b  !important
+            font-family: "Montserrat Bold"
+  .bbq-btn-close
+    .v-icon
+      color transparent !important
+      background-image: url('~@/assets/images/icons/icon-close-grey.svg')
+      height 25px
+      width 25px
+  .block.betbbquotes
+    .betbbquote
+      background #5a769b !important
+      border-bottom 1px solid #e5e5e5 !important
+  .stmnt-bbquote .bbq-infomsg
+    border: 0px !important
+    border-radius: 0px  !important
+    padding: 15px 15px 15px 40px
+    background-position: 13px center
+    &.notgeolocated
+      background-color: #FFE5CF !important
+      color: #D36000 !important
+      border: 1px solid #FFE5CF
+      .v-icon
+        color: #D36000 !important
+        padding-right 5px
+
+  .stmnt .buyback .stmnt-btn.sb-green
+    color: #fff
+    background-color: #3b495f !important
+    border-color: #3b495f !important
+  .stmnt-tgl.on
+    background-color: #ebe200 !important
+  .stmnt-bbquote
+    .stmnt-btn.sb-blue
+      background #3b495f  !important
+      color #fff
+      padding: 0 20px
+      letter-spacing: 0
+      &:hover
+        background #3b495f !important
+        color #fff
+
+
+  /*********************************BET HISTORY END*****************************/
+
+  /**********************************ACCOUNT PAGES*******************************/
+  .page-content.account
+    color #000
+    .verAccountTitle
+      color #364a5e !important
+    &.acc_verification
+      .ctsform
+        .form-actions
+          button
+          &.v-btn
+            width 440px !important
+            @media mobile-big-and-below
+              width 100% !important
+              padding 0 10px
+              span
+                white-space normal !important
+        .verifyText
+          span
+            color #364a5e !important
+        .v-card__text
+          u
+            color #364a5e !important
+    .step-number
+      color #636e80 !important
+    .title
+      color #3b495f
+    .account_links
+      background transparent
+      padding-left: 15px
+      .acc_header
+        background none
+        color #ffffff
+        font-family 'Montserrat SemiBold'
+        padding-left: 5px
+      .navigation
+        .navigation-item
+          padding 0 5px 0 10px
+          a
+            justify-content flex-start
+            align-items center
+            text-transform uppercase
+            line-height 18px
+            min-height 38px
+          &:hover
+            a
+              color #fff !important
+              font-family 'Montserrat Regular'
+              &:before
+                content ''
+                border 1px solid #ebe200
+                border-radius: 50%
+                width: 8px
+                height: 8px
+                margin-left: -15px
+                margin-right: 7px
+      .site-navigation .navigation-group
+        padding 0
+        border-top 0px
+        &.VERTICAL:last-child .navigation-item
+          display block
+        .router-link-exact-active.router-link-active
+          color #fff !important
+          font-family 'Montserrat Regular'
+          &:before
+            content ''
+            border 1px solid #ebe200
+            border-radius: 50%
+            width: 8px
+            height: 8px
+            margin-left: -15px
+            margin-right: 7px
+    h1
+      color: #3b495f
+      text-align: left !important
+      font-family: 'Montserrat SemiBold'
+    .personal-info.ctsform
+      .edit_btn
+        color: #fff 
+    .personal-info
+      .diss
+        background #E7E6EA
+  &.url-joinUs
+    .page-content.account
+      h1
+        // text-align center !important
+  .accpage
+    .mb-container
+      flex-direction column
+      .mb-desc
+        text-align center
+        padding: 0 0px 20px 0px
+  .accpage
+    border-radius 0
+    margin-top 20px
+    h1,
+    h2
+      color #3b495f
+    .v-expansion-panel__header
+      background #E7E6EA !important
+      h3
+        margin 0
+    ul.v-expansion-panel
+      padding-left 0
+    .v-icon.blue--text
+      font-size 20px !important
+      color #3b495f !important
+    .v-btn
+      font-family 'Montserrat SemiBold'
+      border-radius 3px
+      &.primary-btn
+        background-color: #364a5e !important
+    .v-btn.success
+      background #364a5e !important
+    .v-btn.error
+      background #E7E6EA !important
+      color #000
+    .v-input--checkbox
+      .v-icon
+        color #364a5e !important
+    .account-page
+      .stepCount
+        .steps
+          .btnStepVisited
+            color #3b495f
+            border 1px solid #3b495f
+          .btnStep
+            background: #3b495f !important
+          .v-btn--disabled
+            background: #e5e5e5 !important
+      #registrationForm
+        .joinusTitle
+          .correction-title
+            color #636E80
+          .correction-subtitle
+            color #3b495f
+          .mag_glass_correction
+            background-image: url(icons-path'/'reg_ver_correction_darkblue'.svg')
+        .mb-container
+          button
+            background: #fff !important
+            border 2px solid #3b495f
+            color #3b495f
+            .reg_driver_license
+              background-image: url(icons-path'/'reg_driver_license_darkblue'.svg')
+  .ctsform
+    button
+      background #364a5e !important
+      border-radius 3px
+      &.secondary-btn
+        background #fff !important
+        color #364a5e
+        border 2px solid #364a5e
+      &.confirm-btn
+        background #ebe200 !important
+      &.changeBtn
+        background #ebe200 !important
+        color rgba(0,0,0,.87)
+    .filled .control-label
+    .pseudofilled .control-label
+      color #000
+
+    .withfocus
+      .control-label
+        color #3b495f
+        background-color #ebe200
+
+    input:focus + .control-label
+    select:focus + .control-label
+    .withfocus .control-label
+      color #3b495f
+
+    input:focus + .control-label:after
+    select:focus + .control-label:after
+    .withfocus .control-label:after
+      background-color:#ebe200
+      height 2px
+
+    &.reset-password
+      .show_hide
+        color: #3b495f !important
+  .txtable th
+    background #d2d5da !important
+    color #5a769b !important
+
+  .playbalance
+    color #3b495f
+    .total-balance
+      background #3b495f !important
+      .val
+        color #ebe200
+    .v-icon
+      margin-left 5px
+      &.chevron_up
+        color transparent !important
+        background-image: url('~@/assets/images/icons/arrow_up.svg')
+        height 15px
+        width 15px
+        background-position center
+      &.chevron_down
+        color transparent !important
+        background-image: url('~@/assets/images/icons/arrow_down.svg')
+        height 15px
+        width 15px
+        background-position center
+  .notification-preferences
+    .table_head
+      background #43505a !important
+      color #fff !important
+      .channel
+        color: #ebe200 !important
+  /**********************************ACCOUNT PAGES END*******************************/
+
+  /********************************OTHER************************************/
+  .hheader .big3-markets-header .markets-title.available-for-bb .available-for-bb
+    background-image: url('~@/assets/images/icons/available-for-bb.svg') !important
+    @media mobile-big-and-below
+      top 0px !important
+      width 17px !important
+  .selection-wapper.selection-data.priceup:before
+    background green !important
+  .selection-wapper.selection-data.pricedown:before
+    background red !important
+
+  .selection-price .price.priceUp:before
+    background: green
+  .selection-price .price.priceDown:before
+    background: red
+  .RR .selection-price .price.priceUp:before
+    left: -30px
+  .RR .selection-price .price.priceDown:before
+    left: -30px
+  .SBbetSlip .currenthandicap.hcpUp:after
+    background: green
+  .SBbetSlip .currenthandicap.hcpDown:after
+    background: red
+
+  .SBbetSlip .currenthandicapT.hcpUpn:before
+    background: green
+  .SBbetSlip .currenthandicapT.hcpDown:before
+    background: red
+
+  .main-column
+    .banners
+      .headlines
+        padding 0 !important
+        margin 0
+      img
+        max-width 100%
+        // padding-bottom 10px
+        border-radius 5px
+      .jumbotron__image
+        position unset
+        top 0
+        left 0
+        transform none
+        min-width 100%
+        will-change unset
+        transition none
+  .date-picker-table
+    .btn.accent
+    .btn--outline
+      background-color #2A77AA !important
+      border-color #2A77AA !important
+  .v-btn.primary-btn-blue
+    background #3b495f !important
+
+  .header
+    .header-message-white
+      .content-container
+        margin-top 5px
+        margin-bottom 5px
+      .content-wrapp
+        margin-left 15px !important
+        &.appinstall
+          align-items center
+          justify-content center
+          margin-left 0 !important
+          p
+            text-transform uppercase
+            font-family 'Montserrat Bold'
+            font-size 16px
+            letter-spacing 0
+            padding-bottom 5px
+            &:after
+              content ''
+              width 100%
+              height 2px
+              background #364a5e
+              display block
+              // border-bottom 2px solid #364a5e
+      .close
+        left -25px !important
+        .v-icon
+          margin-left 0 !important
+          color #E7B96B
+      .message_btn
+        background-color #E7B96B !important
+        background #E7B96B !important
+        background-image none !important
+  &.browser-internet-explorer
+    @media tablet-and-above
+      .betslip-page
+        position relative !important
+    header.header
+      position relative !important
+    .header .logo.white-holder
+      display block
+      img
+        margin-top 20px
+    .selection .stake_price .price
+      width 30% !important
+    .selection .selection-core .stake-n-return
+      width 100% !important
+    .betType .stake-n-return
+      width 100% !important
+    button.v-btn
+      min-width auto
+    .toggleBetslipColumn
+      background none
+      .v-btn
+        min-width: 100px!important
+    .loggedIn .v-btn
+      min-width: 0px!important
+    .loggedIn .pd-icon
+      margin-left: 10px!important
+    .browser-internet-explorer .selection .selection-wapper
+      min-height 40px !important
+    .betsliptablink
+      display flex
+    .coupon-event
+      .names.participants
+        flex 1
+    .eventmarketgroup
+      .markets
+        .selections-in-columns
+          .selections-container
+            .selections
+              .selection
+                .selection-column
+                  .selection-wapper
+                    .value
+                      flex 0 1 auto !important
+    .betslip-column .betslip-page
+      overflow visible
+    .betslip_footer_bottom
+      margin 0px -15px -60px -15px
+
+  .menu__content--select.menuable__content__active a
+    color  #06283b !important
+
+  .v-select__slot
+    background #fff
+    border 1px solid #dbdce0
+    padding: 0 5px
+    border-radius 3px
+    label
+      font-size 14px
+      transform scale(1) !important
+      top -20px !important
+      color #3b495f
+  .theme--light.v-text-field.v-input--is-focused>.v-input__control>.v-input__slot:before
+    border-color #ebe200
+    border-width 1px
+  .v-input.customSelect
+    margin-top 10px
+    .v-input__slot:before
+      display none
+    .theme--light.v-messages
+      color: #3b495f
+      padding: 0 2px
+  .checkbox-holder
+    .v-messages
+      display none
+    .control-block
+      margin-bottom 0px
+    &.control-block
+      margin-bottom 0px
+    .v-input--selection-controls
+      margin-top 5px
+
+  .v-btn
+  .v-btn.v-btn.v-btn.primary-btn-blue
+    button()
+
+  .download-btn.download-btn.download-btn
+    background: #43505a !important
+    font-family: "Montserrat SemiBold"
+  .try-again-btn.try-again-btn.try-again-btn
+    background: #ebe200 !important
+    font-family: "Montserrat SemiBold"
+    span
+      color: #43505a !important
+  .maybe-later-btn.maybe-later-btn.maybe-later-btn
+    // background #ebe200 !important
+    background transparent !important
+    border 1px solid #43505a !important
+    font-family: "Montserrat SemiBold"
+    span
+      color: #43505a !important
+  .okay-btn.okay-btn.okay-btn
+    background-color: #ebe200 !important
+    font-family: "Montserrat SemiBold"
+    span
+      color #43505a !important
+  .welcome-dialog
+    h1
+      text-transform: uppercase
+
+      .highlight
+        text-transform: uppercase
+        color: #EBE200
+    .description
+      font-family: "Montserrat Regular"
+      text-transform: uppercase
+
+      .highlight
+        font-family: "Montserrat Bold"
+
+    .description
+      background-color: rgba(51, 51, 51, 0.54)
+      padding: 12px 25px
+    .background
+      .main
+      .footer
+        @media mobile-big-and-below
+          text-align: left
+
+      .footer
+        background: none
+        display: flex
+        align-items: center
+        flex: 1 0 auto
+
+        .lottery-logo
+          margin-right: 25px
+
+          @media mobile-big-and-below
+            align-self: flex-start
+            margin-right: 10px
+
+  .dialog-login
+    max-width: 1087px
+
+
+  // .live-match
+  //   .event_header
+  //     .parent
+  //       height: 67px
+  //
+  //       @media mobile-big-and-below
+  //         height: 48px
+  //
+  //       .child-left
+  //         .team-title
+  //           position: absolute
+  //           top: 50%
+  //           margin-top: -0.5em
+  //
+  //           @media mobile-big-and-below
+  //             max-width: 90px
+  //
+  //           &:nth-child(1)
+  //             left: 25px
+  //           &:nth-child(2)
+  //             right: 25px
+  .live-match
+    .event_header
+      .live-header
+        margin-bottom: 10px
+      .parent
+        .child-left
+          .team-title
+            height: 40px
+            display: flex
+            align-items: center
+
+            @media mobile-big-and-below
+              height: 32px
+        .child-right
+          .result-title
+            margin: 0
+
+          .result-title
+            td
+              padding: 3px 10px
+              background: #ebe200
+              color: #3b495f !important
+
+          .current-main-score
+          .current-score
+            background: #ebe200
+            color: #3b495f !important
+
+  &.url-promotions
+    .promotion-overlay .promotions-overlay-wrapper[data-v-788627ba]
+      top 10%
+      @media mobile-big-and-below
+        top 0
+    .promotions-container
+      margin: 0 5px 0 0
+      .promotion-overlay
+        color #3b495f
+        .caca
+          display flex
+          flex-direction: row
+          background none
+        .promotions-overlay-wrapper
+          .promotion-item-note[data-v-788627ba]
+            padding-bottom: 15px
+            @media mobile-big-and-below
+              padding-bottom: 330px
+          .promotion-item__title
+            padding-top: 15px
+            font-family: "Montserrat SemiBold"
+            font-size: 18px
+            line-height: 18px
+            text-align: left
+            padding-right: 45px
+          .flex.close
+            top: 5px
+            right: 24px
+            @media mobile-big-and-below
+              right -24px
+            .v-icon
+              color transparent !important
+              background-image: url('~@/assets/images/brands/dn/icon-close.svg')
+              height: 25px
+              width: 25px
+              background-repeat: no-repeat
+          .min-reward
+          .max-reward
+            background: #ebe200
+            color: #4b5757
+            padding: 20px
+            margin-bottom: 15px
+            font-family: "Montserrat Bold"
+      .promotion-item
+        background: #ebe200
+        color: #3b495f
+        border-radius: 5px
+        padding 15px 5px
+        @media mobile-big-and-below
+          width 100%
+          margin 5px 0
+          flex unset
+        .promotion-item-wrapper
+          display: flex
+          align-items: center
+          height 100%
+          .promotion-item__title
+            font-family: "Montserrat SemiBold"
+            line-height 16px
+            font-weight normal
+            padding-bottom 10px
+            color #3b495f
+          .promotion-content
+            color #3b495f
+            font-size 14px
+          .promo_icon .v-icon
+            color transparent !important
+            background-image: url('~@/assets/images/brands/dn/promotion-icon.svg')
+            background-repeat: no-repeat
+            background-position center
+            width 80px
+            height 110px
+            margin-right 10px
+            @media mobile-big-and-below
+              width 80px
+              height 110px
+          .promo_readmore
+            margin-left auto
+            .v-icon
+              color transparent !important
+              background-image: url('~@/assets/images/brands/dn/arrow_right.svg')
+              background-repeat: no-repeat
+              background-position center
+              margin-left 10px
+              font-size: 24px
+        &:nth-child(odd)
+          background: #636E80
+          color: #fff
+          .promotion-item__title
+          .promotion-content
+            color: #fff
+          .promo_readmore
+            .v-icon
+              background-image: url('~@/assets/images/brands/dn/arrow_right_white.svg')
+          .promo_icon .v-icon
+            background-image: url('~@/assets/images/brands/dn/promotion-icon-white.svg')
+
+  .voucher-item
+    .voucher-item__title
+      font-weight normal
+      font-family 'Montserrat Bold'
+      background: #f1f2f2 !important
+      margin: -15px -15px 10px -15px
+      padding: 10px 15px
+      line-height: normal
+    .amount
+      font-family 'Montserrat Bold'
+    .dates
+      .date-start
+      .date-end
+        font-weight normal
+        font-family 'Montserrat SemiBold'
+        min-width: 80px
+        display: inline-block
+    .customer-notes-title
+      font-weight normal
+      font-family 'Montserrat SemiBold'
+  .overlay-dialog
+    .v-btn
+      background-color: #3b495f !important
+      color: #fff
+
+    .geo-content
+      .gc-link
+        color: #fff !important
+
+    .gc-postpone
+      color: #3b495f
+
+  .betslip-page:not(.betslip-empty) .v-btn.primary-btn
+    background-color: #3b495f !important
+  .betslip-gc-msg
+    .v-btn.primary-btn.geolocation-btn
+      background-color: #ebe200 !important
+
+
+  .left-column
+    .logo
+      padding: 20px 0 3px 15px
+
+      @media mobile-big-and-below
+        display: none
+
+  .PlayPlusImg
+    margin auto
+    text-align center
+    max-width: 150px
+    padding: 0 0 10px 0
+    display: block
+  .transaction-container
+    color: #3b495f
+    padding 0
+    .v-btn
+      font-size 14px !important
+      .v-btn__content
+        letter-spacing: 0px
+    ul
+      padding-left 20px
+    .pageTilte
+      margin-bottom 0
+    .sightline,
+    .cashinshop
+      .label
+        font-family 'Montserrat SemiBold'
+        padding-bottom 10px
+      @media mobile-big-and-below
+        padding 10px
+    .note
+      ul
+        padding-left 20px
+      li
+        padding 3px 0
+  &.url-withdrawal-cashinshop
+    .desc-footer
+      font-size 12px
+      padding-top 10px
+    .tds
+      font-size 14px
+  .go-back
+    color: #3b495f
+  .add-funds
+    color: #3b495f
+    h1
+      @media mobile-big-and-below
+        font-size 18px
+    .generic-icon-note
+      .v-icon
+        display none
+    ul
+      padding-left 20px
+    li
+      text-align left
+      padding 3px 0
+    .main-column #form
+      max-width 100%
+
+  .tandc-popup-container
+    overflow hidden
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    left 0
+    width 100%
+    height 100%
+    z-index 10000
+    background  rgba(0,0,0,.7)
+
+    .authy-popup-child
+      .guidedTitle
+        color: #364a5e !important
+
+    .tandc-popup-child
+      .tandc-popup-content
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6
+          text-align: left !important
+      .reg_ver_register_title
+        .step-number
+          color #3b495f
+      .form-actions 
+        .confirm-btn
+          background: #3b495f
+          color #fff
+    .tc-text h1
+      &:first-child
+        margin-top: 0 !important
+    .tandc-popup-content
+      height: calc(100% - 75px)
+      width: 100%
+      overflow-y: auto
+      padding-bottom: 90px
+
+    &.tandc-iframe
+      .tandc-popup-content
+        padding: 0
+        height: auto
+
+  .tandc-popup-child
+    padding 20px 20px 72px 20px
+    position fixed
+    top 10%
+    right 10%
+    bottom 10%
+    left 10%
+    z-index 10001
+    background #fff
+    -webkit-overflow-scrolling touch
+    overflow-y scroll
+    overflow -moz-scrollbars-none !important
+    -ms-overflow-style none !important
+    scrollbar-width: none
+    &::-webkit-scrollbar
+      width: 0 !important
+
+    @media mobile-big-and-below
+      padding 10px 10px 0px 10px !important
+      top 2%
+      right 5%
+      left 5%
+      bottom 5%
+      overflow-y scroll
+    .tc-heading
+      display block
+      padding 15px
+      font-size 30px
+      text-align center
+
+  .tandc-popup-child .tc-embedded
+    width 100%
+    height: calc(100% - 75px)
+    border none
+    -webkit-overflow-scrolling touch
+    overflow-y scroll
+    @media mobile-big-and-below
+      padding-bottom 75px
+  .tandc-popup-child .form-actions
+    position absolute
+    right 0
+    bottom 10px
+    left 0
+    z-index 10003
+    text-align center
+    background #fff
+    padding 5px 0 5px 0
+    bottom 0px
+    .v-btn.btn.primary-btn
+      background-color #1a9ddd
+      color #fff
+    .v-btn.btn.secondary-btn
+      background-color #1a9ddd
+      color #fff
+    .v-btn.btn.secondary-btn
+      background-color #f5f8fc
+      border 1px solid #cfd6db
+      color #99a8b1
+
+  .tandc-popup-child
+    .tc-heading
+      font-family 'Montserrat Bold'
+      font-size 25px
+      color: #3b495f
+      @media mobile-big-and-below
+        font-size 18px
+        line-height: 18px
+    .tc-text
+      @media mobile-big-and-below
+        text-align: left
+    .form-actions
+      .v-btn.btn.primary-btn
+        background-color: #ebe200 !important
+        color: #3b495f !important
+        border-radius 3px !important
+        font-family 'Montserrat SemiBold'
+      .v-btn.btn.secondary-btn
+        background-color: #3b495f !important
+        color: #fff !important
+        border-radius 3px !important
+        font-family 'Montserrat SemiBold'
+
+      @media mobile-big-and-below
+        padding-top: 15px
+        padding-bottom: 15px
+  .closeButtonProcessingDialog 
+    background: #636e80 !important
+
+  .igt-icon
+    .icon-boost
+    .icon-betly-boost
+      background-image: url('~@/assets/images/brands/dn/betly-boost-white.svg') !important
+      height 20px
+      width 20px
+      background-position center
+
+  .igt-icon
+    .icon-boost
+    .icon-betly-boost
+      @media mobile-big-and-below
+        background-image: url('~@/assets/images/brands/dn/betly-boost.svg') !important
+        height 20px
+        width 20px
+        background-position center
+
+.dn .application
+  .marketgroup .coupon-event .market .markets-container .markets.single .market.three-and-more-selections
+    .selections-mobile .selection-wapper .value .sh .selectionprice.varylongprice
+      font-size 12px !important
+
+
+.dn .application
+  .marketgroup .coupon-event .market .markets-container .markets.single .market.three-and-more-selections
+    .selections-mobile .selection-wapper .value .sh .selectionprice.veryvarylongprice
+      font-size 11px !important
+      @media mobile-big-and-below
+        font-size 10px !important
+
+
+  /*********** Refer a Friend********************************/
+  .raf-friend-holder
+    padding 5px
+    color #000 !important
+    a.terms-link
+      color #000 !important
+    .code-container .copy
+      background: #3b495f !important
+      border:  0px
+      color: #fff !important
+      border-radius 25px !important
+      .icon-copy-black
+        background-image url('~@/assets/images/icons/copy-white.svg')
+
+      
+    .code-container .code
+      border: 1px solid #3b495f
+  .promotion.raf-friend .raf_friend_content
+     border: 1px solid #dbdce0
+  .raf-friend
+    .subtitle
+      margin 0
+      background #3b495f 
+      color #fff
+
+  /*********** Refer a Friend eND********************************/

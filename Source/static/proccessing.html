@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class='no-js lt-ie9 lt-ie8 lt-ie7'> <![endif]-->
+<!--[if IE 7]>         <html class='no-js lt-ie9 lt-ie8'> <![endif]-->
+<!--[if IE 8]>         <html class='no-js lt-ie9'> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class='no-js'>
+<!--<![endif]-->
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='description' content=''>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href=''>
+</head>
+
+<body class='proccesssing_page' onload='proccedRequest()'>
+<div class='container'>
+        <div class='helper'>
+            <div class='content'>
+                <p class='text'>Redirecting...</p> 
+                <div class='loader'></div>
+            </div>
+        </div>
+    </div>
+    <form id='spanexpress' name='LaunchSpanExpress' action='' method='post'></form>
+    </div>
+</body>
+</html>
+
+<script>
+    function proccedRequest() {
+        var deserializeFormData = {}
+        let form = document.getElementById('spanexpress')
+        var getPostUrl = new URLSearchParams(window.location.search).get('postUrl')
+        form.action = getPostUrl
+        location.search.substr(1).split('&').forEach(function (item) { deserializeFormData[item.split('=')[0]] = item.split('=')[1] })
+        console.log('deserializeFormData', deserializeFormData)
+        delete deserializeFormData['postUrl']
+        Object.keys(deserializeFormData).forEach(function (item) {
+            let elemType = (item === 'IdentityToken') ? 'textarea' : 'input'
+            let el = document.createElement(elemType)
+            el.id = item
+            el.name = item
+            el.value = decodeURIComponent(deserializeFormData[item])
+            form.appendChild(el)
+        })
+        let el = document.createElement('input')
+        el.type = 'submit'
+        form.appendChild(el)
+        setTimeout(() => {
+            form.submit()
+        }, 0)
+    }
+</script>
+<style>
+    body {
+        margin: 0
+    }
+
+    #spanexpress {
+        display: none
+    }
+
+    .redirecting {
+        font-size: 15px;
+        color: #ffffff
+    }
+
+    .loader {
+        border: 7px solid #CFD6DB;
+        border-top: 7px solid #0b4da1;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 2s linear infinite;
+        margin: 10px auto 0 auto;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg)
+        }
+
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+
+    .container {
+        display: table;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .helper {
+        position: absolute;
+        top: 50%;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .content {
+        position: relative;
+        top: -50%;
+        left: 50%;
+        margin: 0 auto;
+        width: 200px;
+    }
+    .text {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+    }
+</style>
