@@ -1,7 +1,8 @@
 <template>
   <div class="sports-page">
     <v-layout  class="page-layout">
-      <v-flex class="main-column" :style="{paddingTop: headerHeight + 'px'}" ref="maincolumn">
+      main page
+      <!-- <v-flex class="main-column" :style="{paddingTop: headerHeight + 'px'}" ref="maincolumn">
         <resize-observer @notify="mainColumnResize" />
         <resize-observer @notify="centerColumnResize" />
         <sports-menu-mobile v-if="mobileBigAndBelow && (brandLayout === 'generic' || brandKey === 'sb' || brandKey === 'qcasino' || brandKey === 'pr' || brandKey === 'rw')" :navigation-section="'BO_POPULAR'" class="popular"></sports-menu-mobile>
@@ -51,14 +52,14 @@
                   </span>
                 </template>
               </div>
-            <!-- <v-btn :ripple="false" @click="toggleBetslipColumn">
+             <v-btn :ripple="false" @click="toggleBetslipColumn">
               <span :class="betslipVisible ? 'pd-icon pd-icon-chevron-down' : 'pd-icon pd-icon-chevron-top'"></span>
             </v-btn> -->
-          </div>
+          <!-- </div> -->
             <!-- <vue-slide-up-down :active="betslipVisible" :duration="500" ref="upDownBetslip"> -->
-              <betslip></betslip>
+              <!-- <betslip></betslip> -->
             <!-- </vue-slide-up-down> -->
-            <div v-if="!stickyBetslip && (brandLayout === 'generic' || brandKey === 'boyd' || brandKey === 'qcasino' || brandKey === 'pr' || brandKey === 'rw')" class="banners">
+            <!-- <div v-if="!stickyBetslip && (brandLayout === 'generic' || brandKey === 'boyd' || brandKey === 'qcasino' || brandKey === 'pr' || brandKey === 'rw')" class="banners">
               <headlinesLight category="SidebarBanners" ></headlinesLight>
             </div>
           </v-flex>
@@ -68,7 +69,7 @@
             </div>
           </v-flex>
         </v-layout>
-      </v-flex>
+      </v-flex> -->
     </v-layout>
   </div>
 </template>

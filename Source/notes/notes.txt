@@ -1,0 +1,5 @@
+Steps:
+
+1. node version 14.0.0 - old code/vue works good with warrning in terminal
+2. App.vue - display main layout only. Sportslayout - hide whole structure from  <v-layout  class="page-layout"> to bottom
+3. https://v3-migration.vuejs.org/migration-build.html#preparations   -- change deprecated slot

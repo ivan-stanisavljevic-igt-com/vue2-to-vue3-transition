@@ -23,16 +23,16 @@
           <router-view />
         </v-container>
       </v-content>
-      <bottom-navigation v-if="mobileBigAndBelow"></bottom-navigation>
-      <geolocation-troubleshooter v-if="gelocationState"></geolocation-troubleshooter>
-      <message-dialog v-if="messageState"></message-dialog>
-      <log-dialog v-if="logState"></log-dialog>
-      <session-dialog v-if="sessionDialogIsActive"></session-dialog>
+      <!-- <bottom-navigation v-if="mobileBigAndBelow"></bottom-navigation> -->
+      <!-- <geolocation-troubleshooter v-if="gelocationState"></geolocation-troubleshooter> -->
+      <!-- <message-dialog v-if="messageState"></message-dialog> -->
+      <!-- <log-dialog v-if="logState"></log-dialog> -->
+      <!-- <session-dialog v-if="sessionDialogIsActive"></session-dialog> -->
       <!-- Popup with limits, on registration-login -->
-      <PostRegistrationLimits/>
+      <!-- <PostRegistrationLimits/> -->
     </v-app>
     <!-- T&C pop-up -->
-    <div class="tandc-popup-container" v-if="termsAndCondtions" :class="{'tandc-iframe': tAndCIFrame}">
+    <!-- <div class="tandc-popup-container" v-if="termsAndCondtions" :class="{'tandc-iframe': tAndCIFrame}">
       <div class="tandc-popup-child">
         <span class="tc-heading">{{ $t('MyAccount.AcceptTermsConditions') }}</span>
         <div class="tandc-popup-content">
@@ -44,9 +44,9 @@
           <v-btn class="btn secondary-btn" @click="toggleTandC('decline')">{{ $t('Account.JoinUs.TC.Decline') }}</v-btn>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Force verification if PIN is set but MTL and TOTP are not verified -->
-    <div class="tandc-popup-container tandc-iframe post-reg-popup" v-if="forceTOTPOrMTLVerification" :class="{'z-index-203': !isLoggedIn}">
+    <!-- <div class="tandc-popup-container tandc-iframe post-reg-popup" v-if="forceTOTPOrMTLVerification" :class="{'z-index-203': !isLoggedIn}">
       <div class="tandc-popup-child infoVer-popup">
         <div class="form-actions padding-y-20 not-2fa">
           <div>
@@ -57,9 +57,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- First login pop-up - info about verification -->
-    <div class="tandc-popup-container tandc-iframe" v-if="loginForTheFirstTime && !isCustomerVerified">
+    <!-- <div class="tandc-popup-container tandc-iframe" v-if="loginForTheFirstTime && !isCustomerVerified">
       <div class="tandc-popup-child infoVer-popup reg-success-popup">
         <RegStepCounter class="reg_ver_register_title" :currentStep="5"></RegStepCounter>
         <span class="reg_ver_register"></span>
@@ -76,9 +76,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Two-Factor Authentication - post-registration screen -->
-    <div class="tandc-popup-container tandc-iframe post-reg-popup" v-if="show2FAPostRegPopup" :class="{'z-index-203': !isLoggedIn}">
+    <!-- <div class="tandc-popup-container tandc-iframe post-reg-popup" v-if="show2FAPostRegPopup" :class="{'z-index-203': !isLoggedIn}">
       <div class="tandc-popup-child infoVer-popup">
         <div class="form-actions padding-y-20 not-2fa">
           <div>
@@ -89,10 +89,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Time limits pop up -->
     <div>
-      <div v-if="timeLimitLogout5MinuteAlert">
+      <!-- <div v-if="timeLimitLogout5MinuteAlert">
         <v-dialog v-model="timeLimits5MinExpirationDialog" max-width="400">
           <v-card class="timelimitspopup">
             <v-card-text class="tl-alert-msg">{{ $t('Account.PlayLimits.Time.ExpirationInFiveMinutes') }}</v-card-text>
@@ -101,8 +101,8 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
-      </div>
-      <div v-if="timeLimitLogoutOneMinutAlert">
+      </div> -->
+      <!-- <div v-if="timeLimitLogoutOneMinutAlert">
         <v-dialog v-model="timeLimits1MinExpirationDialog" max-width="400">
           <v-card class="timelimitspopup">
             <v-card-text class="tl-alert-msg">{{ $t('Account.PlayLimits.Time.ExpirationInOneMinute') }}</v-card-text>
@@ -111,10 +111,10 @@
             </v-card-actions>
           </v-card>
         </v-dialog>
-      </div>
+      </div> -->
     </div>
     <!-- Hamburger menu -->
-    <v-navigation-drawer class="dialog-menu hamburger" v-if="mobileBigAndBelow && brandKey !== 'mav' && brandLayout !== 'generic'" v-model="dialogHamburgerMenu" app fixed disable-resize-watcher disable-route-watcher>
+    <!-- <v-navigation-drawer class="dialog-menu hamburger" v-if="mobileBigAndBelow && brandKey !== 'mav' && brandLayout !== 'generic'" v-model="dialogHamburgerMenu" app fixed disable-resize-watcher disable-route-watcher>
       <div v-if="brandKey !=='boyd'" class="header">
       <v-flex v-if="brandLayout !== 'generic'" class="logo" @click="clickOnLogoHandler()">
         <router-link to="/">
@@ -126,7 +126,7 @@
       </div>
       <v-flex class="close"><v-btn v-if="brandKey==='boyd'" flat @click="toggleHamburgerMenu()" class="close"><v-icon>close</v-icon></v-btn></v-flex>
       <hamburger-menu></hamburger-menu>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <!-- <v-dialog content-class="dialog-menu hamburger v-navigation-drawer" v-if="mobileBigAndBelow && (brandKey === 'dn' || brandKey === 'dnw')" v-model="dialogHamburgerMenu" fullscreen persistent hide-overlay transition="dialog-bottom-transition">
       <div :style="(brandKey === 'dn' || brandKey === 'dnw') ? {paddingTop: headerHeight + 'px'} : {}">
         <v-flex class="close"><v-btn v-if="brandKey==='boyd'" flat @click="toggleHamburgerMenu()" class="close"><v-icon>close</v-icon></v-btn></v-flex>
@@ -134,10 +134,10 @@
       </div>
     </v-dialog> -->
     <footer-part></footer-part>
-    <headlinesLight category="LoginHeadlines"></headlinesLight>
-    <welcome-dialog v-if="welcomeDialog"></welcome-dialog>
-    <welcome></welcome>
-    <whats-new></whats-new>
+    <!-- <headlinesLight category="LoginHeadlines"></headlinesLight> -->
+    <!-- <welcome-dialog v-if="welcomeDialog"></welcome-dialog> -->
+    <!-- <welcome></welcome> -->
+    <!-- <whats-new></whats-new> -->
   </div>
   </div>
 </template>

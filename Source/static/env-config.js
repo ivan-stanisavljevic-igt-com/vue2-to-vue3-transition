@@ -7,23 +7,23 @@ window.ctsautoconf = window.ctsautoconf || {}
 // content server
 window.ctsautoconf.CONTENT_SERVER_HOSTNAME_PREFIX = ''
 // window.ctsautoconf.CONTENT_SERVER_HOSTNAME = 'content.sportsbook.iw.igt.rs'
-window.ctsautoconf.CONTENT_SERVER_HOSTNAME = 'https://sb.ts.sb.oh.igt.rs'
+window.ctsautoconf.CONTENT_SERVER_HOSTNAME = 'https://iw.dev.igt.rs'
 // window.ctsautoconf.CONTENT_SERVER_HOSTNAME = 'contentsportsbook.dev.gameaccount.com'  // sportsbook.fanduel.com
-window.ctsautoconf.MEDIA_CONTENT_HOSTNAME = 'https://sb.ts.sb.oh.igt.rs'
+window.ctsautoconf.MEDIA_CONTENT_HOSTNAME = 'https://iw.dev.igt.rs'
 // window.ctsautoconf.MEDIA_CONTENT_HOSTNAME = '//media.mardigras.sportsbook.dn.igt.rs'
 
 // callbroker.ashx
 // window.ctsautoconf.WEB_SERVER_HOSTNAME = 'api.sportsbook.iw.igt.rs'
-window.ctsautoconf.WEB_SERVER_HOSTNAME = 'https://sb.ts.sb.oh.igt.rs'
+window.ctsautoconf.WEB_SERVER_HOSTNAME = 'https://iw.dev.igt.rs'
 
 // livewire
-window.ctsautoconf.WEBPUSH_SERVICE_HOSTNAME = 'https://sb.ts.sb.oh.igt.rs'
+window.ctsautoconf.WEBPUSH_SERVICE_HOSTNAME = 'https://iw.dev.igt.rs'
 // betting data matcher service
 window.ctsautoconf.BETTING_DATA_MATCHER_SERVICE_HOSTNAME = ''
 window.ctsautoconf.portPerEnvironment = { 'default': '' }
 
 // Search
-window.ctsautoconf.SEARCH_MANAGER_HOSTNAME = ''
+window.ctsautoconf.SEARCH_MANAGER_HOSTNAME = 'https://iw.dev.igt.rs'
 
 // BetCalculator Service
 // window.ctsautoconf.BETCALC_SERVER_HOSTNAME = ''
